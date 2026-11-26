@@ -52,9 +52,26 @@ def main():
     title_end = html.index("</title>", title_start) + len("</title>")
     head = ('<title>医学拼写</title>\n'
             '  <link rel="icon" type="image/png" href="doctor_icon.png">\n'
-            '  <link rel="apple-touch-icon" href="doctor_icon.png">')
+            '  <link rel="apple-touch-icon" href="icon-192.png">\n'
+            '  <link rel="manifest" href="manifest.webmanifest">\n'
+            '  <script src="install.js" defer></script>')
     html = html[:title_start] + head + html[title_end:]
+    credit = '<footer class="maker-credit">由DSM制作</footer>'
+    if html.count(credit) != 1:
+        raise ValueError("Expected the page footer once")
+    html = html.replace(credit, read("web/install.html") + "\n    " + credit)
     (SITE / "index.html").write_text(html, encoding="utf-8")
+    core = ["index.html", "manifest.webmanifest", "install.js", "mascot.webp",
+            "doctor_icon.png", "icon-192.png"]
+    worker = read("web/sw-template.js")
+    stamp = sha256(worker.encode())
+    for path in [*core, *urls.values()]:
+        stamp.update(path.encode())
+        stamp.update((SITE / path).read_bytes())
+    worker = worker.replace("__CORE__", json.dumps(core))
+    worker = worker.replace("__RECORDINGS__", json.dumps(list(urls.values())))
+    worker = worker.replace("__VERSION__", stamp.hexdigest()[:16])
+    (SITE / "sw.js").write_text(worker, encoding="utf-8")
 
 
 if __name__ == "__main__":

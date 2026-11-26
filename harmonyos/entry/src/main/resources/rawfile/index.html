@@ -108,6 +108,11 @@
     #libraryList small { color: var(--muted); }
     #libraryList button { font-size: .78rem; }
     .maker-credit { margin-top: 16px; text-align: center; font-size: .8125rem; color: var(--muted); }
+    #transfer { margin-top: 16px; border-top: 1px solid var(--line); padding: 0; }
+    #transfer textarea { width: 100%; resize: vertical; margin: 0 0 8px; padding: 9px 11px; border: 1.5px solid #bacdbc; border-radius: 11px; font: 1rem/1.4 monospace; color: var(--ink); background: #fbfdf9; }
+    #transfer textarea:focus-visible { outline: 3px solid #398462; outline-offset: 2px; }
+    #transfer button:disabled { opacity: .5; cursor: default; }
+    #transferStatus:empty { display: none; }
     @media(max-width: 345px) { .wrap { padding-inline: 11px; } #card { padding-inline: 14px; } .hero { padding-inline: 16px; } .hero img { width: 96px; } }
     @media(max-height: 540px) and (max-width: 600px) { header { padding-bottom: 7px; } .hero { padding-block: 10px; } .hero img { height: 72px; } #progress { font-size: 2rem; } }
     @media(prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
@@ -174,6 +179,22 @@
         <button id="newRound" type="button">清空本轮，开始练习</button>
         <button id="apply" class="quiet" type="button">保存设置</button>
       </div>
+      <details id="transfer">
+        <summary>转移进度</summary>
+        <p class="meta">在原设备生成并复制进度码，在另一台设备粘贴后恢复。两台设备各自保存，继续练习后可重新生成。</p>
+        <label for="transferCode">进度码</label>
+        <textarea id="transferCode" rows="2" maxlength="8192" autocapitalize="none" spellcheck="false" placeholder="在此粘贴进度码"></textarea>
+        <div class="btns">
+          <button id="exportCode" type="button" class="quiet">生成进度码</button>
+          <button id="copyCode" type="button" class="quiet" disabled>复制</button>
+          <button id="previewCode" type="button">核对进度码</button>
+        </div>
+        <p id="transferStatus" class="meta" role="status"></p>
+        <div class="btns" id="transferConfirm" hidden>
+          <button id="importCode" type="button">确认替换本机进度</button>
+          <button id="cancelImport" type="button" class="quiet">取消</button>
+        </div>
+      </details>
     </details>
     <details class="panel" id="library">
       <summary><span class="icon book-icon" aria-hidden="true"></span>已斩词库 <span id="libraryCount">0</span></summary>
@@ -238,6 +259,37 @@ function fresh() {
 
 function validNumber(value, min, max) {
   return Number.isSafeInteger(value) && value >= min && value <= max;
+}
+
+// Detect copying errors; imported values are also checked against this question bank.
+function checksum(text) {
+  let hash = 2166136261;
+  for (let i = 0; i < text.length; i++) hash = Math.imul(hash ^ text.charCodeAt(i), 16777619);
+  return (hash >>> 0).toString(16).padStart(8, '0');
+}
+
+const bankFingerprint = checksum(JSON.stringify(bank.map(q => [q.id, q.prompt, q.zh, q.answers])));
+
+function decodeProgress(code) {
+  if (code.length > 8192) throw Error('进度码过长，请重新复制。');
+  const match = /^MSP1\.([0-9a-f]{8})\.([A-Za-z0-9+/]+={0,2})$/.exec(code.replace(/\s/g, ''));
+  if (!match || checksum(match[2]) !== match[1]) throw Error('进度码不完整或版本不匹配，请重新复制。');
+  const {bank: fingerprint, progress} = JSON.parse(atob(match[2]));
+  if (fingerprint !== bankFingerprint) throw Error('这个进度码来自其他题库。');
+  const {date, mode, scope, goal, done, roundStart, mastered, ids, pos} = progress;
+  const calendarDate = typeof date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(date) && new Date(date + 'T00:00:00Z');
+  const uniqueIds = list => Array.isArray(list) && list.length <= bank.length &&
+    list.every(id => byId.has(id)) && new Set(list).size === list.length;
+  if (!calendarDate || !Number.isFinite(calendarDate.getTime()) || calendarDate.toISOString().slice(0, 10) !== date ||
+      !['seq', 'mix'].includes(mode) || !validNumber(scope, 0, 8) || !validNumber(goal, 1, bank.length) ||
+      !validNumber(done, 0, Number.MAX_SAFE_INTEGER - 1) || !validNumber(roundStart, 0, done) ||
+      !uniqueIds(mastered) || !uniqueIds(ids) || !validNumber(pos, 0, ids.length)) throw Error('进度码中的练习记录无效。');
+  const allowed = new Set(candidates(scope, mastered));
+  if (allowed.size !== ids.length || !ids.every(id => allowed.has(id))) throw Error('进度码中的题目与练习范围不符。');
+  if (mode === 'seq' && ids.some((id, i) => i > pos && bookOrder.get(id) < bookOrder.get(ids[i - 1]))) {
+    throw Error('进度码中的剩余题目顺序有误。');
+  }
+  return {date, mode, scope, goal, done, roundStart, mastered, ids, pos};
 }
 
 function loadProgress() {
@@ -493,6 +545,80 @@ el('clearRound').onclick = openSettings;
 el('clearFinished').onclick = openSettings;
 el('apply').onclick = () => settings(false);
 el('newRound').onclick = () => settings(true);
+
+let pendingTransfer = null;
+function clearTransferPreview() {
+  pendingTransfer = null;
+  el('transferConfirm').hidden = true;
+  el('transferStatus').textContent = '';
+}
+el('transferCode').oninput = () => {
+  clearTransferPreview();
+  el('copyCode').disabled = true;
+};
+el('exportCode').onclick = () => {
+  clearTransferPreview();
+  if (rollDay()) draw();
+  const payload = btoa(JSON.stringify({bank: bankFingerprint, progress: s}));
+  el('transferCode').value = 'MSP1.' + checksum(payload) + '.' + payload;
+  el('copyCode').disabled = false;
+  el('transferStatus').textContent = '已生成当前进度码，可以复制到另一台设备。';
+};
+el('copyCode').onclick = async () => {
+  const field = el('transferCode');
+  const code = field.value;
+  if (!code) return;
+  try {
+    await navigator.clipboard.writeText(code);
+    if (field.value === code) el('transferStatus').textContent = '进度码已复制。';
+  } catch {
+    if (field.value !== code) return;
+    field.focus(); field.select();
+    el('transferStatus').textContent = '已选中进度码，请在文本菜单选择「复制」。';
+  }
+};
+el('previewCode').onclick = () => {
+  clearTransferPreview();
+  const code = el('transferCode').value;
+  let next;
+  try { next = decodeProgress(code); }
+  catch (error) {
+    el('transferStatus').textContent = /^进度码|^这个进度码/.test(error.message) ? error.message : '进度码格式有误，请重新复制。';
+    return;
+  }
+  let saved;
+  try { saved = localStorage.getItem(storageKey); }
+  catch { el('transferStatus').textContent = '本机无法访问练习存储，请稍后重试。'; return; }
+  pendingTransfer = {next, code, saved, previous: JSON.stringify(s)};
+  const scopeName = next.scope ? '第 ' + next.scope + ' 单元' : '全部单元';
+  const dayCount = next.date === today() ? '今日答对 ' + next.done + ' 题' : '跨日恢复后，今日答对数从 0 开始';
+  el('transferStatus').textContent = next.date + ' · ' + scopeName + ' · ' + (next.mode === 'mix' ? '乱序' : '顺序') +
+    ' · 每组 ' + next.goal + ' 题 · 已斩 ' + next.mastered.length + ' 题。' + dayCount + '。确认后会替换本机练习进度。';
+  el('transferConfirm').hidden = false;
+};
+el('cancelImport').onclick = clearTransferPreview;
+el('importCode').onclick = () => {
+  const pending = pendingTransfer;
+  if (!pending) return;
+  clearTransferPreview();
+  try {
+    if (el('transferCode').value !== pending.code || JSON.stringify(s) !== pending.previous ||
+        localStorage.getItem(storageKey) !== pending.saved) {
+      el('transferStatus').textContent = '进度或进度码已变化，请重新核对。'; return;
+    }
+    localStorage.setItem(storageKey, JSON.stringify(pending.next));
+  } catch { el('transferStatus').textContent = '本机保存失败，请稍后重试。'; return; }
+  Object.assign(s, pending.next);
+  storageOk = true;
+  el('librarySearch').value = '';
+  renderLibrary();
+  draw('已恢复练习进度。');
+  el('transferCode').value = '';
+  el('copyCode').disabled = true;
+  el('transfer').open = false;
+  el('settings').open = false;
+};
+
 el('more').onclick = () => {
   rollDay();
   s.roundStart = s.done;

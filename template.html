@@ -108,6 +108,11 @@
     #libraryList small { color: var(--muted); }
     #libraryList button { font-size: .78rem; }
     .maker-credit { margin-top: 16px; text-align: center; font-size: .8125rem; color: var(--muted); }
+    #transfer { margin-top: 16px; border-top: 1px solid var(--line); padding: 0; }
+    #transfer textarea { width: 100%; resize: vertical; margin: 0 0 8px; padding: 9px 11px; border: 1.5px solid #bacdbc; border-radius: 11px; font: 1rem/1.4 monospace; color: var(--ink); background: #fbfdf9; }
+    #transfer textarea:focus-visible { outline: 3px solid #398462; outline-offset: 2px; }
+    #transfer button:disabled { opacity: .5; cursor: default; }
+    #transferStatus:empty { display: none; }
     @media(max-width: 345px) { .wrap { padding-inline: 11px; } #card { padding-inline: 14px; } .hero { padding-inline: 16px; } .hero img { width: 96px; } }
     @media(max-height: 540px) and (max-width: 600px) { header { padding-bottom: 7px; } .hero { padding-block: 10px; } .hero img { height: 72px; } #progress { font-size: 2rem; } }
     @media(prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
@@ -174,6 +179,22 @@
         <button id="newRound" type="button">清空本轮，开始练习</button>
         <button id="apply" class="quiet" type="button">保存设置</button>
       </div>
+      <details id="transfer">
+        <summary>转移进度</summary>
+        <p class="meta">在原设备生成并复制进度码，在另一台设备粘贴后恢复。两台设备各自保存，继续练习后可重新生成。</p>
+        <label for="transferCode">进度码</label>
+        <textarea id="transferCode" rows="2" maxlength="8192" autocapitalize="none" spellcheck="false" placeholder="在此粘贴进度码"></textarea>
+        <div class="btns">
+          <button id="exportCode" type="button" class="quiet">生成进度码</button>
+          <button id="copyCode" type="button" class="quiet" disabled>复制</button>
+          <button id="previewCode" type="button">核对进度码</button>
+        </div>
+        <p id="transferStatus" class="meta" role="status"></p>
+        <div class="btns" id="transferConfirm" hidden>
+          <button id="importCode" type="button">确认替换本机进度</button>
+          <button id="cancelImport" type="button" class="quiet">取消</button>
+        </div>
+      </details>
     </details>
     <details class="panel" id="library">
       <summary><span class="icon book-icon" aria-hidden="true"></span>已斩词库 <span id="libraryCount">0</span></summary>

@@ -32,12 +32,13 @@ class Element {
   replaceChildren(...children) { this.children = children; }
   add(option) { this.append(option); }
   focus() {}
+  select() { this.wasSelected = true; }
   scrollIntoView() {}
   reportValidity() { return true; }
   setAttribute(name, value) { this[name] = String(value); }
 }
 
-function boot(storage = new Map(), Audio) {
+function boot(storage = new Map(), Audio, clipboard) {
   const elements = new Map();
   for (const match of source.matchAll(/<[a-z][^<>]*\sid="([^"]+)"[^<>]*>/gi)) {
     const element = new Element();
@@ -52,6 +53,7 @@ function boot(storage = new Map(), Audio) {
   el('pronunciations').textContent = audioText;
   const context = vm.createContext({
     Audio,
+    atob, btoa, navigator: {clipboard},
     document: {
       getElementById: el,
       createElement: () => new Element(),
@@ -288,5 +290,81 @@ async function checkPlayback() {
   assert.equal(app.current().id, '1-2');
 }
 
-checkPlayback().then(() => console.log('PASS: 248 offline pronunciations, playback/replay and error recovery; 8 units, legacy upgrade, spelling, full study blocks, switching units, persistent progress, mastered library, search, restoration, empty unit and day rollover.'))
+async function checkTransfer() {
+  const first = boot(seedLegacy(4));
+  first.settings(12, 3, 'mix');
+  first.click('ban');
+  first.correct();
+  const snapshot = first.state();
+  first.click('exportCode');
+  const code = first.el('transferCode').value;
+  assert.ok(code.length < 8192 && code.startsWith('MSP1.'));
+  await first.click('copyCode');
+  assert.equal(first.el('transferCode').wasSelected, true);
+  first.correct();
+  assert.equal(first.el('transferCode').value, code, 'Export remains a snapshot while practice continues');
+
+  const second = boot();
+  const paste = value => {
+    second.el('transferCode').value = value;
+    second.el('transferCode').oninput();
+    second.click('previewCode');
+  };
+  const initial = second.state();
+  paste(code);
+  assert.equal(second.el('transferConfirm').hidden, false);
+  assert.deepEqual(second.state(), initial);
+  second.click('cancelImport');
+  second.click('importCode');
+  assert.deepEqual(second.state(), initial);
+  paste(code);
+  second.correct();
+  second.click('importCode');
+  assert.equal(second.state().done, 1);
+  assert.equal(second.el('transferConfirm').hidden, true);
+  paste(code);
+  second.click('importCode');
+  assert.deepEqual(second.state(), snapshot);
+  assert.deepEqual(boot(second.storage).state(), snapshot);
+
+  function changeCode(edit) {
+    const envelope = JSON.parse(atob(code.split('.')[2]));
+    edit(envelope);
+    const data = btoa(JSON.stringify(envelope));
+    let hash = 2166136261;
+    for (const char of data) hash = Math.imul(hash ^ char.charCodeAt(0), 16777619);
+    return 'MSP1.' + (hash >>> 0).toString(16).padStart(8, '0') + '.' + data;
+  }
+  const bogus = [code + 'A', code.replace('MSP1', 'MSP4'), 'X'.repeat(9000),
+    changeCode(e => { e.progress.date = '2026-02-30'; }), changeCode(e => { e.bank = 'other'; }),
+    changeCode(e => { e.progress.ids[0] = '__proto__'; }), changeCode(e => { e.progress.ids[0] = e.progress.ids[1]; }),
+    changeCode(e => { e.progress.goal = -1; }), changeCode(e => { e.progress.pos = 9999; }),
+    changeCode(e => { e.progress.ids.pop(); }), changeCode(e => { e.progress = null; }),
+    changeCode(e => { e.progress.scope = 2; }), changeCode(e => { e.progress.mode = 'seq'; e.progress.ids.sort((a,b) => questions.get(b).no - questions.get(a).no); })];
+  for (const invalid of bogus) {
+    paste(invalid);
+    assert.equal(second.el('transferConfirm').hidden, true);
+    second.click('importCode');
+    assert.deepEqual(second.state(), snapshot);
+  }
+  paste(changeCode(e => { e.progress.date = '2020-02-29'; }));
+  assert.match(second.el('transferStatus').textContent, /跨日/);
+  second.click('importCode');
+  assert.equal(second.state().done, 0);
+  assert.equal(second.state().pos, snapshot.pos);
+  assert.deepEqual(second.state().mastered, snapshot.mastered);
+
+  let release;
+  const copy = new Promise(resolve => { release = resolve; });
+  const third = boot(new Map(), undefined, {writeText: () => copy});
+  third.click('exportCode');
+  const copying = third.click('copyCode');
+  third.correct();
+  release();
+  await copying;
+  assert.equal(third.state().done, 1);
+  assert.equal(third.current().id, '1-2');
+}
+
+Promise.all([checkPlayback(), checkTransfer()]).then(() => console.log('PASS: cross-device progress transfer, local confirmation, malformed codes and snapshot concurrency; 248 offline pronunciations, playback/replay and error recovery; 8 units, legacy upgrade, spelling, full study blocks, switching units, persistent progress, mastered library, search, restoration, empty unit and day rollover.'))
   .catch(error => { console.error(error); process.exitCode = 1; });
