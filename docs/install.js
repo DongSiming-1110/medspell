@@ -63,6 +63,7 @@ if ("serviceWorker" in navigator) {
     }
   });
   window.addEventListener("online", warm);
+  navigator.serviceWorker.addEventListener("controllerchange", warm);
   navigator.serviceWorker.register("./sw.js").then(warm).catch(() => {
     statusMessage.textContent = "当前浏览器未能启用离线练习，可继续在线使用。";
   });
