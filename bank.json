@@ -1,0 +1,2487 @@
+[
+ {
+  "id": "1-1",
+  "unit": 1,
+  "no": 1,
+  "prompt": "_ overload",
+  "zh": "神经超载",
+  "answers": [
+   "neuron"
+  ]
+ },
+ {
+  "id": "1-2",
+  "unit": 1,
+  "no": 2,
+  "prompt": "typical office _",
+  "zh": "典型的诊所就诊",
+  "answers": [
+   "visit"
+  ]
+ },
+ {
+  "id": "1-3",
+  "unit": 1,
+  "no": 3,
+  "prompt": "DEXA _",
+  "zh": "双能X线吸收扫描",
+  "answers": [
+   "scan"
+  ]
+ },
+ {
+  "id": "1-4",
+  "unit": 1,
+  "no": 4,
+  "prompt": "medical _",
+  "zh": "行医",
+  "answers": [
+   "practice"
+  ]
+ },
+ {
+  "id": "1-5",
+  "unit": 1,
+  "no": 5,
+  "prompt": "health _",
+  "zh": "健康保持",
+  "answers": [
+   "maintenance"
+  ]
+ },
+ {
+  "id": "1-6",
+  "unit": 1,
+  "no": 6,
+  "prompt": "PAP _",
+  "zh": "巴氏涂片试验",
+  "answers": [
+   "smear"
+  ]
+ },
+ {
+  "id": "1-7",
+  "unit": 1,
+  "no": 7,
+  "prompt": "_ report",
+  "zh": "乳房X线检查报告",
+  "answers": [
+   "mammogram"
+  ]
+ },
+ {
+  "id": "1-8",
+  "unit": 1,
+  "no": 8,
+  "prompt": "refill a(n) _",
+  "zh": "根据处方再配药",
+  "answers": [
+   "prescription"
+  ]
+ },
+ {
+  "id": "1-9",
+  "unit": 1,
+  "no": 9,
+  "prompt": "_ examination",
+  "zh": "体检",
+  "answers": [
+   "physical"
+  ]
+ },
+ {
+  "id": "1-10",
+  "unit": 1,
+  "no": 10,
+  "prompt": "perpetual _",
+  "zh": "永久的恐慌",
+  "answers": [
+   "panic"
+  ]
+ },
+ {
+  "id": "1-11",
+  "unit": 1,
+  "no": 11,
+  "prompt": "_ physician",
+  "zh": "执业医生",
+  "answers": [
+   "practicing"
+  ]
+ },
+ {
+  "id": "1-12",
+  "unit": 1,
+  "no": 12,
+  "prompt": "paracetamol _",
+  "zh": "扑热息痛药片",
+  "answers": [
+   "tablet"
+  ]
+ },
+ {
+  "id": "1-13",
+  "unit": 1,
+  "no": 13,
+  "prompt": "_ cap",
+  "zh": "防孩子打开的盖子",
+  "answers": [
+   "Childproof"
+  ]
+ },
+ {
+  "id": "1-14",
+  "unit": 1,
+  "no": 14,
+  "prompt": "_ clinical trial",
+  "zh": "随机临床试验",
+  "answers": [
+   "randomized"
+  ]
+ },
+ {
+  "id": "1-15",
+  "unit": 1,
+  "no": 15,
+  "prompt": "random _",
+  "zh": "随机分配",
+  "answers": [
+   "allocation"
+  ]
+ },
+ {
+  "id": "1-16",
+  "unit": 1,
+  "no": 16,
+  "prompt": "patient _",
+  "zh": "病人的预后",
+  "answers": [
+   "prognosis"
+  ]
+ },
+ {
+  "id": "1-17",
+  "unit": 1,
+  "no": 17,
+  "prompt": "_ group",
+  "zh": "对照组",
+  "answers": [
+   "control"
+  ]
+ },
+ {
+  "id": "1-18",
+  "unit": 1,
+  "no": 18,
+  "prompt": "a 10-year _ study",
+  "zh": "10年的跟踪研究",
+  "answers": [
+   "follow-up"
+  ]
+ },
+ {
+  "id": "1-19",
+  "unit": 1,
+  "no": 19,
+  "prompt": "medical _",
+  "zh": "内科病房",
+  "answers": [
+   "Ward"
+  ]
+ },
+ {
+  "id": "1-20",
+  "unit": 1,
+  "no": 20,
+  "prompt": "infectious _",
+  "zh": "传染性肝炎",
+  "answers": [
+   "hepatitis"
+  ]
+ },
+ {
+  "id": "1-21",
+  "unit": 1,
+  "no": 21,
+  "prompt": "severe _",
+  "zh": "身体严重不适",
+  "answers": [
+   "malaise"
+  ]
+ },
+ {
+  "id": "1-22",
+  "unit": 1,
+  "no": 22,
+  "prompt": "bilirubin _",
+  "zh": "胆红素代谢",
+  "answers": [
+   "metabolism"
+  ]
+ },
+ {
+  "id": "1-23",
+  "unit": 1,
+  "no": 23,
+  "prompt": "permanent _ damage",
+  "zh": "永久性肝损伤",
+  "answers": [
+   "liver"
+  ]
+ },
+ {
+  "id": "1-24",
+  "unit": 1,
+  "no": 24,
+  "prompt": "exacerbate _",
+  "zh": "加重病理生理状况",
+  "answers": [
+   "pathophysiology"
+  ]
+ },
+ {
+  "id": "1-25",
+  "unit": 1,
+  "no": 25,
+  "prompt": "medical _",
+  "zh": "医学文献",
+  "answers": [
+   "Literature"
+  ]
+ },
+ {
+  "id": "1-26",
+  "unit": 1,
+  "no": 26,
+  "prompt": "clinical _",
+  "zh": "临床调查",
+  "answers": [
+   "investigation"
+  ]
+ },
+ {
+  "id": "1-27",
+  "unit": 1,
+  "no": 27,
+  "prompt": "_ of relapse",
+  "zh": "复发率",
+  "answers": [
+   "incidence"
+  ]
+ },
+ {
+  "id": "1-28",
+  "unit": 1,
+  "no": 28,
+  "prompt": "clinical _",
+  "zh": "临床流行病学",
+  "answers": [
+   "epidemiology"
+  ]
+ },
+ {
+  "id": "1-29",
+  "unit": 1,
+  "no": 29,
+  "prompt": "strict _",
+  "zh": "严格的卧床休息",
+  "answers": [
+   "bed rest"
+  ]
+ },
+ {
+  "id": "1-30",
+  "unit": 1,
+  "no": 30,
+  "prompt": "hospital _",
+  "zh": "住院",
+  "answers": [
+   "stay"
+  ]
+ },
+ {
+  "id": "1-31",
+  "unit": 1,
+  "no": 31,
+  "prompt": "recurrent _",
+  "zh": "反复发作的黄疸",
+  "answers": [
+   "Jaundice"
+  ]
+ },
+ {
+  "id": "1-32",
+  "unit": 1,
+  "no": 32,
+  "prompt": "clinical _",
+  "zh": "临床病程",
+  "answers": [
+   "course"
+  ]
+ },
+ {
+  "id": "1-33",
+  "unit": 1,
+  "no": 33,
+  "prompt": "_ morphine",
+  "zh": "静脉注射吗啡",
+  "answers": [
+   "intravenous"
+  ]
+ },
+ {
+  "id": "1-34",
+  "unit": 1,
+  "no": 34,
+  "prompt": "_ blood pressure",
+  "zh": "舒张压",
+  "answers": [
+   "diastolic"
+  ]
+ },
+ {
+  "id": "1-35",
+  "unit": 1,
+  "no": 35,
+  "prompt": "brain _",
+  "zh": "脑血流灌注",
+  "answers": [
+   "perfusion"
+  ]
+ },
+ {
+  "id": "1-36",
+  "unit": 1,
+  "no": 36,
+  "prompt": "_ care",
+  "zh": "初级保健",
+  "answers": [
+   "primary"
+  ]
+ },
+ {
+  "id": "1-37",
+  "unit": 1,
+  "no": 37,
+  "prompt": "aorto-coronary arterial _",
+  "zh": "主动脉冠状动脉旁路",
+  "answers": [
+   "Bypass"
+  ]
+ },
+ {
+  "id": "1-38",
+  "unit": 1,
+  "no": 38,
+  "prompt": "_ treatment decision",
+  "zh": "知情治疗决定",
+  "answers": [
+   "informed"
+  ]
+ },
+ {
+  "id": "2-1",
+  "unit": 2,
+  "no": 1,
+  "prompt": "_ disease",
+  "zh": "再现疾病",
+  "answers": [
+   "re-emerging",
+   "re-emergent",
+   "resurgent"
+  ]
+ },
+ {
+  "id": "2-2",
+  "unit": 2,
+  "no": 2,
+  "prompt": "new flu _",
+  "zh": "新流感变种",
+  "answers": [
+   "strain"
+  ]
+ },
+ {
+  "id": "2-3",
+  "unit": 2,
+  "no": 3,
+  "prompt": "antibiotic and _",
+  "zh": "抗生素和疫苗",
+  "answers": [
+   "vaccine"
+  ]
+ },
+ {
+  "id": "2-4",
+  "unit": 2,
+  "no": 4,
+  "prompt": "_ fever",
+  "zh": "猩红热",
+  "answers": [
+   "scarlet"
+  ]
+ },
+ {
+  "id": "2-5",
+  "unit": 2,
+  "no": 5,
+  "prompt": "_ disease",
+  "zh": "传染病",
+  "answers": [
+   "infectious"
+  ]
+ },
+ {
+  "id": "2-6",
+  "unit": 2,
+  "no": 6,
+  "prompt": "_ disease",
+  "zh": "新现疾病",
+  "answers": [
+   "emerging",
+   "emergent"
+  ]
+ },
+ {
+  "id": "2-7",
+  "unit": 2,
+  "no": 7,
+  "prompt": "_ strategy",
+  "zh": "预防策略",
+  "answers": [
+   "prevention"
+  ]
+ },
+ {
+  "id": "2-8",
+  "unit": 2,
+  "no": 8,
+  "prompt": "bubonic _",
+  "zh": "腺鼠疫",
+  "answers": [
+   "plague"
+  ]
+ },
+ {
+  "id": "2-9",
+  "unit": 2,
+  "no": 9,
+  "prompt": "_ microbe",
+  "zh": "病原微生物",
+  "answers": [
+   "pathogenic"
+  ]
+ },
+ {
+  "id": "2-10",
+  "unit": 2,
+  "no": 10,
+  "prompt": "drug _",
+  "zh": "抗药性",
+  "answers": [
+   "resistance"
+  ]
+ },
+ {
+  "id": "2-11",
+  "unit": 2,
+  "no": 11,
+  "prompt": "_ of antibiotic therapy",
+  "zh": "抗生素治疗疗程",
+  "answers": [
+   "course"
+  ]
+ },
+ {
+  "id": "2-12",
+  "unit": 2,
+  "no": 12,
+  "prompt": "level of _",
+  "zh": "毒性水平",
+  "answers": [
+   "virulence"
+  ]
+ },
+ {
+  "id": "2-13",
+  "unit": 2,
+  "no": 13,
+  "prompt": "flu _",
+  "zh": "流感大流行",
+  "answers": [
+   "pandemic"
+  ]
+ },
+ {
+  "id": "2-14",
+  "unit": 2,
+  "no": 14,
+  "prompt": "surface _",
+  "zh": "表面抗原",
+  "answers": [
+   "antigen"
+  ]
+ },
+ {
+  "id": "2-15",
+  "unit": 2,
+  "no": 15,
+  "prompt": "_ system",
+  "zh": "免疫系统",
+  "answers": [
+   "immune"
+  ]
+ },
+ {
+  "id": "2-16",
+  "unit": 2,
+  "no": 16,
+  "prompt": "_ shift",
+  "zh": "基因改变",
+  "answers": [
+   "genetic"
+  ]
+ },
+ {
+  "id": "2-17",
+  "unit": 2,
+  "no": 17,
+  "prompt": "public health _",
+  "zh": "公共卫生基础设施",
+  "answers": [
+   "infrastructure"
+  ]
+ },
+ {
+  "id": "2-18",
+  "unit": 2,
+  "no": 18,
+  "prompt": "malaria _",
+  "zh": "疟疾病例",
+  "answers": [
+   "case"
+  ]
+ },
+ {
+  "id": "2-19",
+  "unit": 2,
+  "no": 19,
+  "prompt": "_ flu",
+  "zh": "猪流感",
+  "answers": [
+   "swine"
+  ]
+ },
+ {
+  "id": "2-20",
+  "unit": 2,
+  "no": 20,
+  "prompt": "_ bacillus",
+  "zh": "结核杆菌",
+  "answers": [
+   "tuberculosis"
+  ]
+ },
+ {
+  "id": "2-21",
+  "unit": 2,
+  "no": 21,
+  "prompt": "level of _",
+  "zh": "发病率水平",
+  "answers": [
+   "morbidity",
+   "incidence"
+  ]
+ },
+ {
+  "id": "2-22",
+  "unit": 2,
+  "no": 22,
+  "prompt": "health _",
+  "zh": "保健专业人士",
+  "answers": [
+   "professional"
+  ]
+ },
+ {
+  "id": "2-23",
+  "unit": 2,
+  "no": 23,
+  "prompt": "_ tuberculosis",
+  "zh": "潜伏结核病",
+  "answers": [
+   "latent"
+  ]
+ },
+ {
+  "id": "2-24",
+  "unit": 2,
+  "no": 24,
+  "prompt": "_ skin test",
+  "zh": "结核素皮试",
+  "answers": [
+   "tuberculin"
+  ]
+ },
+ {
+  "id": "2-25",
+  "unit": 2,
+  "no": 25,
+  "prompt": "_ program",
+  "zh": "筛查计划",
+  "answers": [
+   "screening"
+  ]
+ },
+ {
+  "id": "2-26",
+  "unit": 2,
+  "no": 26,
+  "prompt": "_ gamma test",
+  "zh": "γ 干扰素测试",
+  "answers": [
+   "interferon"
+  ]
+ },
+ {
+  "id": "2-27",
+  "unit": 2,
+  "no": 27,
+  "prompt": "drug _",
+  "zh": "药物毒性",
+  "answers": [
+   "toxicity"
+  ]
+ },
+ {
+  "id": "2-28",
+  "unit": 2,
+  "no": 28,
+  "prompt": "_ disease",
+  "zh": "可治愈的病",
+  "answers": [
+   "curable"
+  ]
+ },
+ {
+  "id": "3-1",
+  "unit": 3,
+  "no": 1,
+  "prompt": "surge of _",
+  "zh": "肾上腺素激增",
+  "answers": [
+   "adrenaline"
+  ]
+ },
+ {
+  "id": "3-2",
+  "unit": 3,
+  "no": 2,
+  "prompt": "internal medicine _",
+  "zh": "内科实习期",
+  "answers": [
+   "residency"
+  ]
+ },
+ {
+  "id": "3-3",
+  "unit": 3,
+  "no": 3,
+  "prompt": "_ disease",
+  "zh": "自身免疫疾病",
+  "answers": [
+   "autoimmune"
+  ]
+ },
+ {
+  "id": "3-4",
+  "unit": 3,
+  "no": 4,
+  "prompt": "loss of _",
+  "zh": "丧失耐力",
+  "answers": [
+   "stamina"
+  ]
+ },
+ {
+  "id": "3-5",
+  "unit": 3,
+  "no": 5,
+  "prompt": "_ weakness",
+  "zh": "短暂的虚弱",
+  "answers": [
+   "transient"
+  ]
+ },
+ {
+  "id": "3-6",
+  "unit": 3,
+  "no": 6,
+  "prompt": "become _",
+  "zh": "卧床不起",
+  "answers": [
+   "bedridden"
+  ]
+ },
+ {
+  "id": "3-7",
+  "unit": 3,
+  "no": 7,
+  "prompt": "building _",
+  "zh": "基本构件",
+  "answers": [
+   "block"
+  ]
+ },
+ {
+  "id": "3-8",
+  "unit": 3,
+  "no": 8,
+  "prompt": "animal _",
+  "zh": "动物模型",
+  "answers": [
+   "model"
+  ]
+ },
+ {
+  "id": "3-9",
+  "unit": 3,
+  "no": 9,
+  "prompt": "slow _",
+  "zh": "减缓神经退化",
+  "answers": [
+   "neurodegeneration"
+  ]
+ },
+ {
+  "id": "3-10",
+  "unit": 3,
+  "no": 10,
+  "prompt": "_ toxin",
+  "zh": "排除毒素",
+  "answers": [
+   "excrete"
+  ]
+ },
+ {
+  "id": "3-11",
+  "unit": 3,
+  "no": 11,
+  "prompt": "_ nutrition",
+  "zh": "优化营养",
+  "answers": [
+   "optimize"
+  ]
+ },
+ {
+  "id": "3-12",
+  "unit": 3,
+  "no": 12,
+  "prompt": "food _",
+  "zh": "食物过敏",
+  "answers": [
+   "allergy"
+  ]
+ },
+ {
+  "id": "3-13",
+  "unit": 3,
+  "no": 13,
+  "prompt": "toxic _",
+  "zh": "毒素载量",
+  "answers": [
+   "load"
+  ]
+ },
+ {
+  "id": "3-14",
+  "unit": 3,
+  "no": 14,
+  "prompt": "risk of _",
+  "zh": "复发危险",
+  "answers": [
+   "relapse"
+  ]
+ },
+ {
+  "id": "3-15",
+  "unit": 3,
+  "no": 15,
+  "prompt": "physician _",
+  "zh": "医生自我实验",
+  "answers": [
+   "self-experimentation"
+  ]
+ },
+ {
+  "id": "3-16",
+  "unit": 3,
+  "no": 16,
+  "prompt": "clinical _",
+  "zh": "临床试验",
+  "answers": [
+   "trial"
+  ]
+ },
+ {
+  "id": "3-17",
+  "unit": 3,
+  "no": 17,
+  "prompt": "_ electrical stimulation",
+  "zh": "神经肌肉电刺激",
+  "answers": [
+   "neuromuscular"
+  ]
+ },
+ {
+  "id": "3-18",
+  "unit": 3,
+  "no": 18,
+  "prompt": "physical _",
+  "zh": "理疗师",
+  "answers": [
+   "therapist"
+  ]
+ },
+ {
+  "id": "3-19",
+  "unit": 3,
+  "no": 19,
+  "prompt": "impact of _",
+  "zh": "微量营养素的影响",
+  "answers": [
+   "micronutrient"
+  ]
+ },
+ {
+  "id": "3-20",
+  "unit": 3,
+  "no": 20,
+  "prompt": "brain _",
+  "zh": "脑功能",
+  "answers": [
+   "function"
+  ]
+ },
+ {
+  "id": "3-21",
+  "unit": 3,
+  "no": 21,
+  "prompt": "_ acid",
+  "zh": "氨基酸",
+  "answers": [
+   "amino"
+  ]
+ },
+ {
+  "id": "3-22",
+  "unit": 3,
+  "no": 22,
+  "prompt": "medical _",
+  "zh": "医学文献",
+  "answers": [
+   "literature"
+  ]
+ },
+ {
+  "id": "3-23",
+  "unit": 3,
+  "no": 23,
+  "prompt": "registered _",
+  "zh": "注册营养师",
+  "answers": [
+   "dietician"
+  ]
+ },
+ {
+  "id": "3-24",
+  "unit": 3,
+  "no": 24,
+  "prompt": "_ and psychological symptom",
+  "zh": "神经和心理症状",
+  "answers": [
+   "neurological"
+  ]
+ },
+ {
+  "id": "3-25",
+  "unit": 3,
+  "no": 25,
+  "prompt": "abdominal _",
+  "zh": "腹部不适",
+  "answers": [
+   "complaints"
+  ]
+ },
+ {
+  "id": "3-26",
+  "unit": 3,
+  "no": 26,
+  "prompt": "pesticide and _",
+  "zh": "杀虫剂和除草剂",
+  "answers": [
+   "herbicide"
+  ]
+ },
+ {
+  "id": "3-27",
+  "unit": 3,
+  "no": 27,
+  "prompt": "_ medicine",
+  "zh": "行医",
+  "answers": [
+   "practice"
+  ]
+ },
+ {
+  "id": "3-28",
+  "unit": 3,
+  "no": 28,
+  "prompt": "blood _",
+  "zh": "血压",
+  "answers": [
+   "pressure"
+  ]
+ },
+ {
+  "id": "3-29",
+  "unit": 3,
+  "no": 29,
+  "prompt": "IRB-approved _",
+  "zh": "机构审查委员会批准的方案",
+  "answers": [
+   "protocol"
+  ]
+ },
+ {
+  "id": "3-30",
+  "unit": 3,
+  "no": 30,
+  "prompt": "secondary _ multiple sclerosis",
+  "zh": "继发进展型多发性硬化",
+  "answers": [
+   "progressive"
+  ]
+ },
+ {
+  "id": "3-31",
+  "unit": 3,
+  "no": 31,
+  "prompt": "traditional _",
+  "zh": "传统领域",
+  "answers": [
+   "domain"
+  ]
+ },
+ {
+  "id": "3-32",
+  "unit": 3,
+  "no": 32,
+  "prompt": "social _",
+  "zh": "社交媒体",
+  "answers": [
+   "media"
+  ]
+ },
+ {
+  "id": "3-33",
+  "unit": 3,
+  "no": 33,
+  "prompt": "increasing _",
+  "zh": "越来越无处不在",
+  "answers": [
+   "ubiquity"
+  ]
+ },
+ {
+  "id": "3-34",
+  "unit": 3,
+  "no": 34,
+  "prompt": "electronic medical _",
+  "zh": "电子病历",
+  "answers": [
+   "record"
+  ]
+ },
+ {
+  "id": "3-35",
+  "unit": 3,
+  "no": 35,
+  "prompt": "_ medication",
+  "zh": "非处方药",
+  "answers": [
+   "over-the-counter"
+  ]
+ },
+ {
+  "id": "3-36",
+  "unit": 3,
+  "no": 36,
+  "prompt": "real-time _",
+  "zh": "实时监控",
+  "answers": [
+   "surveillance"
+  ]
+ },
+ {
+  "id": "3-37",
+  "unit": 3,
+  "no": 37,
+  "prompt": "closely _",
+  "zh": "紧密相关",
+  "answers": [
+   "correlated"
+  ]
+ },
+ {
+  "id": "3-38",
+  "unit": 3,
+  "no": 38,
+  "prompt": "_ conjunctivitis",
+  "zh": "过敏性结膜炎",
+  "answers": [
+   "allergic"
+  ]
+ },
+ {
+  "id": "3-39",
+  "unit": 3,
+  "no": 39,
+  "prompt": "_ term",
+  "zh": "搜索词",
+  "answers": [
+   "search"
+  ]
+ },
+ {
+  "id": "3-40",
+  "unit": 3,
+  "no": 40,
+  "prompt": "_ of disease",
+  "zh": "疾病的季节性",
+  "answers": [
+   "seasonality"
+  ]
+ },
+ {
+  "id": "3-41",
+  "unit": 3,
+  "no": 41,
+  "prompt": "severe acute _ syndrome",
+  "zh": "重症急性呼吸综合征",
+  "answers": [
+   "respiratory"
+  ]
+ },
+ {
+  "id": "3-42",
+  "unit": 3,
+  "no": 42,
+  "prompt": "crude _",
+  "zh": "简陋算法",
+  "answers": [
+   "algorithm"
+  ]
+ },
+ {
+  "id": "3-43",
+  "unit": 3,
+  "no": 43,
+  "prompt": "_ attack",
+  "zh": "生物恐怖袭击",
+  "answers": [
+   "bioterrorist"
+  ]
+ },
+ {
+  "id": "3-44",
+  "unit": 3,
+  "no": 44,
+  "prompt": "_ control",
+  "zh": "蚊虫防控",
+  "answers": [
+   "mosquito"
+  ]
+ },
+ {
+  "id": "4-1",
+  "unit": 4,
+  "no": 1,
+  "prompt": "_ medicine",
+  "zh": "补充医学",
+  "answers": [
+   "complementary"
+  ]
+ },
+ {
+  "id": "4-2",
+  "unit": 4,
+  "no": 2,
+  "prompt": "_ medicine",
+  "zh": "替代医学",
+  "answers": [
+   "alternative"
+  ]
+ },
+ {
+  "id": "4-3",
+  "unit": 4,
+  "no": 3,
+  "prompt": "medical _",
+  "zh": "医疗模式",
+  "answers": [
+   "paradigm"
+  ]
+ },
+ {
+  "id": "4-4",
+  "unit": 4,
+  "no": 4,
+  "prompt": "_ and herb",
+  "zh": "针刺和草药",
+  "answers": [
+   "acupuncture"
+  ]
+ },
+ {
+  "id": "4-5",
+  "unit": 4,
+  "no": 5,
+  "prompt": "_ treatment",
+  "zh": "辅助治疗",
+  "answers": [
+   "adjunct"
+  ]
+ },
+ {
+  "id": "4-6",
+  "unit": 4,
+  "no": 6,
+  "prompt": "_ and vomiting",
+  "zh": "恶心和呕吐",
+  "answers": [
+   "nausea"
+  ]
+ },
+ {
+  "id": "4-7",
+  "unit": 4,
+  "no": 7,
+  "prompt": "_ dental pain",
+  "zh": "术后牙痛",
+  "answers": [
+   "post-operative"
+  ]
+ },
+ {
+  "id": "4-8",
+  "unit": 4,
+  "no": 8,
+  "prompt": "_ trial",
+  "zh": "临床试验",
+  "answers": [
+   "clinical"
+  ]
+ },
+ {
+  "id": "4-9",
+  "unit": 4,
+  "no": 9,
+  "prompt": "_ therapy",
+  "zh": "物理疗法；理疗",
+  "answers": [
+   "physical"
+  ]
+ },
+ {
+  "id": "4-10",
+  "unit": 4,
+  "no": 10,
+  "prompt": "_ modality",
+  "zh": "治疗方法",
+  "answers": [
+   "therapeutic"
+  ]
+ },
+ {
+  "id": "4-11",
+  "unit": 4,
+  "no": 11,
+  "prompt": "therapeutic _",
+  "zh": "治疗干预",
+  "answers": [
+   "intervention"
+  ]
+ },
+ {
+  "id": "4-12",
+  "unit": 4,
+  "no": 12,
+  "prompt": "research _",
+  "zh": "研究设计",
+  "answers": [
+   "design"
+  ]
+ },
+ {
+  "id": "4-13",
+  "unit": 4,
+  "no": 13,
+  "prompt": "magnetic _",
+  "zh": "磁共振",
+  "answers": [
+   "resonance"
+  ]
+ },
+ {
+  "id": "4-14",
+  "unit": 4,
+  "no": 14,
+  "prompt": "positron _ tomography",
+  "zh": "正电子发射体层摄影〔术〕",
+  "answers": [
+   "emission"
+  ]
+ },
+ {
+  "id": "4-15",
+  "unit": 4,
+  "no": 15,
+  "prompt": "_ effect",
+  "zh": "止痛效果",
+  "answers": [
+   "analgesia"
+  ]
+ },
+ {
+  "id": "4-16",
+  "unit": 4,
+  "no": 16,
+  "prompt": "biomedical _",
+  "zh": "生物医学界",
+  "answers": [
+   "establishment"
+  ]
+ },
+ {
+  "id": "4-17",
+  "unit": 4,
+  "no": 17,
+  "prompt": "_ unit",
+  "zh": "康复中心",
+  "answers": [
+   "rehabilitation"
+  ]
+ },
+ {
+  "id": "4-18",
+  "unit": 4,
+  "no": 18,
+  "prompt": "therapeutic _",
+  "zh": "治疗策略",
+  "answers": [
+   "strategy"
+  ]
+ },
+ {
+  "id": "4-19",
+  "unit": 4,
+  "no": 19,
+  "prompt": "herbal _",
+  "zh": "草药配方",
+  "answers": [
+   "formula"
+  ]
+ },
+ {
+  "id": "4-20",
+  "unit": 4,
+  "no": 20,
+  "prompt": "a wide _ of complications",
+  "zh": "各式各样的并发症",
+  "answers": [
+   "array"
+  ]
+ },
+ {
+  "id": "4-21",
+  "unit": 4,
+  "no": 21,
+  "prompt": "_ East-West medicine",
+  "zh": "中西医结合",
+  "answers": [
+   "integrative"
+  ]
+ },
+ {
+  "id": "4-22",
+  "unit": 4,
+  "no": 22,
+  "prompt": "_ abdominal pain",
+  "zh": "急性腹痛",
+  "answers": [
+   "acute"
+  ]
+ },
+ {
+  "id": "4-23",
+  "unit": 4,
+  "no": 23,
+  "prompt": "_ medicine",
+  "zh": "施药；用药",
+  "answers": [
+   "administer"
+  ]
+ },
+ {
+  "id": "4-24",
+  "unit": 4,
+  "no": 24,
+  "prompt": "surgical _",
+  "zh": "外科手术",
+  "answers": [
+   "procedure"
+  ]
+ },
+ {
+  "id": "4-25",
+  "unit": 4,
+  "no": 25,
+  "prompt": "scientific _",
+  "zh": "科学评估",
+  "answers": [
+   "evaluation"
+  ]
+ },
+ {
+  "id": "4-26",
+  "unit": 4,
+  "no": 26,
+  "prompt": "_ statistics",
+  "zh": "患病率统计",
+  "answers": [
+   "prevalence"
+  ]
+ },
+ {
+  "id": "4-27",
+  "unit": 4,
+  "no": 27,
+  "prompt": "_ mechanism",
+  "zh": "合理的机制",
+  "answers": [
+   "plausible"
+  ]
+ },
+ {
+  "id": "4-28",
+  "unit": 4,
+  "no": 28,
+  "prompt": "_ therapy",
+  "zh": "传统疗法",
+  "answers": [
+   "conventional"
+  ]
+ },
+ {
+  "id": "4-29",
+  "unit": 4,
+  "no": 29,
+  "prompt": "_ model of care",
+  "zh": "循证医疗模式",
+  "answers": [
+   "evidence-based"
+  ]
+ },
+ {
+  "id": "4-30",
+  "unit": 4,
+  "no": 30,
+  "prompt": "stress _",
+  "zh": "压力处理",
+  "answers": [
+   "management"
+  ]
+ },
+ {
+  "id": "4-31",
+  "unit": 4,
+  "no": 31,
+  "prompt": "_ nervous system",
+  "zh": "周围神经系统",
+  "answers": [
+   "peripheral"
+  ]
+ },
+ {
+  "id": "4-32",
+  "unit": 4,
+  "no": 32,
+  "prompt": "physiologic _",
+  "zh": "生理机制",
+  "answers": [
+   "mechanism"
+  ]
+ },
+ {
+  "id": "4-33",
+  "unit": 4,
+  "no": 33,
+  "prompt": "mechanistic and _ study",
+  "zh": "机制和还原式研究",
+  "answers": [
+   "reductionistic"
+  ]
+ },
+ {
+  "id": "4-34",
+  "unit": 4,
+  "no": 34,
+  "prompt": "_ research",
+  "zh": "效益研究",
+  "answers": [
+   "cost-effectiveness"
+  ]
+ },
+ {
+  "id": "4-35",
+  "unit": 4,
+  "no": 35,
+  "prompt": "clinical _",
+  "zh": "临床结果",
+  "answers": [
+   "outcome"
+  ]
+ },
+ {
+  "id": "4-36",
+  "unit": 4,
+  "no": 36,
+  "prompt": "_ and clinical study",
+  "zh": "临床前及临床研究",
+  "answers": [
+   "preclinical"
+  ]
+ },
+ {
+  "id": "5-1",
+  "unit": 5,
+  "no": 1,
+  "prompt": "_ of chronic disease",
+  "zh": "慢性疾病的发病率",
+  "answers": [
+   "incidence"
+  ]
+ },
+ {
+  "id": "5-2",
+  "unit": 5,
+  "no": 2,
+  "prompt": "_ of chronic disease",
+  "zh": "慢性疾病的患病率",
+  "answers": [
+   "prevalence"
+  ]
+ },
+ {
+  "id": "5-3",
+  "unit": 5,
+  "no": 3,
+  "prompt": "_ disease",
+  "zh": "代谢性疾病",
+  "answers": [
+   "metabolic"
+  ]
+ },
+ {
+  "id": "5-4",
+  "unit": 5,
+  "no": 4,
+  "prompt": "optimal _ dosage",
+  "zh": "最佳治疗剂量",
+  "answers": [
+   "therapeutic"
+  ]
+ },
+ {
+  "id": "5-5",
+  "unit": 5,
+  "no": 5,
+  "prompt": "unhealthy living _",
+  "zh": "不健康的生活表型",
+  "answers": [
+   "phenotype"
+  ]
+ },
+ {
+  "id": "5-6",
+  "unit": 5,
+  "no": 6,
+  "prompt": "physical _",
+  "zh": "体能活动不足",
+  "answers": [
+   "inactivity"
+  ]
+ },
+ {
+  "id": "5-7",
+  "unit": 5,
+  "no": 7,
+  "prompt": "_ prevention",
+  "zh": "初级预防",
+  "answers": [
+   "primary"
+  ]
+ },
+ {
+  "id": "5-8",
+  "unit": 5,
+  "no": 8,
+  "prompt": "_ medication",
+  "zh": "处方药",
+  "answers": [
+   "prescription"
+  ]
+ },
+ {
+  "id": "5-9",
+  "unit": 5,
+  "no": 9,
+  "prompt": "_ of disease",
+  "zh": "疾病的缓解",
+  "answers": [
+   "alleviation"
+  ]
+ },
+ {
+  "id": "5-10",
+  "unit": 5,
+  "no": 10,
+  "prompt": "_ medicine",
+  "zh": "精准医学",
+  "answers": [
+   "precision"
+  ]
+ },
+ {
+  "id": "5-11",
+  "unit": 5,
+  "no": 11,
+  "prompt": "_ lifestyle",
+  "zh": "久坐不动的生活方式",
+  "answers": [
+   "sedentary"
+  ]
+ },
+ {
+  "id": "5-12",
+  "unit": 5,
+  "no": 12,
+  "prompt": "_ teeth",
+  "zh": "蛀牙",
+  "answers": [
+   "decaying"
+  ]
+ },
+ {
+  "id": "5-13",
+  "unit": 5,
+  "no": 13,
+  "prompt": "_ professor",
+  "zh": "营养教授",
+  "answers": [
+   "nutrition"
+  ]
+ },
+ {
+  "id": "5-14",
+  "unit": 5,
+  "no": 14,
+  "prompt": "burgeoning _",
+  "zh": "迅速膨胀的腰围",
+  "answers": [
+   "waistline"
+  ]
+ },
+ {
+  "id": "5-15",
+  "unit": 5,
+  "no": 15,
+  "prompt": "_ water",
+  "zh": "瓶装水",
+  "answers": [
+   "bottled"
+  ]
+ },
+ {
+  "id": "5-16",
+  "unit": 5,
+  "no": 16,
+  "prompt": "caloric _",
+  "zh": "热量摄入",
+  "answers": [
+   "intake"
+  ]
+ },
+ {
+  "id": "5-17",
+  "unit": 5,
+  "no": 17,
+  "prompt": "curb _",
+  "zh": "节制食欲",
+  "answers": [
+   "appetite"
+  ]
+ },
+ {
+  "id": "5-18",
+  "unit": 5,
+  "no": 18,
+  "prompt": "grain and _",
+  "zh": "谷物和蛋白质",
+  "answers": [
+   "protein"
+  ]
+ },
+ {
+  "id": "5-19",
+  "unit": 5,
+  "no": 19,
+  "prompt": "_ of life",
+  "zh": "生活质量",
+  "answers": [
+   "quality"
+  ]
+ },
+ {
+  "id": "6-1",
+  "unit": 6,
+  "no": 1,
+  "prompt": "_ home",
+  "zh": "养老院；疗养院",
+  "answers": [
+   "nursing"
+  ]
+ },
+ {
+  "id": "6-2",
+  "unit": 6,
+  "no": 2,
+  "prompt": "_ care",
+  "zh": "善终医护",
+  "answers": [
+   "hospice"
+  ]
+ },
+ {
+  "id": "6-3",
+  "unit": 6,
+  "no": 3,
+  "prompt": "congestive heart _",
+  "zh": "充血性心力衰竭",
+  "answers": [
+   "failure"
+  ]
+ },
+ {
+  "id": "6-4",
+  "unit": 6,
+  "no": 4,
+  "prompt": "available _",
+  "zh": "24小时随叫随到",
+  "answers": [
+   "around the clock"
+  ]
+ },
+ {
+  "id": "6-5",
+  "unit": 6,
+  "no": 5,
+  "prompt": "_ care unit",
+  "zh": "冠心病监护病房",
+  "answers": [
+   "coronary"
+  ]
+ },
+ {
+  "id": "6-6",
+  "unit": 6,
+  "no": 6,
+  "prompt": "_ to treatment",
+  "zh": "对治疗有反应",
+  "answers": [
+   "respond"
+  ]
+ },
+ {
+  "id": "6-7",
+  "unit": 6,
+  "no": 7,
+  "prompt": "skilled nursing _",
+  "zh": "专业护理机构",
+  "answers": [
+   "facility"
+  ]
+ },
+ {
+  "id": "6-8",
+  "unit": 6,
+  "no": 8,
+  "prompt": "_ care",
+  "zh": "生命终末期护理",
+  "answers": [
+   "end-of-life"
+  ]
+ },
+ {
+  "id": "6-9",
+  "unit": 6,
+  "no": 9,
+  "prompt": "_ care",
+  "zh": "舒适护理",
+  "answers": [
+   "comfort"
+  ]
+ },
+ {
+  "id": "6-10",
+  "unit": 6,
+  "no": 10,
+  "prompt": "hospital _ planner",
+  "zh": "出院计划专员",
+  "answers": [
+   "discharge"
+  ]
+ },
+ {
+  "id": "6-11",
+  "unit": 6,
+  "no": 11,
+  "prompt": "symptom _",
+  "zh": "症状护理",
+  "answers": [
+   "care"
+  ]
+ },
+ {
+  "id": "6-12",
+  "unit": 6,
+  "no": 12,
+  "prompt": "_ care",
+  "zh": "姑息疗法",
+  "answers": [
+   "palliative"
+  ]
+ },
+ {
+  "id": "6-13",
+  "unit": 6,
+  "no": 13,
+  "prompt": "_ illness",
+  "zh": "绝症",
+  "answers": [
+   "fatal"
+  ]
+ },
+ {
+  "id": "6-14",
+  "unit": 6,
+  "no": 14,
+  "prompt": "chronic obstructive _ disease",
+  "zh": "慢性阻塞性肺病",
+  "answers": [
+   "pulmonary"
+  ]
+ },
+ {
+  "id": "6-15",
+  "unit": 6,
+  "no": 15,
+  "prompt": "_ treatment",
+  "zh": "实验性治疗",
+  "answers": [
+   "experimental"
+  ]
+ },
+ {
+  "id": "6-16",
+  "unit": 6,
+  "no": 16,
+  "prompt": "spiritual _",
+  "zh": "精神顾问",
+  "answers": [
+   "advisor"
+  ]
+ },
+ {
+  "id": "6-17",
+  "unit": 6,
+  "no": 17,
+  "prompt": "_ all treatment",
+  "zh": "终止所有治疗",
+  "answers": [
+   "discontinue"
+  ]
+ },
+ {
+  "id": "6-18",
+  "unit": 6,
+  "no": 18,
+  "prompt": "go through _",
+  "zh": "经历透析",
+  "answers": [
+   "dialysis"
+  ]
+ },
+ {
+  "id": "6-19",
+  "unit": 6,
+  "no": 19,
+  "prompt": "PAP _",
+  "zh": "巴氏涂片试验",
+  "answers": [
+   "smear"
+  ]
+ },
+ {
+  "id": "6-20",
+  "unit": 6,
+  "no": 20,
+  "prompt": "patient-_ relationship",
+  "zh": "医患关系",
+  "answers": [
+   "provider"
+  ]
+ },
+ {
+  "id": "6-21",
+  "unit": 6,
+  "no": 21,
+  "prompt": "provide _",
+  "zh": "提供惯常医护",
+  "answers": [
+   "care-as-usual"
+  ]
+ },
+ {
+  "id": "6-22",
+  "unit": 6,
+  "no": 22,
+  "prompt": "_ examination",
+  "zh": "预防性检查",
+  "answers": [
+   "preventive"
+  ]
+ },
+ {
+  "id": "6-23",
+  "unit": 6,
+  "no": 23,
+  "prompt": "off the _ path",
+  "zh": "离开熟路；另辟蹊径",
+  "answers": [
+   "beaten"
+  ]
+ },
+ {
+  "id": "6-24",
+  "unit": 6,
+  "no": 24,
+  "prompt": "_ into a shape",
+  "zh": "塑形",
+  "answers": [
+   "mold"
+  ]
+ },
+ {
+  "id": "6-25",
+  "unit": 6,
+  "no": 25,
+  "prompt": "_ a prescription",
+  "zh": "照旧处方再开药",
+  "answers": [
+   "renew",
+   "refill"
+  ]
+ },
+ {
+  "id": "7-1",
+  "unit": 7,
+  "no": 1,
+  "prompt": "nursing _",
+  "zh": "护士站",
+  "answers": [
+   "station"
+  ]
+ },
+ {
+  "id": "7-2",
+  "unit": 7,
+  "no": 2,
+  "prompt": "_ machine",
+  "zh": "呼吸机",
+  "answers": [
+   "life-support"
+  ]
+ },
+ {
+  "id": "7-3",
+  "unit": 7,
+  "no": 3,
+  "prompt": "comfort _",
+  "zh": "舒适护理措施",
+  "answers": [
+   "measure"
+  ]
+ },
+ {
+  "id": "7-4",
+  "unit": 7,
+  "no": 4,
+  "prompt": "_ treatment",
+  "zh": "停止治疗",
+  "answers": [
+   "withdraw"
+  ]
+ },
+ {
+  "id": "7-5",
+  "unit": 7,
+  "no": 5,
+  "prompt": "_ decision-making process",
+  "zh": "家长式决策程序",
+  "answers": [
+   "paternalistic"
+  ]
+ },
+ {
+  "id": "7-6",
+  "unit": 7,
+  "no": 6,
+  "prompt": "patient _",
+  "zh": "病人授权",
+  "answers": [
+   "empowerment"
+  ]
+ },
+ {
+  "id": "7-7",
+  "unit": 7,
+  "no": 7,
+  "prompt": "medical _",
+  "zh": "医学伦理学家",
+  "answers": [
+   "ethicist"
+  ]
+ },
+ {
+  "id": "7-8",
+  "unit": 7,
+  "no": 8,
+  "prompt": "ethical _",
+  "zh": "伦理准则",
+  "answers": [
+   "principle"
+  ]
+ },
+ {
+  "id": "7-9",
+  "unit": 7,
+  "no": 9,
+  "prompt": "clinical _",
+  "zh": "临床理念",
+  "answers": [
+   "ideal"
+  ]
+ },
+ {
+  "id": "7-10",
+  "unit": 7,
+  "no": 10,
+  "prompt": "_ care",
+  "zh": "以病人为中心的护理",
+  "answers": [
+   "patient-centered"
+  ]
+ },
+ {
+  "id": "7-11",
+  "unit": 7,
+  "no": 11,
+  "prompt": "patient _",
+  "zh": "病人自主权",
+  "answers": [
+   "autonomy"
+  ]
+ },
+ {
+  "id": "7-12",
+  "unit": 7,
+  "no": 12,
+  "prompt": "treatment _",
+  "zh": "治疗选择",
+  "answers": [
+   "option"
+  ]
+ },
+ {
+  "id": "7-13",
+  "unit": 7,
+  "no": 13,
+  "prompt": "_ purview",
+  "zh": "专属领域",
+  "answers": [
+   "exclusive"
+  ]
+ },
+ {
+  "id": "7-14",
+  "unit": 7,
+  "no": 14,
+  "prompt": "_ decision",
+  "zh": "紧急状况下做的决定",
+  "answers": [
+   "emergency"
+  ]
+ },
+ {
+  "id": "7-15",
+  "unit": 7,
+  "no": 15,
+  "prompt": "physician _",
+  "zh": "对医生的限制",
+  "answers": [
+   "restraint"
+  ]
+ },
+ {
+  "id": "7-16",
+  "unit": 7,
+  "no": 16,
+  "prompt": "_ and confusion",
+  "zh": "焦虑与困惑",
+  "answers": [
+   "anxiety"
+  ]
+ },
+ {
+  "id": "7-17",
+  "unit": 7,
+  "no": 17,
+  "prompt": "ethical _",
+  "zh": "违背伦理",
+  "answers": [
+   "transgression"
+  ]
+ },
+ {
+  "id": "7-18",
+  "unit": 7,
+  "no": 18,
+  "prompt": "family _",
+  "zh": "家庭医疗",
+  "answers": [
+   "practice"
+  ]
+ },
+ {
+  "id": "7-19",
+  "unit": 7,
+  "no": 19,
+  "prompt": "widespread _",
+  "zh": "广泛转移",
+  "answers": [
+   "metastases"
+  ]
+ },
+ {
+  "id": "7-20",
+  "unit": 7,
+  "no": 20,
+  "prompt": "_ treatment",
+  "zh": "积极治疗",
+  "answers": [
+   "aggressive"
+  ]
+ },
+ {
+  "id": "7-21",
+  "unit": 7,
+  "no": 21,
+  "prompt": "_ lesion",
+  "zh": "原发病灶",
+  "answers": [
+   "primary"
+  ]
+ },
+ {
+  "id": "7-22",
+  "unit": 7,
+  "no": 22,
+  "prompt": "recommend _",
+  "zh": "建议随访",
+  "answers": [
+   "follow-up"
+  ]
+ },
+ {
+  "id": "7-23",
+  "unit": 7,
+  "no": 23,
+  "prompt": "electronic _",
+  "zh": "电子病历",
+  "answers": [
+   "record"
+  ]
+ },
+ {
+  "id": "7-24",
+  "unit": 7,
+  "no": 24,
+  "prompt": "pulmonary _",
+  "zh": "肺栓塞",
+  "answers": [
+   "emboli"
+  ]
+ },
+ {
+  "id": "7-25",
+  "unit": 7,
+  "no": 25,
+  "prompt": "computerized _",
+  "zh": "CT，计算机断层扫描",
+  "answers": [
+   "tomography"
+  ]
+ },
+ {
+  "id": "7-26",
+  "unit": 7,
+  "no": 26,
+  "prompt": "bilateral _",
+  "zh": "双侧浸润",
+  "answers": [
+   "infiltrates"
+  ]
+ },
+ {
+  "id": "7-27",
+  "unit": 7,
+  "no": 27,
+  "prompt": "_ X-ray",
+  "zh": "X线胸片",
+  "answers": [
+   "chest"
+  ]
+ },
+ {
+  "id": "7-28",
+  "unit": 7,
+  "no": 28,
+  "prompt": "left _ pneumonia",
+  "zh": "左肺下叶肺炎",
+  "answers": [
+   "lower-lobe"
+  ]
+ },
+ {
+  "id": "7-29",
+  "unit": 7,
+  "no": 29,
+  "prompt": "_ breathing",
+  "zh": "呼吸困难",
+  "answers": [
+   "labored"
+  ]
+ },
+ {
+  "id": "7-30",
+  "unit": 7,
+  "no": 30,
+  "prompt": "hospice _",
+  "zh": "善终医护团队",
+  "answers": [
+   "team"
+  ]
+ },
+ {
+  "id": "8-1",
+  "unit": 8,
+  "no": 1,
+  "prompt": "human _",
+  "zh": "研究中的人类受试者",
+  "answers": [
+   "subject"
+  ]
+ },
+ {
+  "id": "8-2",
+  "unit": 8,
+  "no": 2,
+  "prompt": "_ research",
+  "zh": "生物医学研究",
+  "answers": [
+   "biomedical"
+  ]
+ },
+ {
+  "id": "8-3",
+  "unit": 8,
+  "no": 3,
+  "prompt": "accepted _",
+  "zh": "公认的治疗",
+  "answers": [
+   "therapy"
+  ]
+ },
+ {
+  "id": "8-4",
+  "unit": 8,
+  "no": 4,
+  "prompt": "formal _",
+  "zh": "正式方案",
+  "answers": [
+   "protocol"
+  ]
+ },
+ {
+  "id": "8-5",
+  "unit": 8,
+  "no": 5,
+  "prompt": "principle of _",
+  "zh": "善行原则",
+  "answers": [
+   "beneficence"
+  ]
+ },
+ {
+  "id": "8-6",
+  "unit": 8,
+  "no": 6,
+  "prompt": "principle of _",
+  "zh": "公正原则",
+  "answers": [
+   "justice"
+  ]
+ },
+ {
+  "id": "8-7",
+  "unit": 8,
+  "no": 7,
+  "prompt": "_ agent",
+  "zh": "有自主能力的行为者",
+  "answers": [
+   "autonomous"
+  ]
+ },
+ {
+  "id": "8-8",
+  "unit": 8,
+  "no": 8,
+  "prompt": "_ autonomy",
+  "zh": "受损的自主权",
+  "answers": [
+   "diminished"
+  ]
+ },
+ {
+  "id": "8-9",
+  "unit": 8,
+  "no": 9,
+  "prompt": "be _ to risk of harm",
+  "zh": "使……有受到伤害的风险",
+  "answers": [
+   "exposed"
+  ]
+ },
+ {
+  "id": "8-10",
+  "unit": 8,
+  "no": 10,
+  "prompt": "Hippocratic _",
+  "zh": "希波克拉底誓言",
+  "answers": [
+   "Oath"
+  ]
+ },
+ {
+  "id": "8-11",
+  "unit": 8,
+  "no": 11,
+  "prompt": "fairness in _",
+  "zh": "分配的公正性",
+  "answers": [
+   "distribution"
+  ]
+ },
+ {
+  "id": "8-12",
+  "unit": 8,
+  "no": 12,
+  "prompt": "informed _",
+  "zh": "知情同意",
+  "answers": [
+   "consent"
+  ]
+ },
+ {
+  "id": "8-13",
+  "unit": 8,
+  "no": 13,
+  "prompt": "fair _ and outcome",
+  "zh": "公正的程序和结果",
+  "answers": [
+   "procedure"
+  ]
+ },
+ {
+  "id": "8-14",
+  "unit": 8,
+  "no": 14,
+  "prompt": "_ table",
+  "zh": "手术台",
+  "answers": [
+   "operating"
+  ]
+ },
+ {
+  "id": "8-15",
+  "unit": 8,
+  "no": 15,
+  "prompt": "ethical _",
+  "zh": "伦理责任",
+  "answers": [
+   "obligation"
+  ]
+ },
+ {
+  "id": "8-16",
+  "unit": 8,
+  "no": 16,
+  "prompt": "_ neurosurgeon",
+  "zh": "儿科神经外科医生",
+  "answers": [
+   "pediatric"
+  ]
+ },
+ {
+  "id": "8-17",
+  "unit": 8,
+  "no": 17,
+  "prompt": "_ the surgery",
+  "zh": "做手术",
+  "answers": [
+   "perform"
+  ]
+ },
+ {
+  "id": "8-18",
+  "unit": 8,
+  "no": 18,
+  "prompt": "blood _",
+  "zh": "血流",
+  "answers": [
+   "flow"
+  ]
+ },
+ {
+  "id": "8-19",
+  "unit": 8,
+  "no": 19,
+  "prompt": "_ care",
+  "zh": "重症监护",
+  "answers": [
+   "intensive"
+  ]
+ },
+ {
+  "id": "8-20",
+  "unit": 8,
+  "no": 20,
+  "prompt": "_ father",
+  "zh": "养父",
+  "answers": [
+   "adoptive"
+  ]
+ },
+ {
+  "id": "8-21",
+  "unit": 8,
+  "no": 21,
+  "prompt": "_ father",
+  "zh": "生父",
+  "answers": [
+   "biological"
+  ]
+ },
+ {
+  "id": "8-22",
+  "unit": 8,
+  "no": 22,
+  "prompt": "_ needs",
+  "zh": "心理需要",
+  "answers": [
+   "psychological"
+  ]
+ },
+ {
+  "id": "8-23",
+  "unit": 8,
+  "no": 23,
+  "prompt": "_ judgment",
+  "zh": "医学判断",
+  "answers": [
+   "medical"
+  ]
+ },
+ {
+  "id": "8-24",
+  "unit": 8,
+  "no": 24,
+  "prompt": "_ therapy",
+  "zh": "职业疗法",
+  "answers": [
+   "occupational"
+  ]
+ },
+ {
+  "id": "8-25",
+  "unit": 8,
+  "no": 25,
+  "prompt": "_ meningitis",
+  "zh": "感染脑膜炎",
+  "answers": [
+   "contract"
+  ]
+ },
+ {
+  "id": "8-26",
+  "unit": 8,
+  "no": 26,
+  "prompt": "die of a(n) _",
+  "zh": "死于感染",
+  "answers": [
+   "infection"
+  ]
+ },
+ {
+  "id": "8-27",
+  "unit": 8,
+  "no": 27,
+  "prompt": "blood _",
+  "zh": "血管",
+  "answers": [
+   "vessel"
+  ]
+ },
+ {
+  "id": "8-28",
+  "unit": 8,
+  "no": 28,
+  "prompt": "imbalance in _",
+  "zh": "循环的不平衡",
+  "answers": [
+   "circulation"
+  ]
+ }
+]

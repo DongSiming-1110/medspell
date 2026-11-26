@@ -1,0 +1,1493 @@
+{
+  "voice": "Microsoft Zira Desktop",
+  "clips": {
+    "1-1": {
+      "phrase": "neuron overload",
+      "seconds": 2.084,
+      "rms_dbfs": -18.4,
+      "sha256": "095ac42cd25fecc6ee27db1f0a8dab2cf04d1a64698370994360ce052d44a861"
+    },
+    "1-2": {
+      "phrase": "typical office visit",
+      "seconds": 2.279,
+      "rms_dbfs": -19.2,
+      "sha256": "d6b050f014d892e21617c17cb0691c71b7ae6173b56bd924d3264dc33d4854e8"
+    },
+    "1-3": {
+      "phrase": "DEXA scan",
+      "seconds": 1.831,
+      "rms_dbfs": -20.9,
+      "sha256": "84c2974eb76e32b10da81886292c44ecd876de88dd81a50cf6edf0814bdb2385"
+    },
+    "1-4": {
+      "phrase": "medical practice",
+      "seconds": 2.109,
+      "rms_dbfs": -21.8,
+      "sha256": "1dde3b2d937a2ac4bccb6a897de7243cb233a2afee42bc2dfb510487313d72d9"
+    },
+    "1-5": {
+      "phrase": "health maintenance",
+      "seconds": 1.974,
+      "rms_dbfs": -20.3,
+      "sha256": "b0205c6770d168e750329d21aa951011edf2c28813495ce41e82ecfe3fff6f38"
+    },
+    "1-6": {
+      "phrase": "PAP smear",
+      "seconds": 1.784,
+      "rms_dbfs": -20.7,
+      "sha256": "6ccf0dff914b944bd50b86d253263c2539d1b1f4998ffb8fa83119ba3fd76dd5"
+    },
+    "1-7": {
+      "phrase": "mammogram report",
+      "seconds": 2.199,
+      "rms_dbfs": -18.0,
+      "sha256": "0fa0d554681c4ef94a33e546d537b0371509bf163a30e96b2a8e375bacc5b79b"
+    },
+    "1-8": {
+      "phrase": "refill a(n) prescription",
+      "seconds": 2.309,
+      "rms_dbfs": -18.3,
+      "sha256": "7f78538e20a9156795f61218cc0ee9d4204be624e2d5566bf5713a32280d1385"
+    },
+    "1-9": {
+      "phrase": "physical examination",
+      "seconds": 2.354,
+      "rms_dbfs": -18.5,
+      "sha256": "b95bf35d3c5ac56245320d29e0aaf023ff6fc17856096f82ea025b859b5703fe"
+    },
+    "1-10": {
+      "phrase": "perpetual panic",
+      "seconds": 2.084,
+      "rms_dbfs": -19.7,
+      "sha256": "56dc1efddfed18a7637d00826f184eaefebc08fdfc639378e2ea5198d0ad3105"
+    },
+    "1-11": {
+      "phrase": "practicing physician",
+      "seconds": 2.309,
+      "rms_dbfs": -21.0,
+      "sha256": "ea59dad7fecad9d20d74ca4b3576f7957bc22122e10d625f1bd1913fd1ba51fe"
+    },
+    "1-12": {
+      "phrase": "paracetamol tablet",
+      "seconds": 2.289,
+      "rms_dbfs": -18.9,
+      "sha256": "8ff3821e98a2a8c9c29556630a25d3fff175342addca17fd700d5a03696c1ffd"
+    },
+    "1-13": {
+      "phrase": "Childproof cap",
+      "seconds": 2.159,
+      "rms_dbfs": -20.2,
+      "sha256": "7ea789b81403e7562e09e5bff6c4324a3df6b9e0470c0a141da365723e336ca9"
+    },
+    "1-14": {
+      "phrase": "randomized clinical trial",
+      "seconds": 2.654,
+      "rms_dbfs": -19.2,
+      "sha256": "ed66b2ac0a033def84e23a719a325a273583d964d857751bed64cb7fdf61f15a"
+    },
+    "1-15": {
+      "phrase": "random allocation",
+      "seconds": 2.199,
+      "rms_dbfs": -16.5,
+      "sha256": "b5da829a69ab424327c8e9f8ecc58b3fd17cc7985bd8183bf38d044388640039"
+    },
+    "1-16": {
+      "phrase": "patient prognosis",
+      "seconds": 2.405,
+      "rms_dbfs": -20.0,
+      "sha256": "6d50e7ad482baad4e7c2f534b652431accd25e660eb85f20beedac4684c0c024"
+    },
+    "1-17": {
+      "phrase": "control group",
+      "seconds": 1.909,
+      "rms_dbfs": -19.0,
+      "sha256": "984757ec8121ea583dda5a933d70ac4124b8449ec327b1c509010cfd31749730"
+    },
+    "1-18": {
+      "phrase": "a 10-year follow-up study",
+      "seconds": 2.514,
+      "rms_dbfs": -19.1,
+      "sha256": "de63417ba993ae42201abe92dee77672b25f8258c8286862cc0cdf61bc2640b5"
+    },
+    "1-19": {
+      "phrase": "medical Ward",
+      "seconds": 1.814,
+      "rms_dbfs": -18.7,
+      "sha256": "49ac61b24b9cb514b68322b6d72bcd59ae25a27d6e856ce871b3e608e601946f"
+    },
+    "1-20": {
+      "phrase": "infectious hepatitis",
+      "seconds": 2.459,
+      "rms_dbfs": -20.9,
+      "sha256": "e711c0342d34d541a5df48346ae5afa73e84007a0eac9b04da998a6555abc366"
+    },
+    "1-21": {
+      "phrase": "severe malaise",
+      "seconds": 2.034,
+      "rms_dbfs": -18.9,
+      "sha256": "fd9c142dda39577634a7271f494d9800cadb5705d5a9a70830635efadeb05ed4"
+    },
+    "1-22": {
+      "phrase": "bilirubin metabolism",
+      "seconds": 2.459,
+      "rms_dbfs": -18.4,
+      "sha256": "6aed2073eeb445bedb7690fda1dc95060e50675f2a52f2cc3c4025e14b877b3f"
+    },
+    "1-23": {
+      "phrase": "permanent liver damage",
+      "seconds": 2.324,
+      "rms_dbfs": -17.8,
+      "sha256": "dab7662579ab4df9a93d2f30c8f6fe56fac115dba2af6b6083bde0c6e2bfd8e7"
+    },
+    "1-24": {
+      "phrase": "exacerbate pathophysiology",
+      "seconds": 3.039,
+      "rms_dbfs": -19.8,
+      "sha256": "9fe56161d56e8ab66aa5d02fe13b610bce2ddfb39816583c2f161be9f65dfecf"
+    },
+    "1-25": {
+      "phrase": "medical Literature",
+      "seconds": 2.159,
+      "rms_dbfs": -18.0,
+      "sha256": "e96af66b8f199b5cec1200338c8b8633fb1311dfdb7d4d87f10a2bd89eae33af"
+    },
+    "1-26": {
+      "phrase": "clinical investigation",
+      "seconds": 2.405,
+      "rms_dbfs": -16.9,
+      "sha256": "cd33c123db0d34af9dc7914d158cd9a851332fd80724f62c5c9ba9d6c6eb35cc"
+    },
+    "1-27": {
+      "phrase": "incidence of relapse",
+      "seconds": 2.314,
+      "rms_dbfs": -18.6,
+      "sha256": "bd3912c28ead38e33bb0da06edde0c5c3b7e34684035671ad52d4bc796b074d7"
+    },
+    "1-28": {
+      "phrase": "clinical epidemiology",
+      "seconds": 2.504,
+      "rms_dbfs": -17.1,
+      "sha256": "3c5c7f10391e56fbf4663465e0c1d564c1eb547c1056b9c2a86f778a7f3cf80d"
+    },
+    "1-29": {
+      "phrase": "strict bed rest",
+      "seconds": 2.204,
+      "rms_dbfs": -21.6,
+      "sha256": "af5574cb924fcf538bde18f3f819ee5b2b2c2ecbb065017974795265fc243f25"
+    },
+    "1-30": {
+      "phrase": "hospital stay",
+      "seconds": 1.961,
+      "rms_dbfs": -20.5,
+      "sha256": "2a15b27614573be317b4d7332343d8d6c0b2e16e71e9c819dd64f3d6355faa0d"
+    },
+    "1-31": {
+      "phrase": "recurrent Jaundice",
+      "seconds": 2.104,
+      "rms_dbfs": -18.6,
+      "sha256": "f2372ae322c9ef8c549ac46e809e81eb818328cf2ad25db63268082e7a0a2f8c"
+    },
+    "1-32": {
+      "phrase": "clinical course",
+      "seconds": 1.961,
+      "rms_dbfs": -19.0,
+      "sha256": "9488e2de0c322b2707ab60ebbd2d69fe1fe68489aa72c23dd14b5a9b2204bcb5"
+    },
+    "1-33": {
+      "phrase": "intravenous morphine",
+      "seconds": 2.244,
+      "rms_dbfs": -17.0,
+      "sha256": "bb827cdf567848134ec4c2e0a117a46e39bc29adcbd5d2c8f235d7a84400220c"
+    },
+    "1-34": {
+      "phrase": "diastolic blood pressure",
+      "seconds": 2.584,
+      "rms_dbfs": -19.7,
+      "sha256": "f48ca3614d9b19fab172660d78495c920b4437fb36b3260ff294523c2bbe4436"
+    },
+    "1-35": {
+      "phrase": "brain perfusion",
+      "seconds": 2.119,
+      "rms_dbfs": -18.6,
+      "sha256": "371d6ba1751d876ced01a38eedaa3e5b043e2afff260ffa6a89ee52c3b6791a2"
+    },
+    "1-36": {
+      "phrase": "primary care",
+      "seconds": 1.979,
+      "rms_dbfs": -20.5,
+      "sha256": "9ea89211da6a55906dc75311701203750504e15cf27e1c8d5d52833b77e30998"
+    },
+    "1-37": {
+      "phrase": "aorto-coronary arterial Bypass",
+      "seconds": 3.379,
+      "rms_dbfs": -19.1,
+      "sha256": "9031d2b786b390cad92019b750a80fcbed65162a6263a2451a694ebadf5612c6"
+    },
+    "1-38": {
+      "phrase": "informed treatment decision",
+      "seconds": 2.634,
+      "rms_dbfs": -17.8,
+      "sha256": "12d566bdbc346beecd3392b3a0dbc786894e8ac5c74bd211f72c14c8944f8b78"
+    },
+    "2-1": {
+      "phrase": "re-emerging disease",
+      "seconds": 2.214,
+      "rms_dbfs": -16.5,
+      "sha256": "3a9b6826d9ed80f8ee87413d62bcc4bf63dbc44d5b8d023998fd9d1219e15b28"
+    },
+    "2-2": {
+      "phrase": "new flu strain",
+      "seconds": 2.089,
+      "rms_dbfs": -19.1,
+      "sha256": "614a0a2dce09c4ffb617d86a0b1d233c2bba484beb90a844d88e3024efbf601b"
+    },
+    "2-3": {
+      "phrase": "antibiotic and vaccine",
+      "seconds": 2.584,
+      "rms_dbfs": -19.2,
+      "sha256": "563d69a495cf73976c1480b86770aa8906f38cec82792ec5942ac45daa1f6c1c"
+    },
+    "2-4": {
+      "phrase": "scarlet fever",
+      "seconds": 2.04,
+      "rms_dbfs": -20.6,
+      "sha256": "42abdc076152a31c4436f6590464833ab80c8d3bd55bbaf1c8b95a33990f25d6"
+    },
+    "2-5": {
+      "phrase": "infectious disease",
+      "seconds": 2.214,
+      "rms_dbfs": -20.2,
+      "sha256": "cb53979f3a0872fa11aa36c410895846dfe7aa50999dc56bed6ca26e364ccbe0"
+    },
+    "2-6": {
+      "phrase": "emerging disease",
+      "seconds": 2.079,
+      "rms_dbfs": -17.2,
+      "sha256": "489f4dcf48801570964b206eb998b02753a7d37a14287862b07b6b6215f2cdc2"
+    },
+    "2-7": {
+      "phrase": "prevention strategy",
+      "seconds": 2.275,
+      "rms_dbfs": -19.6,
+      "sha256": "e3d6af5eaef9b3d2f38b548a331f6ba2f55b367279a17f053c47ae5620183148"
+    },
+    "2-8": {
+      "phrase": "bubonic plague",
+      "seconds": 2.066,
+      "rms_dbfs": -19.9,
+      "sha256": "35fd94004ff1f1d7ad319a4ce15618f78239d9974e2ccca294d3c0eda918651b"
+    },
+    "2-9": {
+      "phrase": "pathogenic microbe",
+      "seconds": 2.324,
+      "rms_dbfs": -20.1,
+      "sha256": "443fba17aebfe0ca3e50a962d6b67e610f51310d7b9eabdfd902ec619fb163b5"
+    },
+    "2-10": {
+      "phrase": "drug resistance",
+      "seconds": 2.044,
+      "rms_dbfs": -21.4,
+      "sha256": "23bebccc26d653950cdff15f39c579dfd116e31ae94c093975d058f4518ac73c"
+    },
+    "2-11": {
+      "phrase": "course of antibiotic therapy",
+      "seconds": 2.814,
+      "rms_dbfs": -19.1,
+      "sha256": "39ed8f78896be803a646d8177a5c60166335ce67e4d21ea7276389a318ee6b73"
+    },
+    "2-12": {
+      "phrase": "level of virulence",
+      "seconds": 2.134,
+      "rms_dbfs": -19.4,
+      "sha256": "0ba7dea0e60c6e4de54b821fddc130994d6696c0825d9e2f8e70e9003473bb22"
+    },
+    "2-13": {
+      "phrase": "flu pandemic",
+      "seconds": 2.014,
+      "rms_dbfs": -16.8,
+      "sha256": "a9e972c2a2563ef1ae1ff9a3bf0321772fdd69084b795eba9f0bff02b25c8758"
+    },
+    "2-14": {
+      "phrase": "surface antigen",
+      "seconds": 2.179,
+      "rms_dbfs": -19.4,
+      "sha256": "18dad8b2afc92da0687ca8df13a3326baf1d99ff4478be10ae2034064406b82e"
+    },
+    "2-15": {
+      "phrase": "immune system",
+      "seconds": 1.949,
+      "rms_dbfs": -16.0,
+      "sha256": "384474c920228fde0ffccfd5837ec8a51fb6190bff63e33cc6675887559ded26"
+    },
+    "2-16": {
+      "phrase": "genetic shift",
+      "seconds": 1.889,
+      "rms_dbfs": -17.9,
+      "sha256": "c78bbf95b2344b6dc3d97693286a13671cc33735329376b3428ba07f1bcbf440"
+    },
+    "2-17": {
+      "phrase": "public health infrastructure",
+      "seconds": 2.679,
+      "rms_dbfs": -21.4,
+      "sha256": "02cc6d063783d4d27fb28fe7bc4726d770c9eccf84e447b0ce577763f0cfba40"
+    },
+    "2-18": {
+      "phrase": "malaria case",
+      "seconds": 1.969,
+      "rms_dbfs": -18.0,
+      "sha256": "61628c701bec75ce5a46837a64f9a100e5096786616d017ff1a7fc2d310f2efa"
+    },
+    "2-19": {
+      "phrase": "swine flu",
+      "seconds": 1.844,
+      "rms_dbfs": -19.4,
+      "sha256": "2d446ff8d2ef1b212501594bca7a696362a8003a00a1da5edff065dcd265e778"
+    },
+    "2-20": {
+      "phrase": "tuberculosis bacillus",
+      "seconds": 2.629,
+      "rms_dbfs": -19.6,
+      "sha256": "4bfa806abdf27edbc97f30d64b614827022f284b89781cbc11c72a1cc218f4db"
+    },
+    "2-21": {
+      "phrase": "level of morbidity",
+      "seconds": 2.059,
+      "rms_dbfs": -18.3,
+      "sha256": "4d23fab2fd279d1bb7e92eb56a11fc36d62d8dbcb829355e1e28fd958d190d6f"
+    },
+    "2-22": {
+      "phrase": "health professional",
+      "seconds": 2.104,
+      "rms_dbfs": -22.1,
+      "sha256": "b7d4ad505a848bb35f7f403930f55f98078b99e853b63afe430aeb50f5b9256a"
+    },
+    "2-23": {
+      "phrase": "latent tuberculosis",
+      "seconds": 2.464,
+      "rms_dbfs": -19.3,
+      "sha256": "7e27ae4f63dbe030b64bcd14b2a0820e9c6d11eda318c6478a0237a6659777f9"
+    },
+    "2-24": {
+      "phrase": "tuberculin skin test",
+      "seconds": 2.464,
+      "rms_dbfs": -17.8,
+      "sha256": "95b2321f0da8929360a8800712c467a2f1dddc254ad80935b5d87cbc0b556aa7"
+    },
+    "2-25": {
+      "phrase": "screening program",
+      "seconds": 2.254,
+      "rms_dbfs": -19.2,
+      "sha256": "c9d1f3a12118c446fdccd0458f466c43aecaf31d1695895b7b836cf86c09cf0b"
+    },
+    "2-26": {
+      "phrase": "interferon gamma test",
+      "seconds": 2.549,
+      "rms_dbfs": -18.7,
+      "sha256": "5c826d01afe33d81206c72f25d44f1a4b33191510382aca7b02d93f854125e53"
+    },
+    "2-27": {
+      "phrase": "drug toxicity",
+      "seconds": 2.069,
+      "rms_dbfs": -21.7,
+      "sha256": "318f998224945f9965161dddce0e085067d6e1b72e8f8febf170159beb7fdab6"
+    },
+    "2-28": {
+      "phrase": "curable disease",
+      "seconds": 2.074,
+      "rms_dbfs": -18.1,
+      "sha256": "e5c6d9dc3ca9dac85d00f4dfb3b134b9f811db4f58617c91973e0676c5002682"
+    },
+    "3-1": {
+      "phrase": "surge of adrenaline",
+      "seconds": 2.129,
+      "rms_dbfs": -19.3,
+      "sha256": "53949f48edf751d3e2a57782f6a0c9a046df80447eaeba844e1eb0b3569b0711"
+    },
+    "3-2": {
+      "phrase": "internal medicine residency",
+      "seconds": 2.634,
+      "rms_dbfs": -19.2,
+      "sha256": "dcfbcd5782f67f6a8c64af1a4617179049e35b6b728f826f88016b57ed0dd8df"
+    },
+    "3-3": {
+      "phrase": "autoimmune disease",
+      "seconds": 2.189,
+      "rms_dbfs": -16.8,
+      "sha256": "e6fa638a5be639bc14f64f86bc9f6ffbd4079e9f51095516e9c54d381b39d760"
+    },
+    "3-4": {
+      "phrase": "loss of stamina",
+      "seconds": 1.999,
+      "rms_dbfs": -18.9,
+      "sha256": "52e7b46b9f6c8f95abe616d55c92423fa511fb896323f400e0675f6d1ec6cc47"
+    },
+    "3-5": {
+      "phrase": "transient weakness",
+      "seconds": 2.234,
+      "rms_dbfs": -18.2,
+      "sha256": "a9e262ee489882095b2bf7c11015e63c0a3a90c2c083dd0b0a171758c3cde785"
+    },
+    "3-6": {
+      "phrase": "become bedridden",
+      "seconds": 1.964,
+      "rms_dbfs": -18.9,
+      "sha256": "164ec7dc462fe097b259f8b2a605851450466d921138c4b8325f71a8cb345d32"
+    },
+    "3-7": {
+      "phrase": "building block",
+      "seconds": 1.879,
+      "rms_dbfs": -19.5,
+      "sha256": "56a054934aaebffcd75db3a14e30af8b085ac1db2964a2870c4fa091e0981bc5"
+    },
+    "3-8": {
+      "phrase": "animal model",
+      "seconds": 1.844,
+      "rms_dbfs": -17.3,
+      "sha256": "fe61a60d0aa8decd7535ddb91f77d59938a2386f024d8a9345b385d9e513e118"
+    },
+    "3-9": {
+      "phrase": "slow neurodegeneration",
+      "seconds": 2.469,
+      "rms_dbfs": -18.5,
+      "sha256": "fe6c36ab7b8d3ebb358bfb0845345b8a2dc5dced06d66ac4bb2f98109ebab71f"
+    },
+    "3-10": {
+      "phrase": "excrete toxin",
+      "seconds": 2.019,
+      "rms_dbfs": -21.4,
+      "sha256": "66edd826cb0503d427c5443cb7cfad2468a0f8181cc210becc89ac0727ab7fcf"
+    },
+    "3-11": {
+      "phrase": "optimize nutrition",
+      "seconds": 2.324,
+      "rms_dbfs": -17.5,
+      "sha256": "309ce7e677632d881dfd423fe9794213996134cd012f1513f2fa90a45cd3dfa0"
+    },
+    "3-12": {
+      "phrase": "food allergy",
+      "seconds": 1.919,
+      "rms_dbfs": -19.5,
+      "sha256": "700a94785f99a2a5be937a417e1f777ea2260720efb2c50008b305509274523d"
+    },
+    "3-13": {
+      "phrase": "toxic load",
+      "seconds": 1.844,
+      "rms_dbfs": -21.8,
+      "sha256": "d08f74b39c01a3555e7a8ef294ec5fd9faade69c29ca5654779f56802b9c4cea"
+    },
+    "3-14": {
+      "phrase": "risk of relapse",
+      "seconds": 2.114,
+      "rms_dbfs": -19.8,
+      "sha256": "88948e1b8b9a42c2b4fd28745dd60f0c31ac5933f0a14e1972790e035d41b27b"
+    },
+    "3-15": {
+      "phrase": "physician self-experimentation",
+      "seconds": 3.014,
+      "rms_dbfs": -18.7,
+      "sha256": "cfa34156a6b16499e13dc63cc89ebbc1d5a5dd57c51fe549b7fd2fce704af57b"
+    },
+    "3-16": {
+      "phrase": "clinical trial",
+      "seconds": 1.954,
+      "rms_dbfs": -20.7,
+      "sha256": "2518a817cf9d0d7b3971030874c6f0b98fb3fe79349dfe8517f4f1efcd5aa2cc"
+    },
+    "3-17": {
+      "phrase": "neuromuscular electrical stimulation",
+      "seconds": 3.339,
+      "rms_dbfs": -18.1,
+      "sha256": "c57849e5c77a0812c098ed3062af158b178b3f3b4f202dd5cc7951114cd3d86d"
+    },
+    "3-18": {
+      "phrase": "physical therapist",
+      "seconds": 2.179,
+      "rms_dbfs": -20.2,
+      "sha256": "6713199968b1335a604469f6a254e253dddb72c4f8534fe6f2fc72c3b27eda61"
+    },
+    "3-19": {
+      "phrase": "impact of micronutrient",
+      "seconds": 2.514,
+      "rms_dbfs": -18.8,
+      "sha256": "33113bb8df7377d7cbec2476cc5a291e90384da9758b43b5f72aeb44154ef6d2"
+    },
+    "3-20": {
+      "phrase": "brain function",
+      "seconds": 1.919,
+      "rms_dbfs": -19.3,
+      "sha256": "c7612bb440d282c0d7eb4e133d0527ae2a88b53fa7a5a96e316243121862c33e"
+    },
+    "3-21": {
+      "phrase": "amino acid",
+      "seconds": 1.824,
+      "rms_dbfs": -17.9,
+      "sha256": "bc76651741dfc74aa835912b2d278139ec47fa4254b63f16b0dfbe170cefb1a6"
+    },
+    "3-22": {
+      "phrase": "medical literature",
+      "seconds": 2.159,
+      "rms_dbfs": -18.0,
+      "sha256": "e96af66b8f199b5cec1200338c8b8633fb1311dfdb7d4d87f10a2bd89eae33af"
+    },
+    "3-23": {
+      "phrase": "registered dietician",
+      "seconds": 2.414,
+      "rms_dbfs": -19.6,
+      "sha256": "d559aa786308012be0beb917b6574e79df4ce2053145aa5770bd9575c224556a"
+    },
+    "3-24": {
+      "phrase": "neurological and psychological symptom",
+      "seconds": 3.314,
+      "rms_dbfs": -18.4,
+      "sha256": "a96c66bb5edac5ee218cb32b3754b616dc25365770fabece748c6aea3a20ddfa"
+    },
+    "3-25": {
+      "phrase": "abdominal complaints",
+      "seconds": 2.399,
+      "rms_dbfs": -18.6,
+      "sha256": "bdaee291841d1e8263975d936fe01aa68abfbe268420dd603366757706f2e3e0"
+    },
+    "3-26": {
+      "phrase": "pesticide and herbicide",
+      "seconds": 2.494,
+      "rms_dbfs": -20.6,
+      "sha256": "828bca4ce2dd6f2a0d3b46e3e17f998b6faeb1effc00d572c6200de78b1b62c7"
+    },
+    "3-27": {
+      "phrase": "practice medicine",
+      "seconds": 2.084,
+      "rms_dbfs": -22.0,
+      "sha256": "296b3dec09f37a8ae4c2b6a611945bfaf994f684f62b10079654d517ccea1ee7"
+    },
+    "3-28": {
+      "phrase": "blood pressure",
+      "seconds": 1.774,
+      "rms_dbfs": -21.4,
+      "sha256": "b217425b080a62ee80d070ec890acda75a305951f33abb26a4be72d06208d194"
+    },
+    "3-29": {
+      "phrase": "IRB-approved protocol",
+      "seconds": 2.729,
+      "rms_dbfs": -18.6,
+      "sha256": "c62614ea67ae99d7f4d31047fe7fb37c66a6c625f0c4e328c42c98aac9920cab"
+    },
+    "3-30": {
+      "phrase": "secondary progressive multiple sclerosis",
+      "seconds": 3.704,
+      "rms_dbfs": -19.1,
+      "sha256": "c7c9236823a88fa063168a241151931b76a150a07abd7ef0125e84cebcab3d99"
+    },
+    "3-31": {
+      "phrase": "traditional domain",
+      "seconds": 2.079,
+      "rms_dbfs": -16.6,
+      "sha256": "62eb2898c1f8dd87b17e7ed6ae099f28eced10023ef3a9aef34ff2ef85fb8ad1"
+    },
+    "3-32": {
+      "phrase": "social media",
+      "seconds": 1.969,
+      "rms_dbfs": -16.5,
+      "sha256": "de7094e95df706821be9594773d32006097c0c3620fd7c7e27647dfbb1311e0f"
+    },
+    "3-33": {
+      "phrase": "increasing ubiquity",
+      "seconds": 2.339,
+      "rms_dbfs": -17.6,
+      "sha256": "becd25ebf3d6d177a481b7a8766d725907f64d49a9d060705f5ccdb65b369885"
+    },
+    "3-34": {
+      "phrase": "electronic medical record",
+      "seconds": 2.614,
+      "rms_dbfs": -19.8,
+      "sha256": "897abebc7ad6c2ab1a651f8497059b43808c7d881bdef880d787f01b0b18fcd3"
+    },
+    "3-35": {
+      "phrase": "over-the-counter medication",
+      "seconds": 2.554,
+      "rms_dbfs": -17.5,
+      "sha256": "1e8e8c81a85380a550bee51d16daf851715095e6104ea751cff8c1dda9a2c9a8"
+    },
+    "3-36": {
+      "phrase": "real-time surveillance",
+      "seconds": 2.399,
+      "rms_dbfs": -18.5,
+      "sha256": "ca990ee768f2ef6f0b2be3ba6a027d6a7610844b082d773c16c9bf545724021e"
+    },
+    "3-37": {
+      "phrase": "closely correlated",
+      "seconds": 2.194,
+      "rms_dbfs": -19.7,
+      "sha256": "7e51414ba7faeb131d048336d979fb4ee3b16842eecc806a1f735b0dac8857e5"
+    },
+    "3-38": {
+      "phrase": "allergic conjunctivitis",
+      "seconds": 2.574,
+      "rms_dbfs": -20.3,
+      "sha256": "40d5e3a5d21df9740ea1a1599551db7add48552155f83425db1038004777c839"
+    },
+    "3-39": {
+      "phrase": "search term",
+      "seconds": 1.834,
+      "rms_dbfs": -20.7,
+      "sha256": "3d488e50411bdbeb7edb0b687e7d26d94659715445610d61060a66f93a6cc318"
+    },
+    "3-40": {
+      "phrase": "seasonality of disease",
+      "seconds": 2.599,
+      "rms_dbfs": -17.2,
+      "sha256": "2e243497b24b0e713c4ba23fd2eecc27f940958b28c57c3fff09cc78a4c474f7"
+    },
+    "3-41": {
+      "phrase": "severe acute respiratory syndrome",
+      "seconds": 3.184,
+      "rms_dbfs": -19.0,
+      "sha256": "438ec2c9c2c64747c66fb09b528fb8db78d2fdc62658e58e1142cb78aec9d7b2"
+    },
+    "3-42": {
+      "phrase": "crude algorithm",
+      "seconds": 2.029,
+      "rms_dbfs": -19.1,
+      "sha256": "1d5239d9183b9f6793cc791e18c87050345404fa14d13c34b4e970d97d49dbf4"
+    },
+    "3-43": {
+      "phrase": "bioterrorist attack",
+      "seconds": 2.379,
+      "rms_dbfs": -20.8,
+      "sha256": "4855ab77a56eca520ff82df3c73e5b829efec9de379f9ce548c250fdd68b8d20"
+    },
+    "3-44": {
+      "phrase": "mosquito control",
+      "seconds": 2.164,
+      "rms_dbfs": -17.9,
+      "sha256": "69643762d568cf277906f335fde04216b4383d49a3a14339ac5fae18eee3729e"
+    },
+    "4-1": {
+      "phrase": "complementary medicine",
+      "seconds": 2.384,
+      "rms_dbfs": -18.6,
+      "sha256": "0e600f4fb31c223e636501e5a12c41385a8324b8f8633bf13f14d589a78b5175"
+    },
+    "4-2": {
+      "phrase": "alternative medicine",
+      "seconds": 2.284,
+      "rms_dbfs": -18.0,
+      "sha256": "ccf50bada2a9da38dfad98b78d1984ee40116e3af8cc5da742aa49f0036f5d99"
+    },
+    "4-3": {
+      "phrase": "medical paradigm",
+      "seconds": 2.094,
+      "rms_dbfs": -18.5,
+      "sha256": "b2734878e222733222ea0dd814d3b9a1a4eaf8172a416d1df6a1e05351f3ba6e"
+    },
+    "4-4": {
+      "phrase": "acupuncture and herb",
+      "seconds": 2.264,
+      "rms_dbfs": -19.3,
+      "sha256": "2c2aa6f250a854c6cbeaf47c45396befc15152d91ef5fbad52eae95e53c4f08d"
+    },
+    "4-5": {
+      "phrase": "adjunct treatment",
+      "seconds": 1.989,
+      "rms_dbfs": -19.1,
+      "sha256": "cc621e9376789a3b20f32f52ae0b8bad77988bd554973757d41637ee93fe83ff"
+    },
+    "4-6": {
+      "phrase": "nausea and vomiting",
+      "seconds": 2.219,
+      "rms_dbfs": -19.0,
+      "sha256": "add6a26ed6efd75ddf81df08cf3cccb293d9804a0821ced052108ac604567b00"
+    },
+    "4-7": {
+      "phrase": "post-operative dental pain",
+      "seconds": 2.714,
+      "rms_dbfs": -18.9,
+      "sha256": "4955bb56637f74ce5183c63c7d6b912de8080daff5ed14d02e6d22226f7036f4"
+    },
+    "4-8": {
+      "phrase": "clinical trial",
+      "seconds": 1.954,
+      "rms_dbfs": -20.7,
+      "sha256": "2518a817cf9d0d7b3971030874c6f0b98fb3fe79349dfe8517f4f1efcd5aa2cc"
+    },
+    "4-9": {
+      "phrase": "physical therapy",
+      "seconds": 2.049,
+      "rms_dbfs": -19.9,
+      "sha256": "dc4626124318925be2d40dad914f1c54ecebfe212b1b336d9defc6fc21e17285"
+    },
+    "4-10": {
+      "phrase": "therapeutic modality",
+      "seconds": 2.339,
+      "rms_dbfs": -18.7,
+      "sha256": "cbd9c512938d33205ccbe8cf5d66d2349e7234d6b8323a8c1f030b13ed1b0cb9"
+    },
+    "4-11": {
+      "phrase": "therapeutic intervention",
+      "seconds": 2.449,
+      "rms_dbfs": -17.6,
+      "sha256": "85766615e15394f18f50d6a73542dfb168b8d51ef0255a2c057eccc4d6293d9e"
+    },
+    "4-12": {
+      "phrase": "research design",
+      "seconds": 1.989,
+      "rms_dbfs": -18.9,
+      "sha256": "2977ea1908d655275df9a05c043254f00d73e95d3275684961c96d5ca6d05348"
+    },
+    "4-13": {
+      "phrase": "magnetic resonance",
+      "seconds": 2.244,
+      "rms_dbfs": -20.5,
+      "sha256": "e2f7be7ef9393a6a361ddc6a6c326aa38a607d4a5330b3b04b96bde5aec7cc8b"
+    },
+    "4-14": {
+      "phrase": "positron emission tomography",
+      "seconds": 2.889,
+      "rms_dbfs": -18.5,
+      "sha256": "b85b08390a4a03a32da585f8a40e425869070630258394c6dcd996b43caeac99"
+    },
+    "4-15": {
+      "phrase": "analgesia effect",
+      "seconds": 2.389,
+      "rms_dbfs": -18.8,
+      "sha256": "a63121be2c2b7a9f3486892337754b436438f79ab04958942dc37e8b5b07b770"
+    },
+    "4-16": {
+      "phrase": "biomedical establishment",
+      "seconds": 2.644,
+      "rms_dbfs": -20.6,
+      "sha256": "ef6dbc958893f24296a988bce48161c5d922db848e4fbf507b09dd3610f46e60"
+    },
+    "4-17": {
+      "phrase": "rehabilitation unit",
+      "seconds": 2.301,
+      "rms_dbfs": -16.2,
+      "sha256": "0dd25a6aa1673b1ccc7b5b6d1f0bcd381d181adc697e224fe283895630f1e2ed"
+    },
+    "4-18": {
+      "phrase": "therapeutic strategy",
+      "seconds": 2.369,
+      "rms_dbfs": -20.5,
+      "sha256": "7056c4baea6a45fb84c80b90d54e46160fafb4881697c071f37bb6c873720311"
+    },
+    "4-19": {
+      "phrase": "herbal formula",
+      "seconds": 2.009,
+      "rms_dbfs": -19.1,
+      "sha256": "d4de42fcbbb3efd854d34a3087c672d788fcaece2b99807e54d01b819c87d35a"
+    },
+    "4-20": {
+      "phrase": "a wide array of complications",
+      "seconds": 2.876,
+      "rms_dbfs": -19.0,
+      "sha256": "83fc61b1e2aaa76de9c9e61be967725211e294656b890e63be89f2231a746a59"
+    },
+    "4-21": {
+      "phrase": "integrative East-West medicine",
+      "seconds": 2.771,
+      "rms_dbfs": -19.2,
+      "sha256": "a4e9fdc729453051265abe411592c1f7c3b067352ab8135f89e79b0d98f99131"
+    },
+    "4-22": {
+      "phrase": "acute abdominal pain",
+      "seconds": 2.405,
+      "rms_dbfs": -18.4,
+      "sha256": "234b07b5ecd28bf608ad421505a81e94a92840d72778bad6e2718d954fdce350"
+    },
+    "4-23": {
+      "phrase": "administer medicine",
+      "seconds": 2.275,
+      "rms_dbfs": -16.7,
+      "sha256": "803e661fb28f3c9d98da1ff7259071a8774690f8426e50b04cf54523130647b2"
+    },
+    "4-24": {
+      "phrase": "surgical procedure",
+      "seconds": 2.275,
+      "rms_dbfs": -19.0,
+      "sha256": "2751501ffd7192ef2ce55dac929a9f040b90b0e66b6b14f58be2bfe72791dee2"
+    },
+    "4-25": {
+      "phrase": "scientific evaluation",
+      "seconds": 2.719,
+      "rms_dbfs": -19.3,
+      "sha256": "b5eb7b4895aea47f3c9166c54cc420d314deacf2db5869e27c8e3956c4119bca"
+    },
+    "4-26": {
+      "phrase": "prevalence statistics",
+      "seconds": 2.405,
+      "rms_dbfs": -20.4,
+      "sha256": "8228a8892661f9c82a4e73bae7e4bb8f4b1de2c8f64301efffb76d09560ea4e3"
+    },
+    "4-27": {
+      "phrase": "plausible mechanism",
+      "seconds": 2.269,
+      "rms_dbfs": -18.1,
+      "sha256": "da98e88af71e5b0460a491e9c327d55b64e3cd1e07847afd4b3a55de184c93d6"
+    },
+    "4-28": {
+      "phrase": "conventional therapy",
+      "seconds": 2.149,
+      "rms_dbfs": -18.1,
+      "sha256": "c7e1cb77b2ee54fae8b6e214f786aa9711ca3b5ee64d4cdf0451657972245508"
+    },
+    "4-29": {
+      "phrase": "evidence-based model of care",
+      "seconds": 2.714,
+      "rms_dbfs": -18.8,
+      "sha256": "77b5af06f369a7fa8e057ac371243803285fbc922420178bad14a660417d8688"
+    },
+    "4-30": {
+      "phrase": "stress management",
+      "seconds": 2.119,
+      "rms_dbfs": -21.0,
+      "sha256": "1a4f540d095705078d4063cd9e0d9a34079d47a1f82d9bc919477d462cdf8591"
+    },
+    "4-31": {
+      "phrase": "peripheral nervous system",
+      "seconds": 2.444,
+      "rms_dbfs": -19.7,
+      "sha256": "886d07c89b16002cedcdb3a7e9214d0816ba0b7bfd382cc86b93d887a4a7e660"
+    },
+    "4-32": {
+      "phrase": "physiologic mechanism",
+      "seconds": 2.494,
+      "rms_dbfs": -19.4,
+      "sha256": "07aad2289373f8b8ef927ac2a331a655e91fade3a7c7215aba67daf00e082de8"
+    },
+    "4-33": {
+      "phrase": "mechanistic and reductionistic study",
+      "seconds": 3.074,
+      "rms_dbfs": -18.0,
+      "sha256": "24276ef25e9f2da655226d222e4239cbd86246d4224d87a021face57ef540d11"
+    },
+    "4-34": {
+      "phrase": "cost-effectiveness research",
+      "seconds": 2.634,
+      "rms_dbfs": -20.6,
+      "sha256": "bbdcc17222404eb5223a902a8361a297423457b9b2e4508e0e96c85005c71c80"
+    },
+    "4-35": {
+      "phrase": "clinical outcome",
+      "seconds": 2.054,
+      "rms_dbfs": -19.2,
+      "sha256": "b5ccf1f49a2ade8cb94f1664245b3404aa56eaf136d55c730793085e9bacf859"
+    },
+    "4-36": {
+      "phrase": "preclinical and clinical study",
+      "seconds": 2.734,
+      "rms_dbfs": -17.8,
+      "sha256": "c74a719186fb773143f9190ec6536d609e8209e9a2c6e18591b96c583513a9b8"
+    },
+    "5-1": {
+      "phrase": "incidence of chronic disease",
+      "seconds": 2.684,
+      "rms_dbfs": -18.7,
+      "sha256": "c87410fc1411bd7b545b706ba05d2e52556a3c45038fdbabfcd075fc0f2e3e30"
+    },
+    "5-2": {
+      "phrase": "prevalence of chronic disease",
+      "seconds": 2.724,
+      "rms_dbfs": -19.2,
+      "sha256": "8f7eb91a0e75ca782c8332ba5624ad3dbbdeb5fdb2c9f70b201f7d4d63ba159a"
+    },
+    "5-3": {
+      "phrase": "metabolic disease",
+      "seconds": 2.224,
+      "rms_dbfs": -20.8,
+      "sha256": "3932776b6d8afbcb934713aad6d52e743f6fba014411da150bfad3b967575995"
+    },
+    "5-4": {
+      "phrase": "optimal therapeutic dosage",
+      "seconds": 2.771,
+      "rms_dbfs": -18.2,
+      "sha256": "bf29c0e07e3e5fe5d0fecaf8bb34319ef65ef80d93b1bc278cd80e3a57715b35"
+    },
+    "5-5": {
+      "phrase": "unhealthy living phenotype",
+      "seconds": 2.519,
+      "rms_dbfs": -18.5,
+      "sha256": "0a639653ec4265660f66880d501a8056310003eb8e7553c7afb74546beb6a54f"
+    },
+    "5-6": {
+      "phrase": "physical inactivity",
+      "seconds": 2.289,
+      "rms_dbfs": -19.3,
+      "sha256": "cd898068d49b21383cfa4b1aa6b52e1ecc56f322dc8f3fdf3e8706745543a12e"
+    },
+    "5-7": {
+      "phrase": "primary prevention",
+      "seconds": 2.294,
+      "rms_dbfs": -20.2,
+      "sha256": "3c91ca85a43fd8004d33db94e0ae3dd93bc9cbfbb5a7f00ad942d859b996ce4f"
+    },
+    "5-8": {
+      "phrase": "prescription medication",
+      "seconds": 2.409,
+      "rms_dbfs": -17.6,
+      "sha256": "c2955c8f2132bac565d98e513091769fdd2b296b2e6ca4120afab187f4ce00a8"
+    },
+    "5-9": {
+      "phrase": "alleviation of disease",
+      "seconds": 2.504,
+      "rms_dbfs": -16.4,
+      "sha256": "3b9811a13eef7be63163a7c6653870e387961274dd900a7f9bc9d45fe0b6cec6"
+    },
+    "5-10": {
+      "phrase": "precision medicine",
+      "seconds": 2.099,
+      "rms_dbfs": -17.5,
+      "sha256": "5bd64be053f2e16d98ca112ded1feac92bddeaaabe3fa6c049e60bc0b3504fe9"
+    },
+    "5-11": {
+      "phrase": "sedentary lifestyle",
+      "seconds": 2.489,
+      "rms_dbfs": -18.8,
+      "sha256": "8be09813923629677302b371c772c814885d6788860d49182b1005b6f7125054"
+    },
+    "5-12": {
+      "phrase": "decaying teeth",
+      "seconds": 1.909,
+      "rms_dbfs": -18.6,
+      "sha256": "fe01c3deb9524a6d3c136646329f87795a42e9039b66d30350dea21fa15dd6e7"
+    },
+    "5-13": {
+      "phrase": "nutrition professor",
+      "seconds": 2.309,
+      "rms_dbfs": -19.2,
+      "sha256": "18f9acb5a63b50f1566b9588c2798d0ab72bbd8922431cd420047dc22d7ec136"
+    },
+    "5-14": {
+      "phrase": "burgeoning waistline",
+      "seconds": 2.219,
+      "rms_dbfs": -17.7,
+      "sha256": "a492f8087c4fcefd61911ee25b8b6bcb90808549d819bf6074d605f378108491"
+    },
+    "5-15": {
+      "phrase": "bottled water",
+      "seconds": 1.754,
+      "rms_dbfs": -20.3,
+      "sha256": "8d4927d9d1af06b2fb3dfdcd7b51645d19236ea3cbce01b5b25861ce83f3ed37"
+    },
+    "5-16": {
+      "phrase": "caloric intake",
+      "seconds": 2.034,
+      "rms_dbfs": -18.5,
+      "sha256": "7181eb4ca5f576e62cdecea4b910eb13c90b7a977dc08825e33bae6aed88f43f"
+    },
+    "5-17": {
+      "phrase": "curb appetite",
+      "seconds": 1.935,
+      "rms_dbfs": -21.1,
+      "sha256": "9511b9a78ef3b9c42f21c9c06127fe788fdd0c49362efa7c20a4e1ccd5f53e90"
+    },
+    "5-18": {
+      "phrase": "grain and protein",
+      "seconds": 2.149,
+      "rms_dbfs": -18.0,
+      "sha256": "e68b7a62121a2feb89ab1e136c645063e312be05f42ee15ee36776260d4e0af9"
+    },
+    "5-19": {
+      "phrase": "quality of life",
+      "seconds": 2.099,
+      "rms_dbfs": -20.4,
+      "sha256": "acc2db24d07371104076833d63b8c5c4f66c882a3ac2adc409142caca429a9e6"
+    },
+    "6-1": {
+      "phrase": "nursing home",
+      "seconds": 1.869,
+      "rms_dbfs": -18.7,
+      "sha256": "fc17d6e19e288419ea422fbc11c343bbbb9a68206aef82f421d492e318ab54c1"
+    },
+    "6-2": {
+      "phrase": "hospice care",
+      "seconds": 1.879,
+      "rms_dbfs": -20.6,
+      "sha256": "fa46ab7091f4492c6b9de8ed62762bbde12b39dbbf0a4ee4fe6badcfb22029e7"
+    },
+    "6-3": {
+      "phrase": "congestive heart failure",
+      "seconds": 2.489,
+      "rms_dbfs": -20.4,
+      "sha256": "0c33d2e475b6957aee932596379444224e9f91320d0f3def75b2c0f38f5c40e4"
+    },
+    "6-4": {
+      "phrase": "available around the clock",
+      "seconds": 2.539,
+      "rms_dbfs": -19.7,
+      "sha256": "3a8cbf5a115b4788d43db3a0713c2517830a3f762e5173bd49651bdb560611f8"
+    },
+    "6-5": {
+      "phrase": "coronary care unit",
+      "seconds": 2.209,
+      "rms_dbfs": -18.3,
+      "sha256": "b82d1d471e36d425be49a0facfbbfdc340cc5f171a09a827461db7c23ad805f1"
+    },
+    "6-6": {
+      "phrase": "respond to treatment",
+      "seconds": 2.17,
+      "rms_dbfs": -18.2,
+      "sha256": "e5809d8a69a395e1131c623a7e14c7502efc92e3e564991e103f644081fe3c58"
+    },
+    "6-7": {
+      "phrase": "skilled nursing facility",
+      "seconds": 2.559,
+      "rms_dbfs": -18.3,
+      "sha256": "a9a8b1f1623455e5836f69b5db08271ea9bcdccc334ad2ebbaa8ae827c6529bf"
+    },
+    "6-8": {
+      "phrase": "end-of-life care",
+      "seconds": 2.014,
+      "rms_dbfs": -19.9,
+      "sha256": "d7be63c68e42068fcf51a6f767886a658f82ee17b75c43998ceb3f1c068a0f8d"
+    },
+    "6-9": {
+      "phrase": "comfort care",
+      "seconds": 1.839,
+      "rms_dbfs": -20.0,
+      "sha256": "750952d4d74e1a550b7dc3dd609e84b678990eed344385ddca866dd9e7c11eb5"
+    },
+    "6-10": {
+      "phrase": "hospital discharge planner",
+      "seconds": 2.674,
+      "rms_dbfs": -19.3,
+      "sha256": "ed38352a6cff307a1d512a597054bb142f0499690316a817b8cbe513bbc8dec7"
+    },
+    "6-11": {
+      "phrase": "symptom care",
+      "seconds": 1.894,
+      "rms_dbfs": -19.2,
+      "sha256": "f150ba40aba25aa77cd12a872ff4625eee257bed0c81e3f62498ab8b2bab9a7b"
+    },
+    "6-12": {
+      "phrase": "palliative care",
+      "seconds": 2.004,
+      "rms_dbfs": -19.4,
+      "sha256": "41937d6c63a287cfd02861a3eed7125f2d53442b93e728c5bc954f005cbe2edc"
+    },
+    "6-13": {
+      "phrase": "fatal illness",
+      "seconds": 1.899,
+      "rms_dbfs": -20.2,
+      "sha256": "7a300ddfeadcf29d1707b09fcde7faaa5cea9c1c31a9ef079e8a4a3bb3b7ee7c"
+    },
+    "6-14": {
+      "phrase": "chronic obstructive pulmonary disease",
+      "seconds": 3.314,
+      "rms_dbfs": -19.7,
+      "sha256": "0d993b563b1733beedce7305a13899506936e9030538ea2ac255f9b7fbb2188a"
+    },
+    "6-15": {
+      "phrase": "experimental treatment",
+      "seconds": 2.379,
+      "rms_dbfs": -18.7,
+      "sha256": "30b8249fe80cc5a55917641d059426044fbf5bc291713163a0f85c3269d757a6"
+    },
+    "6-16": {
+      "phrase": "spiritual advisor",
+      "seconds": 2.349,
+      "rms_dbfs": -21.3,
+      "sha256": "b06b8cd048bb4595b8dd3de19f791813950fb6f6ac708f7c91bc87cfd314d761"
+    },
+    "6-17": {
+      "phrase": "discontinue all treatment",
+      "seconds": 2.529,
+      "rms_dbfs": -17.0,
+      "sha256": "e17b09829dcfed591b6dcb6292d9f114386a0cb6a76dce845e91cc9ca617032a"
+    },
+    "6-18": {
+      "phrase": "go through dialysis",
+      "seconds": 2.359,
+      "rms_dbfs": -18.7,
+      "sha256": "48f7c9458db0e2281f66838aaa96dab9cad1c1e2319482c98a00507ba74b88c8"
+    },
+    "6-19": {
+      "phrase": "PAP smear",
+      "seconds": 1.784,
+      "rms_dbfs": -20.7,
+      "sha256": "6ccf0dff914b944bd50b86d253263c2539d1b1f4998ffb8fa83119ba3fd76dd5"
+    },
+    "6-20": {
+      "phrase": "patient-provider relationship",
+      "seconds": 2.859,
+      "rms_dbfs": -18.4,
+      "sha256": "0b620080f8a98ce61c85fe15ab36fedb8b410f9d0c51856dedd9998c9ba9259e"
+    },
+    "6-21": {
+      "phrase": "provide care-as-usual",
+      "seconds": 2.489,
+      "rms_dbfs": -20.1,
+      "sha256": "93360c5785e449d1a8b3b202c9b2953f48bdcd25d326af4285aece5824b8e7d9"
+    },
+    "6-22": {
+      "phrase": "preventive examination",
+      "seconds": 2.364,
+      "rms_dbfs": -17.5,
+      "sha256": "bc605d95c312e1e41f789683d9edf8b85be072727eca03fe1c56e95ab7f72486"
+    },
+    "6-23": {
+      "phrase": "off the beaten path",
+      "seconds": 2.074,
+      "rms_dbfs": -19.7,
+      "sha256": "f32482b61288b8fc375aef0ff656049be86b50654728a93f59132461e5b6a69a"
+    },
+    "6-24": {
+      "phrase": "mold into a shape",
+      "seconds": 2.124,
+      "rms_dbfs": -17.8,
+      "sha256": "54a39878b97df86c05d4416abc49fb5174b7717599e5bcb8b1e1799922004fbf"
+    },
+    "6-25": {
+      "phrase": "renew a prescription",
+      "seconds": 2.214,
+      "rms_dbfs": -17.1,
+      "sha256": "2d3cd97d4da49995e50e782702b4f9f082a5afa2646bc06c7bea29a8eccbbae1"
+    },
+    "7-1": {
+      "phrase": "nursing station",
+      "seconds": 2.069,
+      "rms_dbfs": -18.4,
+      "sha256": "b803c39e2afa77f2d59e1a7dca627cabf688f322a357bc07b49b76e981fef363"
+    },
+    "7-2": {
+      "phrase": "life-support machine",
+      "seconds": 2.329,
+      "rms_dbfs": -20.0,
+      "sha256": "2fbf490016822771e0adade17dc90c519e81f2da2e30f9098f061d472d88d67a"
+    },
+    "7-3": {
+      "phrase": "comfort measure",
+      "seconds": 1.864,
+      "rms_dbfs": -19.5,
+      "sha256": "859250c4b35e89c1bb22ac729490778cbecdd013230f5cecd2e372500db3ad53"
+    },
+    "7-4": {
+      "phrase": "withdraw treatment",
+      "seconds": 1.989,
+      "rms_dbfs": -19.6,
+      "sha256": "4791127036e27958ad9bd6ff0f3ddefb3127b24977cbbc7ee48eb64f0c6fad67"
+    },
+    "7-5": {
+      "phrase": "paternalistic decision-making process",
+      "seconds": 3.524,
+      "rms_dbfs": -18.8,
+      "sha256": "a5885cade6fbda0b412ad46f28c95d3f16dea84a52cf1fb04afaa7fef809f50b"
+    },
+    "7-6": {
+      "phrase": "patient empowerment",
+      "seconds": 2.284,
+      "rms_dbfs": -17.8,
+      "sha256": "014fe50b4dc0b78fc96d5dac4f355dfabf5f2a2df2fb05f1f7268e7e8d578100"
+    },
+    "7-7": {
+      "phrase": "medical ethicist",
+      "seconds": 2.114,
+      "rms_dbfs": -19.4,
+      "sha256": "53688b886cf2f73fc167cbb512bb10b42cf5d3efa20272046c9e30ba0ea192eb"
+    },
+    "7-8": {
+      "phrase": "ethical principle",
+      "seconds": 2.084,
+      "rms_dbfs": -19.5,
+      "sha256": "19997b3e7b1c52db91aaf99c4ca96923bc8805defa426cf9f7470a8ce7e71080"
+    },
+    "7-9": {
+      "phrase": "clinical ideal",
+      "seconds": 1.979,
+      "rms_dbfs": -17.3,
+      "sha256": "966bd0ca5e8ce53995400a21f853ea91eae9289d3f6ef8e315f1a100f419245b"
+    },
+    "7-10": {
+      "phrase": "patient-centered care",
+      "seconds": 2.279,
+      "rms_dbfs": -18.1,
+      "sha256": "c4ebf05651aba9b5ab6517e9c8a7ba036dae130624ca7e8200d1fb9a7be27fad"
+    },
+    "7-11": {
+      "phrase": "patient autonomy",
+      "seconds": 2.144,
+      "rms_dbfs": -19.4,
+      "sha256": "d3f60ca5943111cb109c0b5ee2a8c5d8558d09fe4f3e3a939f377daf77819a14"
+    },
+    "7-12": {
+      "phrase": "treatment option",
+      "seconds": 1.974,
+      "rms_dbfs": -19.1,
+      "sha256": "9c60e9ad921a88b70924990c37249ca7d6b748ea00d57cdaceb54078eafa64ab"
+    },
+    "7-13": {
+      "phrase": "exclusive purview",
+      "seconds": 2.199,
+      "rms_dbfs": -18.3,
+      "sha256": "259d075ae930a228e06a174a5ebe5151f2207a1c05768c6739239c290160f57f"
+    },
+    "7-14": {
+      "phrase": "emergency decision",
+      "seconds": 2.254,
+      "rms_dbfs": -17.9,
+      "sha256": "47af25cf3b435cae78a8948167b2a412df43ebf4ee5b9378b9a8c8755ddddfae"
+    },
+    "7-15": {
+      "phrase": "physician restraint",
+      "seconds": 2.154,
+      "rms_dbfs": -18.6,
+      "sha256": "5af31a6b799002569d8fd0f15be6baa67d516ec0b9e1fb1ccc6ffe52159d3730"
+    },
+    "7-16": {
+      "phrase": "anxiety and confusion",
+      "seconds": 2.584,
+      "rms_dbfs": -19.4,
+      "sha256": "40da3c28643949390ed2ed139e618836a7ba44035f818e02142d8355c13633d9"
+    },
+    "7-17": {
+      "phrase": "ethical transgression",
+      "seconds": 2.354,
+      "rms_dbfs": -20.3,
+      "sha256": "32ee38dce6388d6b3c0d22ddefce019298b4f5eea249260b43ad199183b88a07"
+    },
+    "7-18": {
+      "phrase": "family practice",
+      "seconds": 2.139,
+      "rms_dbfs": -21.8,
+      "sha256": "605972b6d9c0a14cca79b700e8ed79f7800e4cc5d5a7bac6333a66dc7f2c6895"
+    },
+    "7-19": {
+      "phrase": "widespread metastases",
+      "seconds": 2.559,
+      "rms_dbfs": -20.3,
+      "sha256": "2b336f7546163f40fbc94335665d85860c3bfc165ef2f74352378a01caea0228"
+    },
+    "7-20": {
+      "phrase": "aggressive treatment",
+      "seconds": 2.134,
+      "rms_dbfs": -21.3,
+      "sha256": "c1057bc2a84ae8bd74306cb93cc447e58a303aca5960791fb3668a127a42b885"
+    },
+    "7-21": {
+      "phrase": "primary lesion",
+      "seconds": 2.094,
+      "rms_dbfs": -19.6,
+      "sha256": "821d413a7b12053aff053692cbf8f76414962d831644dcdb0b07e7be92843b95"
+    },
+    "7-22": {
+      "phrase": "recommend follow-up",
+      "seconds": 2.189,
+      "rms_dbfs": -18.8,
+      "sha256": "2e121a25c14308786f626cba0e9639723a91f021d78c6de5e7714a66f3e0a153"
+    },
+    "7-23": {
+      "phrase": "electronic record",
+      "seconds": 2.179,
+      "rms_dbfs": -20.3,
+      "sha256": "dc70d79fabf1831a6b0c80b7128cc567150ab61cd0e9d8aa3e0911c26d8dd42f"
+    },
+    "7-24": {
+      "phrase": "pulmonary emboli",
+      "seconds": 2.124,
+      "rms_dbfs": -16.9,
+      "sha256": "fbfadc0fb154a00443724ab4a570de6dff42564513965d537ebf2c3eeae65ce4"
+    },
+    "7-25": {
+      "phrase": "computerized tomography",
+      "seconds": 2.559,
+      "rms_dbfs": -20.1,
+      "sha256": "189b62ec285f8c5fc95b77cf8d478af1c8bd792be3e933d48ed503ade7d77873"
+    },
+    "7-26": {
+      "phrase": "bilateral infiltrates",
+      "seconds": 2.604,
+      "rms_dbfs": -20.3,
+      "sha256": "71aacb7ea6c4202be0311c90cf63b9d668cadd45e943b7e1ef8f72a61d306e3f"
+    },
+    "7-27": {
+      "phrase": "chest X-ray",
+      "seconds": 1.894,
+      "rms_dbfs": -20.6,
+      "sha256": "69a74966df9c0c19a5a1f3d6814970b328845c9a4b42bdd2e5eff3f786a7849d"
+    },
+    "7-28": {
+      "phrase": "left lower-lobe pneumonia",
+      "seconds": 2.536,
+      "rms_dbfs": -17.5,
+      "sha256": "5cc2e62c6df4c6d439535380b43b3bba7c372c813ea3e167f2bd4aef09b04cde"
+    },
+    "7-29": {
+      "phrase": "labored breathing",
+      "seconds": 1.859,
+      "rms_dbfs": -17.8,
+      "sha256": "2af949a4cae8166ef5a6d4b4a8d563312f7f5368354dbf33ff846d5b662186a0"
+    },
+    "7-30": {
+      "phrase": "hospice team",
+      "seconds": 1.889,
+      "rms_dbfs": -20.0,
+      "sha256": "de1a1a1dd76a6b930b5311a729ea5a274d18359a48af9bb800f00a9bb77b209a"
+    },
+    "8-1": {
+      "phrase": "human subject",
+      "seconds": 2.029,
+      "rms_dbfs": -18.6,
+      "sha256": "2341f150c14cb8ddde9be364cfe2d36ca5fbf758ef2364ee6b899e7dc2656c9d"
+    },
+    "8-2": {
+      "phrase": "biomedical research",
+      "seconds": 2.289,
+      "rms_dbfs": -20.2,
+      "sha256": "8f67468b7e68e75a4e3d7e7e386297be6e9dc71643e635aca5b37c1396aeb062"
+    },
+    "8-3": {
+      "phrase": "accepted therapy",
+      "seconds": 2.164,
+      "rms_dbfs": -21.3,
+      "sha256": "4b6a7dc7cb64008ab83ed28d25937583306aee41b9c3e23b520061b5ec6b00f6"
+    },
+    "8-4": {
+      "phrase": "formal protocol",
+      "seconds": 2.094,
+      "rms_dbfs": -19.0,
+      "sha256": "51aa087218d2cb2273dd7d6429e5b05f81acd7251f8c74d19569d0a5b2d85f42"
+    },
+    "8-5": {
+      "phrase": "principle of beneficence",
+      "seconds": 2.474,
+      "rms_dbfs": -18.9,
+      "sha256": "f707843ed43616ac89dc6807b8254f4c37130bdc16f2e061b1861fafedd5657e"
+    },
+    "8-6": {
+      "phrase": "principle of justice",
+      "seconds": 2.284,
+      "rms_dbfs": -19.3,
+      "sha256": "c033d6cc7a9282e74d3c21635856bb1e5461112c2f7a8d8b38e9ed0cfcf13d31"
+    },
+    "8-7": {
+      "phrase": "autonomous agent",
+      "seconds": 2.129,
+      "rms_dbfs": -18.8,
+      "sha256": "8b8c670f80768677ce78df63cd996f335514194289d113b60e263e06744123d0"
+    },
+    "8-8": {
+      "phrase": "diminished autonomy",
+      "seconds": 2.179,
+      "rms_dbfs": -18.3,
+      "sha256": "8a7651657a32427203d7639b106fa2b37553804832f0a54b6e8dc472dd2e68bb"
+    },
+    "8-9": {
+      "phrase": "be exposed to risk of harm",
+      "seconds": 2.659,
+      "rms_dbfs": -19.1,
+      "sha256": "b43e0b5200fc9da8bfd8c64ab06cc8f3eb7a79f8a15d30c5988243a88680d36c"
+    },
+    "8-10": {
+      "phrase": "Hippocratic Oath",
+      "seconds": 2.024,
+      "rms_dbfs": -22.6,
+      "sha256": "6bf7c7640b853d83be29fff37c8bc7a105de70fc044eef5703b04c4065a4091f"
+    },
+    "8-11": {
+      "phrase": "fairness in distribution",
+      "seconds": 2.454,
+      "rms_dbfs": -18.1,
+      "sha256": "6bd068a12c1e6bd073247ce51cfcd542a884c4a28af25174b258c11f4cc60a60"
+    },
+    "8-12": {
+      "phrase": "informed consent",
+      "seconds": 2.149,
+      "rms_dbfs": -18.2,
+      "sha256": "2ed21350cc2646c41934ba891ffa1d4a30205efac81c086353a6365b7f5a88ef"
+    },
+    "8-13": {
+      "phrase": "fair procedure and outcome",
+      "seconds": 2.624,
+      "rms_dbfs": -19.5,
+      "sha256": "6e6d9deaf224d53088e70efec1c12d5e63eb59157990bc9f69c4d20d94c208ed"
+    },
+    "8-14": {
+      "phrase": "operating table",
+      "seconds": 2.014,
+      "rms_dbfs": -18.4,
+      "sha256": "ba52eed149fee1c7585d6ffc016f38e2066843ebcd983956a7e328f1a463828d"
+    },
+    "8-15": {
+      "phrase": "ethical obligation",
+      "seconds": 2.244,
+      "rms_dbfs": -18.6,
+      "sha256": "4ed597e73a84f1672517df0cbbb77ac2141931398cc00816e9824f3bcd3e69a9"
+    },
+    "8-16": {
+      "phrase": "pediatric neurosurgeon",
+      "seconds": 2.659,
+      "rms_dbfs": -18.2,
+      "sha256": "38785ad7faa9ccbb5144792733a97af669d9b11dfdccc98965b124c17ee5153d"
+    },
+    "8-17": {
+      "phrase": "perform the surgery",
+      "seconds": 2.179,
+      "rms_dbfs": -19.3,
+      "sha256": "1f8360e8ae74f95082004f9ae53674bd4c5ccbe2f5e8f70cddc56dcf3a413b22"
+    },
+    "8-18": {
+      "phrase": "blood flow",
+      "seconds": 1.639,
+      "rms_dbfs": -21.3,
+      "sha256": "1979a292c6f81309afb9c9f63f400ea2217d879925b60094eb364951cb01af18"
+    },
+    "8-19": {
+      "phrase": "intensive care",
+      "seconds": 1.954,
+      "rms_dbfs": -18.8,
+      "sha256": "5cdcf7ec189b4a8a080ab18d6d5a9926719dcef9e5e889093ce6978c372f2a81"
+    },
+    "8-20": {
+      "phrase": "adoptive father",
+      "seconds": 2.074,
+      "rms_dbfs": -20.5,
+      "sha256": "2d7c1f5ddfac2e91848d304d5912ad1a21fb6dd82bea46c907e6d87e6b1be59a"
+    },
+    "8-21": {
+      "phrase": "biological father",
+      "seconds": 2.229,
+      "rms_dbfs": -19.8,
+      "sha256": "e758fa83925190dd4024179507da137b3a6e4a56bf42dd003e9fee56a635e483"
+    },
+    "8-22": {
+      "phrase": "psychological needs",
+      "seconds": 2.379,
+      "rms_dbfs": -19.4,
+      "sha256": "469f4e7b01e4835ec4b0a311cca7f1a544940d05dfa265985ed395242f5443f2"
+    },
+    "8-23": {
+      "phrase": "medical judgment",
+      "seconds": 1.979,
+      "rms_dbfs": -18.5,
+      "sha256": "d38a8037ff8af7ee97816c492ef25a952dcdda751fd475e7d573f593e4bd0ff4"
+    },
+    "8-24": {
+      "phrase": "occupational therapy",
+      "seconds": 2.284,
+      "rms_dbfs": -18.2,
+      "sha256": "db98c608b8c27e31c05ad6571156f4c8a51ac2e2c674ba9c6691cb4ab5fc6c56"
+    },
+    "8-25": {
+      "phrase": "contract meningitis",
+      "seconds": 2.514,
+      "rms_dbfs": -19.5,
+      "sha256": "c811ebfc7e3c505b24d130fd52688ae8fb7618dc6b4e2815709202eab4d4a4bb"
+    },
+    "8-26": {
+      "phrase": "die of a(n) infection",
+      "seconds": 2.149,
+      "rms_dbfs": -19.9,
+      "sha256": "741bec8b1dcce765ff1522be6f8a3a5f92257ecddc03ed58af528419887fad01"
+    },
+    "8-27": {
+      "phrase": "blood vessel",
+      "seconds": 1.754,
+      "rms_dbfs": -21.3,
+      "sha256": "12b4e02294f679b909fa3fef95f326ba4fea1e0588c2319c8c05a08801c70377"
+    },
+    "8-28": {
+      "phrase": "imbalance in circulation",
+      "seconds": 2.584,
+      "rms_dbfs": -18.7,
+      "sha256": "5f5cec0d22f32d4860a5c664e3737d0fc05dcb45f10fd68b9140810efe2158d1"
+    }
+  }
+}

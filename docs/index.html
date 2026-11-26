@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4f8ef">
+  <title>医学拼写</title>
+  <link rel="icon" type="image/png" href="doctor_icon.png">
+  <link rel="apple-touch-icon" href="doctor_icon.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #163a34;
+      --muted: #52695e;
+      --leaf: #bded66;
+      --forest: #164940;
+      --line: #d5e2d5;
+      --round: "Nunito", "HarmonyOS Sans", "Microsoft YaHei", sans-serif;
+      font: 16px/1.5 var(--round);
+      color: var(--ink);
+      background-color: #f4f8ef;
+    }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; }
+    .wrap { width: min(100%, 520px); margin: auto; padding: max(14px, env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom)); }
+    header, .between, .card-actions, summary, .hero-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    header { padding: 0 2px 14px; }
+    .brand { display: inline-flex; gap: 8px; align-items: center; font-weight: 850; font-size: 1.15rem; }
+    .brand-mark { width: 31px; height: 31px; display: grid; place-items: center; background: var(--leaf); border-radius: 10px; }
+    .brand-mark::after { content: ""; width: 10px; height: 18px; transform: rotate(38deg); border-radius: 16px; border: 2px solid var(--forest); background: linear-gradient(to bottom, white 49%, var(--forest) 50%); }
+    #date { color: #4f645a; font-size: .82rem; font-weight: 650; }
+    .hero { position: relative; overflow: hidden; isolation: isolate; color: white; background: var(--forest); border-radius: 24px; padding: 17px 21px 16px; }
+    .hero::before { content: ""; position: absolute; z-index: -1; width: 200px; height: 200px; border-radius: 50%; border: 1px solid #ffffff1b; box-shadow: 0 0 0 17px #ffffff06, 0 0 0 38px #ffffff06; right: -60px; top: -80px; }
+    h1 { margin: 0; color: #e4f6dc; font-size: .93rem; font-weight: 750; }
+    .scoreline { display: flex; gap: 5px; align-items: baseline; line-height: 1.13; margin: 4px 0 9px; font-variant-numeric: tabular-nums; }
+    #progress { font: 850 2.8rem/1.03 var(--round); letter-spacing: -.065em; }
+    #target { color: #d3e9d3; font-size: 1.1rem; font-weight: 720; }
+    .hero-footer { font-size: .77rem; color: #e2f1df; gap: 4px 10px; flex-wrap: wrap; }
+    #modeLabel { color: #d5e9d7; }
+    .hero img { position: absolute; right: 12px; top: 1px; width: 117px; height: 101px; object-fit: contain; pointer-events: none; }
+    .track { height: 9px; border-radius: 20px; margin: 8px 0 7px; overflow: hidden; background: #34675b; }
+    .bar { height: 100%; background: var(--leaf); box-shadow: inset 0 2px 0 #e1ffab; border-radius: inherit; transition: width .25s ease; }
+    .panel { background: #fff; border: 1px solid var(--line); border-radius: 19px; }
+    #card, #finish { margin: 12px 0; padding: 17px 18px; box-shadow: 0 3px 0 #e0e8da; }
+    .between { align-items: flex-start; }
+    #unit { display: inline-block; font: 760 .76rem/1.4 var(--round); color: #285846; background: #eef5dd; border-radius: 8px; padding: 6px 10px; }
+    .phrase { margin: 15px 0 0; font: 760 clamp(1.6rem, 7.7vw, 2.23rem)/1.24 var(--round); letter-spacing: -.035em; overflow-wrap: anywhere; }
+    .blank { display: inline-block; width: 2.4em; height: .60em; border-radius: 5px 5px 1px 1px; background: #e5f4c7; border-bottom: .10em solid #669237; vertical-align: -.015em; }
+    .meaning { font-weight: 690; font-size: 1.07rem; margin: 4px 0 15px; }
+    input, select, button { font: inherit; color: inherit; }
+    label { display: block; color: var(--muted); font-weight: 680; font-size: .81rem; margin: 11px 0 5px; }
+    input, select { width: 100%; max-width: 100%; height: 46px; border: 1.5px solid #bacdbc; border-radius: 11px; background: #fbfdf9; padding: 8px 12px; font-size: 1rem; }
+    input::placeholder { color: #69786c; }
+    input:focus, select:focus { border-color: #3d8054; }
+    :is(input, select, button, summary):focus-visible { outline: 3px solid #398462; outline-offset: 2px; }
+    button { min-height: 44px; padding: 9px 14px; background: var(--leaf); color: #214229; border: 1px solid #a0d451; border-radius: 12px; font-weight: 780; cursor: pointer; }
+    button:active { transform: translateY(2px); }
+    .full { width: 100%; }
+    .primary { box-shadow: 0 3px 0 #7da942; }
+    .primary:active { box-shadow: 0 1px 0 #7da942; }
+    #form .primary { margin-top: 10px; }
+    .answer-label { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+    .answer-label label { margin: 0; }
+    #listen { display: grid; place-items: center; flex: 0 0 44px; height: 44px; padding: 0; color: #285846; background: #eef5dd; border-color: #dce9c7; }
+    #listen[data-playing="true"] { color: white; background: var(--forest); border-color: var(--forest); }
+    .speaker { width: 24px; height: 24px; position: relative; }
+    .speaker::before { content: ""; position: absolute; top: 4px; left: 1px; width: 11px; height: 16px; background: currentColor; clip-path: polygon(0 32%, 35% 32%, 95% 0, 95% 100%, 35% 68%, 0 68%); }
+    .speaker::after, .speaker i { position: absolute; border: 2px solid transparent; border-right-color: currentColor; border-radius: 50%; }
+    .speaker::after { content: ""; inset: 2px 1px 2px 1px; }
+    .speaker i { inset: 5px 6px 5px 5px; }
+    #voiceStatus { margin: 3px 0 6px; font-size: .82rem; color: #823114; }
+    #voiceStatus:empty { display: none; }
+    .card-actions { gap: 12px; margin-top: 9px; }
+    .card-actions button, .subtle { background: transparent; border: 0; padding: 7px 4px; color: #4c675c; font-size: .86rem; }
+    .card-actions button::before { margin-right: .35em; font-weight: 900; }
+    #hint::before { content: "?"; display: inline-grid; place-items: center; width: 1.2em; height: 1.2em; border: 1.5px solid currentColor; border-radius: 50%; font: 780 .8rem/1 var(--round); }
+    #ban { color: #75532c; }
+    #ban::before { content: "✓"; }
+    #clearRound { font-size: .8rem; min-height: 44px; margin: -6px -3px -6px 0; }
+    .notice, #feedback { font-size: .88rem; line-height: 1.45; overflow-wrap: anywhere; }
+    .notice:not(:empty), #feedback:not(:empty) { padding: 9px 12px; border-radius: 10px; background: #e2f2d4; color: #275435; margin: 10px 0 0; }
+    .notice:empty, #feedback:empty { display: none; }
+    #feedback.err:not(:empty) { background: #fff0e4; color: #823114; }
+    #word[aria-invalid="true"] { border-color: #bd6039; }
+    #finish { padding: 23px 18px 20px; }
+    #finish h2 { margin: 0; font-size: 1.45rem; }
+    #finish .finish-mark { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; background: var(--leaf); color: var(--forest); font-size: 1.6rem; font-weight: 850; margin-bottom: 10px; }
+    #finishText, .meta { color: var(--muted); font-size: .86rem; }
+    details { margin-top: 9px; padding: 0 15px; scroll-margin-top: 10px; }
+    summary { justify-content: flex-start; font-size: .95rem; font-weight: 750; min-height: 53px; list-style: none; cursor: pointer; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: ""; width: 7px; height: 7px; margin: 0 3px 3px auto; border: solid #637769; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+    details[open] > summary::after { transform: rotate(225deg); margin-bottom: -4px; }
+    details[open] { padding-bottom: 16px; }
+    details[open] > summary { border-bottom: 1px solid var(--line); }
+    .icon { width: 28px; height: 28px; border-radius: 9px; display: inline-grid; place-items: center; background: #e5f3d0; }
+    .settings-icon { color: #396846; }
+    .settings-icon::before { content: ""; width: 14px; height: 14px; background: radial-gradient(circle at 4px 4px, currentColor 2.5px, transparent 3px), radial-gradient(circle at 10px 10px, currentColor 2.5px, transparent 3px), linear-gradient(currentColor,currentColor) center 3px / 14px 2px no-repeat, linear-gradient(currentColor,currentColor) center 9px / 14px 2px no-repeat; }
+    .book-icon { background: #ffecd5; color: #975e2d; }
+    .book-icon::before { content: ""; width: 11px; height: 13px; border: 2px solid currentColor; border-left-width: 4px; border-radius: 2px 4px 4px 2px; transform: rotate(-8deg); }
+    #libraryCount { font-size: .77rem; color: #715738; background: #f8efdf; border-radius: 7px; padding: 0 7px; }
+    .controls { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+    .btns { display: flex; gap: 8px; flex-wrap: wrap; }
+    .quiet { background: #edf3e9; border-color: #d3e1d0; }
+    #libraryList { list-style: none; margin: 0; padding: 0; }
+    #libraryList li { display: flex; gap: 8px; align-items: center; justify-content: space-between; border-top: 1px solid #e4ece0; padding: 10px 0; overflow-wrap: anywhere; }
+    #libraryList li > div { flex: 1; min-width: 0; }
+    #libraryList strong, #libraryList small { display: block; }
+    #libraryList small { color: var(--muted); }
+    #libraryList button { font-size: .78rem; }
+    .maker-credit { margin-top: 16px; text-align: center; font-size: .8125rem; color: var(--muted); }
+    @media(max-width: 345px) { .wrap { padding-inline: 11px; } #card { padding-inline: 14px; } .hero { padding-inline: 16px; } .hero img { width: 96px; } }
+    @media(max-height: 540px) and (max-width: 600px) { header { padding-bottom: 7px; } .hero { padding-block: 10px; } .hero img { height: 72px; } #progress { font-size: 2rem; } }
+    @media(prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <span class="brand"><i class="brand-mark" aria-hidden="true"></i>医学拼写</span>
+      <time id="date"></time>
+    </header>
+    <section class="hero" aria-labelledby="sessionTitle">
+      <h1 id="sessionTitle">今日拼写</h1>
+      <div class="scoreline" id="scoreline" role="progressbar" aria-label="本组练习进度" aria-valuemin="0"><strong id="progress">0</strong><span id="target"></span></div>
+      <img src="mascot.webp" alt="" width="117" height="101">
+      <div class="track" aria-hidden="true"><div id="bar" class="bar"></div></div>
+      <div class="hero-footer"><span id="dayCount"></span><span id="modeLabel"></span></div>
+    </section>
+    <p id="notice" class="notice" role="status"></p>
+    <section id="card" class="panel" aria-label="当前题目">
+      <div class="between"><small id="unit"></small><button type="button" class="subtle" id="clearRound" aria-controls="settings">清空本轮</button></div>
+      <div id="phrase" class="phrase" lang="en"></div>
+      <p id="zh" class="meaning"></p>
+      <form id="form" autocomplete="off">
+        <div class="answer-label">
+          <label for="word">填写缺少的单词</label>
+          <button id="listen" type="button" aria-label="播放完整英文词组" title="播放完整英文词组"><span class="speaker" aria-hidden="true"><i></i></span></button>
+        </div>
+        <p id="voiceStatus" role="status"></p>
+        <input id="word" placeholder="输入英文" type="text" lang="en" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="done">
+        <p id="feedback" class="msg" aria-live="polite"></p>
+        <button class="full primary" type="submit">核对拼写</button>
+      </form>
+      <div class="card-actions">
+        <button id="hint" class="link" type="button">查看提示</button>
+        <button id="ban" type="button" aria-label="斩，将这道题移入已斩词库">斩 · 已熟悉</button>
+      </div>
+    </section>
+    <section id="finish" class="panel" hidden>
+      <div class="finish-mark" aria-hidden="true">✓</div><h2 id="finishTitle"></h2>
+      <p id="finishText"></p>
+      <button id="more" class="full primary" type="button">再练一组</button>
+      <button id="clearFinished" type="button" class="subtle" aria-controls="settings">换个单元练习</button>
+    </section>
+    <details class="panel" id="settings">
+      <summary><span class="icon settings-icon" aria-hidden="true"></span>练习设置</summary>
+      <label for="scope">练习范围</label>
+      <select id="scope"><option value="0">全部八个单元</option></select>
+      <div class="controls">
+        <div>
+          <label for="goal">每组目标（题）</label>
+          <input type="number" inputmode="numeric" id="goal" min="1" step="1" required>
+        </div>
+        <div>
+          <label for="mode">出题顺序</label>
+          <select id="mode">
+            <option value="seq">按教材顺序</option>
+            <option value="mix">打乱顺序</option>
+          </select>
+        </div>
+      </div>
+      <p class="meta settings-note">清空本轮后，会从所选范围重新出题。今日答对数和已斩词库会保留。</p>
+      <div class="btns">
+        <button id="newRound" type="button">清空本轮，开始练习</button>
+        <button id="apply" class="quiet" type="button">保存设置</button>
+      </div>
+    </details>
+    <details class="panel" id="library">
+      <summary><span class="icon book-icon" aria-hidden="true"></span>已斩词库 <span id="libraryCount">0</span></summary>
+      <label for="librarySearch">查找已斩词汇</label>
+      <input id="librarySearch" type="search" placeholder="输入英文或中文释义" autocomplete="off" spellcheck="false">
+      <p id="libraryEmpty" class="meta">还没有已斩词汇。</p>
+      <ul id="libraryList"></ul>
+    </details>
+    <footer class="maker-credit">由DSM制作</footer>
+  </main>
+<script id="bank" type="application/json">[{"id": "1-1", "unit": 1, "no": 1, "prompt": "_ overload", "zh": "神经超载", "answers": ["neuron"]}, {"id": "1-2", "unit": 1, "no": 2, "prompt": "typical office _", "zh": "典型的诊所就诊", "answers": ["visit"]}, {"id": "1-3", "unit": 1, "no": 3, "prompt": "DEXA _", "zh": "双能X线吸收扫描", "answers": ["scan"]}, {"id": "1-4", "unit": 1, "no": 4, "prompt": "medical _", "zh": "行医", "answers": ["practice"]}, {"id": "1-5", "unit": 1, "no": 5, "prompt": "health _", "zh": "健康保持", "answers": ["maintenance"]}, {"id": "1-6", "unit": 1, "no": 6, "prompt": "PAP _", "zh": "巴氏涂片试验", "answers": ["smear"]}, {"id": "1-7", "unit": 1, "no": 7, "prompt": "_ report", "zh": "乳房X线检查报告", "answers": ["mammogram"]}, {"id": "1-8", "unit": 1, "no": 8, "prompt": "refill a(n) _", "zh": "根据处方再配药", "answers": ["prescription"]}, {"id": "1-9", "unit": 1, "no": 9, "prompt": "_ examination", "zh": "体检", "answers": ["physical"]}, {"id": "1-10", "unit": 1, "no": 10, "prompt": "perpetual _", "zh": "永久的恐慌", "answers": ["panic"]}, {"id": "1-11", "unit": 1, "no": 11, "prompt": "_ physician", "zh": "执业医生", "answers": ["practicing"]}, {"id": "1-12", "unit": 1, "no": 12, "prompt": "paracetamol _", "zh": "扑热息痛药片", "answers": ["tablet"]}, {"id": "1-13", "unit": 1, "no": 13, "prompt": "_ cap", "zh": "防孩子打开的盖子", "answers": ["Childproof"]}, {"id": "1-14", "unit": 1, "no": 14, "prompt": "_ clinical trial", "zh": "随机临床试验", "answers": ["randomized"]}, {"id": "1-15", "unit": 1, "no": 15, "prompt": "random _", "zh": "随机分配", "answers": ["allocation"]}, {"id": "1-16", "unit": 1, "no": 16, "prompt": "patient _", "zh": "病人的预后", "answers": ["prognosis"]}, {"id": "1-17", "unit": 1, "no": 17, "prompt": "_ group", "zh": "对照组", "answers": ["control"]}, {"id": "1-18", "unit": 1, "no": 18, "prompt": "a 10-year _ study", "zh": "10年的跟踪研究", "answers": ["follow-up"]}, {"id": "1-19", "unit": 1, "no": 19, "prompt": "medical _", "zh": "内科病房", "answers": ["Ward"]}, {"id": "1-20", "unit": 1, "no": 20, "prompt": "infectious _", "zh": "传染性肝炎", "answers": ["hepatitis"]}, {"id": "1-21", "unit": 1, "no": 21, "prompt": "severe _", "zh": "身体严重不适", "answers": ["malaise"]}, {"id": "1-22", "unit": 1, "no": 22, "prompt": "bilirubin _", "zh": "胆红素代谢", "answers": ["metabolism"]}, {"id": "1-23", "unit": 1, "no": 23, "prompt": "permanent _ damage", "zh": "永久性肝损伤", "answers": ["liver"]}, {"id": "1-24", "unit": 1, "no": 24, "prompt": "exacerbate _", "zh": "加重病理生理状况", "answers": ["pathophysiology"]}, {"id": "1-25", "unit": 1, "no": 25, "prompt": "medical _", "zh": "医学文献", "answers": ["Literature"]}, {"id": "1-26", "unit": 1, "no": 26, "prompt": "clinical _", "zh": "临床调查", "answers": ["investigation"]}, {"id": "1-27", "unit": 1, "no": 27, "prompt": "_ of relapse", "zh": "复发率", "answers": ["incidence"]}, {"id": "1-28", "unit": 1, "no": 28, "prompt": "clinical _", "zh": "临床流行病学", "answers": ["epidemiology"]}, {"id": "1-29", "unit": 1, "no": 29, "prompt": "strict _", "zh": "严格的卧床休息", "answers": ["bed rest"]}, {"id": "1-30", "unit": 1, "no": 30, "prompt": "hospital _", "zh": "住院", "answers": ["stay"]}, {"id": "1-31", "unit": 1, "no": 31, "prompt": "recurrent _", "zh": "反复发作的黄疸", "answers": ["Jaundice"]}, {"id": "1-32", "unit": 1, "no": 32, "prompt": "clinical _", "zh": "临床病程", "answers": ["course"]}, {"id": "1-33", "unit": 1, "no": 33, "prompt": "_ morphine", "zh": "静脉注射吗啡", "answers": ["intravenous"]}, {"id": "1-34", "unit": 1, "no": 34, "prompt": "_ blood pressure", "zh": "舒张压", "answers": ["diastolic"]}, {"id": "1-35", "unit": 1, "no": 35, "prompt": "brain _", "zh": "脑血流灌注", "answers": ["perfusion"]}, {"id": "1-36", "unit": 1, "no": 36, "prompt": "_ care", "zh": "初级保健", "answers": ["primary"]}, {"id": "1-37", "unit": 1, "no": 37, "prompt": "aorto-coronary arterial _", "zh": "主动脉冠状动脉旁路", "answers": ["Bypass"]}, {"id": "1-38", "unit": 1, "no": 38, "prompt": "_ treatment decision", "zh": "知情治疗决定", "answers": ["informed"]}, {"id": "2-1", "unit": 2, "no": 1, "prompt": "_ disease", "zh": "再现疾病", "answers": ["re-emerging", "re-emergent", "resurgent"]}, {"id": "2-2", "unit": 2, "no": 2, "prompt": "new flu _", "zh": "新流感变种", "answers": ["strain"]}, {"id": "2-3", "unit": 2, "no": 3, "prompt": "antibiotic and _", "zh": "抗生素和疫苗", "answers": ["vaccine"]}, {"id": "2-4", "unit": 2, "no": 4, "prompt": "_ fever", "zh": "猩红热", "answers": ["scarlet"]}, {"id": "2-5", "unit": 2, "no": 5, "prompt": "_ disease", "zh": "传染病", "answers": ["infectious"]}, {"id": "2-6", "unit": 2, "no": 6, "prompt": "_ disease", "zh": "新现疾病", "answers": ["emerging", "emergent"]}, {"id": "2-7", "unit": 2, "no": 7, "prompt": "_ strategy", "zh": "预防策略", "answers": ["prevention"]}, {"id": "2-8", "unit": 2, "no": 8, "prompt": "bubonic _", "zh": "腺鼠疫", "answers": ["plague"]}, {"id": "2-9", "unit": 2, "no": 9, "prompt": "_ microbe", "zh": "病原微生物", "answers": ["pathogenic"]}, {"id": "2-10", "unit": 2, "no": 10, "prompt": "drug _", "zh": "抗药性", "answers": ["resistance"]}, {"id": "2-11", "unit": 2, "no": 11, "prompt": "_ of antibiotic therapy", "zh": "抗生素治疗疗程", "answers": ["course"]}, {"id": "2-12", "unit": 2, "no": 12, "prompt": "level of _", "zh": "毒性水平", "answers": ["virulence"]}, {"id": "2-13", "unit": 2, "no": 13, "prompt": "flu _", "zh": "流感大流行", "answers": ["pandemic"]}, {"id": "2-14", "unit": 2, "no": 14, "prompt": "surface _", "zh": "表面抗原", "answers": ["antigen"]}, {"id": "2-15", "unit": 2, "no": 15, "prompt": "_ system", "zh": "免疫系统", "answers": ["immune"]}, {"id": "2-16", "unit": 2, "no": 16, "prompt": "_ shift", "zh": "基因改变", "answers": ["genetic"]}, {"id": "2-17", "unit": 2, "no": 17, "prompt": "public health _", "zh": "公共卫生基础设施", "answers": ["infrastructure"]}, {"id": "2-18", "unit": 2, "no": 18, "prompt": "malaria _", "zh": "疟疾病例", "answers": ["case"]}, {"id": "2-19", "unit": 2, "no": 19, "prompt": "_ flu", "zh": "猪流感", "answers": ["swine"]}, {"id": "2-20", "unit": 2, "no": 20, "prompt": "_ bacillus", "zh": "结核杆菌", "answers": ["tuberculosis"]}, {"id": "2-21", "unit": 2, "no": 21, "prompt": "level of _", "zh": "发病率水平", "answers": ["morbidity", "incidence"]}, {"id": "2-22", "unit": 2, "no": 22, "prompt": "health _", "zh": "保健专业人士", "answers": ["professional"]}, {"id": "2-23", "unit": 2, "no": 23, "prompt": "_ tuberculosis", "zh": "潜伏结核病", "answers": ["latent"]}, {"id": "2-24", "unit": 2, "no": 24, "prompt": "_ skin test", "zh": "结核素皮试", "answers": ["tuberculin"]}, {"id": "2-25", "unit": 2, "no": 25, "prompt": "_ program", "zh": "筛查计划", "answers": ["screening"]}, {"id": "2-26", "unit": 2, "no": 26, "prompt": "_ gamma test", "zh": "γ 干扰素测试", "answers": ["interferon"]}, {"id": "2-27", "unit": 2, "no": 27, "prompt": "drug _", "zh": "药物毒性", "answers": ["toxicity"]}, {"id": "2-28", "unit": 2, "no": 28, "prompt": "_ disease", "zh": "可治愈的病", "answers": ["curable"]}, {"id": "3-1", "unit": 3, "no": 1, "prompt": "surge of _", "zh": "肾上腺素激增", "answers": ["adrenaline"]}, {"id": "3-2", "unit": 3, "no": 2, "prompt": "internal medicine _", "zh": "内科实习期", "answers": ["residency"]}, {"id": "3-3", "unit": 3, "no": 3, "prompt": "_ disease", "zh": "自身免疫疾病", "answers": ["autoimmune"]}, {"id": "3-4", "unit": 3, "no": 4, "prompt": "loss of _", "zh": "丧失耐力", "answers": ["stamina"]}, {"id": "3-5", "unit": 3, "no": 5, "prompt": "_ weakness", "zh": "短暂的虚弱", "answers": ["transient"]}, {"id": "3-6", "unit": 3, "no": 6, "prompt": "become _", "zh": "卧床不起", "answers": ["bedridden"]}, {"id": "3-7", "unit": 3, "no": 7, "prompt": "building _", "zh": "基本构件", "answers": ["block"]}, {"id": "3-8", "unit": 3, "no": 8, "prompt": "animal _", "zh": "动物模型", "answers": ["model"]}, {"id": "3-9", "unit": 3, "no": 9, "prompt": "slow _", "zh": "减缓神经退化", "answers": ["neurodegeneration"]}, {"id": "3-10", "unit": 3, "no": 10, "prompt": "_ toxin", "zh": "排除毒素", "answers": ["excrete"]}, {"id": "3-11", "unit": 3, "no": 11, "prompt": "_ nutrition", "zh": "优化营养", "answers": ["optimize"]}, {"id": "3-12", "unit": 3, "no": 12, "prompt": "food _", "zh": "食物过敏", "answers": ["allergy"]}, {"id": "3-13", "unit": 3, "no": 13, "prompt": "toxic _", "zh": "毒素载量", "answers": ["load"]}, {"id": "3-14", "unit": 3, "no": 14, "prompt": "risk of _", "zh": "复发危险", "answers": ["relapse"]}, {"id": "3-15", "unit": 3, "no": 15, "prompt": "physician _", "zh": "医生自我实验", "answers": ["self-experimentation"]}, {"id": "3-16", "unit": 3, "no": 16, "prompt": "clinical _", "zh": "临床试验", "answers": ["trial"]}, {"id": "3-17", "unit": 3, "no": 17, "prompt": "_ electrical stimulation", "zh": "神经肌肉电刺激", "answers": ["neuromuscular"]}, {"id": "3-18", "unit": 3, "no": 18, "prompt": "physical _", "zh": "理疗师", "answers": ["therapist"]}, {"id": "3-19", "unit": 3, "no": 19, "prompt": "impact of _", "zh": "微量营养素的影响", "answers": ["micronutrient"]}, {"id": "3-20", "unit": 3, "no": 20, "prompt": "brain _", "zh": "脑功能", "answers": ["function"]}, {"id": "3-21", "unit": 3, "no": 21, "prompt": "_ acid", "zh": "氨基酸", "answers": ["amino"]}, {"id": "3-22", "unit": 3, "no": 22, "prompt": "medical _", "zh": "医学文献", "answers": ["literature"]}, {"id": "3-23", "unit": 3, "no": 23, "prompt": "registered _", "zh": "注册营养师", "answers": ["dietician"]}, {"id": "3-24", "unit": 3, "no": 24, "prompt": "_ and psychological symptom", "zh": "神经和心理症状", "answers": ["neurological"]}, {"id": "3-25", "unit": 3, "no": 25, "prompt": "abdominal _", "zh": "腹部不适", "answers": ["complaints"]}, {"id": "3-26", "unit": 3, "no": 26, "prompt": "pesticide and _", "zh": "杀虫剂和除草剂", "answers": ["herbicide"]}, {"id": "3-27", "unit": 3, "no": 27, "prompt": "_ medicine", "zh": "行医", "answers": ["practice"]}, {"id": "3-28", "unit": 3, "no": 28, "prompt": "blood _", "zh": "血压", "answers": ["pressure"]}, {"id": "3-29", "unit": 3, "no": 29, "prompt": "IRB-approved _", "zh": "机构审查委员会批准的方案", "answers": ["protocol"]}, {"id": "3-30", "unit": 3, "no": 30, "prompt": "secondary _ multiple sclerosis", "zh": "继发进展型多发性硬化", "answers": ["progressive"]}, {"id": "3-31", "unit": 3, "no": 31, "prompt": "traditional _", "zh": "传统领域", "answers": ["domain"]}, {"id": "3-32", "unit": 3, "no": 32, "prompt": "social _", "zh": "社交媒体", "answers": ["media"]}, {"id": "3-33", "unit": 3, "no": 33, "prompt": "increasing _", "zh": "越来越无处不在", "answers": ["ubiquity"]}, {"id": "3-34", "unit": 3, "no": 34, "prompt": "electronic medical _", "zh": "电子病历", "answers": ["record"]}, {"id": "3-35", "unit": 3, "no": 35, "prompt": "_ medication", "zh": "非处方药", "answers": ["over-the-counter"]}, {"id": "3-36", "unit": 3, "no": 36, "prompt": "real-time _", "zh": "实时监控", "answers": ["surveillance"]}, {"id": "3-37", "unit": 3, "no": 37, "prompt": "closely _", "zh": "紧密相关", "answers": ["correlated"]}, {"id": "3-38", "unit": 3, "no": 38, "prompt": "_ conjunctivitis", "zh": "过敏性结膜炎", "answers": ["allergic"]}, {"id": "3-39", "unit": 3, "no": 39, "prompt": "_ term", "zh": "搜索词", "answers": ["search"]}, {"id": "3-40", "unit": 3, "no": 40, "prompt": "_ of disease", "zh": "疾病的季节性", "answers": ["seasonality"]}, {"id": "3-41", "unit": 3, "no": 41, "prompt": "severe acute _ syndrome", "zh": "重症急性呼吸综合征", "answers": ["respiratory"]}, {"id": "3-42", "unit": 3, "no": 42, "prompt": "crude _", "zh": "简陋算法", "answers": ["algorithm"]}, {"id": "3-43", "unit": 3, "no": 43, "prompt": "_ attack", "zh": "生物恐怖袭击", "answers": ["bioterrorist"]}, {"id": "3-44", "unit": 3, "no": 44, "prompt": "_ control", "zh": "蚊虫防控", "answers": ["mosquito"]}, {"id": "4-1", "unit": 4, "no": 1, "prompt": "_ medicine", "zh": "补充医学", "answers": ["complementary"]}, {"id": "4-2", "unit": 4, "no": 2, "prompt": "_ medicine", "zh": "替代医学", "answers": ["alternative"]}, {"id": "4-3", "unit": 4, "no": 3, "prompt": "medical _", "zh": "医疗模式", "answers": ["paradigm"]}, {"id": "4-4", "unit": 4, "no": 4, "prompt": "_ and herb", "zh": "针刺和草药", "answers": ["acupuncture"]}, {"id": "4-5", "unit": 4, "no": 5, "prompt": "_ treatment", "zh": "辅助治疗", "answers": ["adjunct"]}, {"id": "4-6", "unit": 4, "no": 6, "prompt": "_ and vomiting", "zh": "恶心和呕吐", "answers": ["nausea"]}, {"id": "4-7", "unit": 4, "no": 7, "prompt": "_ dental pain", "zh": "术后牙痛", "answers": ["post-operative"]}, {"id": "4-8", "unit": 4, "no": 8, "prompt": "_ trial", "zh": "临床试验", "answers": ["clinical"]}, {"id": "4-9", "unit": 4, "no": 9, "prompt": "_ therapy", "zh": "物理疗法；理疗", "answers": ["physical"]}, {"id": "4-10", "unit": 4, "no": 10, "prompt": "_ modality", "zh": "治疗方法", "answers": ["therapeutic"]}, {"id": "4-11", "unit": 4, "no": 11, "prompt": "therapeutic _", "zh": "治疗干预", "answers": ["intervention"]}, {"id": "4-12", "unit": 4, "no": 12, "prompt": "research _", "zh": "研究设计", "answers": ["design"]}, {"id": "4-13", "unit": 4, "no": 13, "prompt": "magnetic _", "zh": "磁共振", "answers": ["resonance"]}, {"id": "4-14", "unit": 4, "no": 14, "prompt": "positron _ tomography", "zh": "正电子发射体层摄影〔术〕", "answers": ["emission"]}, {"id": "4-15", "unit": 4, "no": 15, "prompt": "_ effect", "zh": "止痛效果", "answers": ["analgesia"]}, {"id": "4-16", "unit": 4, "no": 16, "prompt": "biomedical _", "zh": "生物医学界", "answers": ["establishment"]}, {"id": "4-17", "unit": 4, "no": 17, "prompt": "_ unit", "zh": "康复中心", "answers": ["rehabilitation"]}, {"id": "4-18", "unit": 4, "no": 18, "prompt": "therapeutic _", "zh": "治疗策略", "answers": ["strategy"]}, {"id": "4-19", "unit": 4, "no": 19, "prompt": "herbal _", "zh": "草药配方", "answers": ["formula"]}, {"id": "4-20", "unit": 4, "no": 20, "prompt": "a wide _ of complications", "zh": "各式各样的并发症", "answers": ["array"]}, {"id": "4-21", "unit": 4, "no": 21, "prompt": "_ East-West medicine", "zh": "中西医结合", "answers": ["integrative"]}, {"id": "4-22", "unit": 4, "no": 22, "prompt": "_ abdominal pain", "zh": "急性腹痛", "answers": ["acute"]}, {"id": "4-23", "unit": 4, "no": 23, "prompt": "_ medicine", "zh": "施药；用药", "answers": ["administer"]}, {"id": "4-24", "unit": 4, "no": 24, "prompt": "surgical _", "zh": "外科手术", "answers": ["procedure"]}, {"id": "4-25", "unit": 4, "no": 25, "prompt": "scientific _", "zh": "科学评估", "answers": ["evaluation"]}, {"id": "4-26", "unit": 4, "no": 26, "prompt": "_ statistics", "zh": "患病率统计", "answers": ["prevalence"]}, {"id": "4-27", "unit": 4, "no": 27, "prompt": "_ mechanism", "zh": "合理的机制", "answers": ["plausible"]}, {"id": "4-28", "unit": 4, "no": 28, "prompt": "_ therapy", "zh": "传统疗法", "answers": ["conventional"]}, {"id": "4-29", "unit": 4, "no": 29, "prompt": "_ model of care", "zh": "循证医疗模式", "answers": ["evidence-based"]}, {"id": "4-30", "unit": 4, "no": 30, "prompt": "stress _", "zh": "压力处理", "answers": ["management"]}, {"id": "4-31", "unit": 4, "no": 31, "prompt": "_ nervous system", "zh": "周围神经系统", "answers": ["peripheral"]}, {"id": "4-32", "unit": 4, "no": 32, "prompt": "physiologic _", "zh": "生理机制", "answers": ["mechanism"]}, {"id": "4-33", "unit": 4, "no": 33, "prompt": "mechanistic and _ study", "zh": "机制和还原式研究", "answers": ["reductionistic"]}, {"id": "4-34", "unit": 4, "no": 34, "prompt": "_ research", "zh": "效益研究", "answers": ["cost-effectiveness"]}, {"id": "4-35", "unit": 4, "no": 35, "prompt": "clinical _", "zh": "临床结果", "answers": ["outcome"]}, {"id": "4-36", "unit": 4, "no": 36, "prompt": "_ and clinical study", "zh": "临床前及临床研究", "answers": ["preclinical"]}, {"id": "5-1", "unit": 5, "no": 1, "prompt": "_ of chronic disease", "zh": "慢性疾病的发病率", "answers": ["incidence"]}, {"id": "5-2", "unit": 5, "no": 2, "prompt": "_ of chronic disease", "zh": "慢性疾病的患病率", "answers": ["prevalence"]}, {"id": "5-3", "unit": 5, "no": 3, "prompt": "_ disease", "zh": "代谢性疾病", "answers": ["metabolic"]}, {"id": "5-4", "unit": 5, "no": 4, "prompt": "optimal _ dosage", "zh": "最佳治疗剂量", "answers": ["therapeutic"]}, {"id": "5-5", "unit": 5, "no": 5, "prompt": "unhealthy living _", "zh": "不健康的生活表型", "answers": ["phenotype"]}, {"id": "5-6", "unit": 5, "no": 6, "prompt": "physical _", "zh": "体能活动不足", "answers": ["inactivity"]}, {"id": "5-7", "unit": 5, "no": 7, "prompt": "_ prevention", "zh": "初级预防", "answers": ["primary"]}, {"id": "5-8", "unit": 5, "no": 8, "prompt": "_ medication", "zh": "处方药", "answers": ["prescription"]}, {"id": "5-9", "unit": 5, "no": 9, "prompt": "_ of disease", "zh": "疾病的缓解", "answers": ["alleviation"]}, {"id": "5-10", "unit": 5, "no": 10, "prompt": "_ medicine", "zh": "精准医学", "answers": ["precision"]}, {"id": "5-11", "unit": 5, "no": 11, "prompt": "_ lifestyle", "zh": "久坐不动的生活方式", "answers": ["sedentary"]}, {"id": "5-12", "unit": 5, "no": 12, "prompt": "_ teeth", "zh": "蛀牙", "answers": ["decaying"]}, {"id": "5-13", "unit": 5, "no": 13, "prompt": "_ professor", "zh": "营养教授", "answers": ["nutrition"]}, {"id": "5-14", "unit": 5, "no": 14, "prompt": "burgeoning _", "zh": "迅速膨胀的腰围", "answers": ["waistline"]}, {"id": "5-15", "unit": 5, "no": 15, "prompt": "_ water", "zh": "瓶装水", "answers": ["bottled"]}, {"id": "5-16", "unit": 5, "no": 16, "prompt": "caloric _", "zh": "热量摄入", "answers": ["intake"]}, {"id": "5-17", "unit": 5, "no": 17, "prompt": "curb _", "zh": "节制食欲", "answers": ["appetite"]}, {"id": "5-18", "unit": 5, "no": 18, "prompt": "grain and _", "zh": "谷物和蛋白质", "answers": ["protein"]}, {"id": "5-19", "unit": 5, "no": 19, "prompt": "_ of life", "zh": "生活质量", "answers": ["quality"]}, {"id": "6-1", "unit": 6, "no": 1, "prompt": "_ home", "zh": "养老院；疗养院", "answers": ["nursing"]}, {"id": "6-2", "unit": 6, "no": 2, "prompt": "_ care", "zh": "善终医护", "answers": ["hospice"]}, {"id": "6-3", "unit": 6, "no": 3, "prompt": "congestive heart _", "zh": "充血性心力衰竭", "answers": ["failure"]}, {"id": "6-4", "unit": 6, "no": 4, "prompt": "available _", "zh": "24小时随叫随到", "answers": ["around the clock"]}, {"id": "6-5", "unit": 6, "no": 5, "prompt": "_ care unit", "zh": "冠心病监护病房", "answers": ["coronary"]}, {"id": "6-6", "unit": 6, "no": 6, "prompt": "_ to treatment", "zh": "对治疗有反应", "answers": ["respond"]}, {"id": "6-7", "unit": 6, "no": 7, "prompt": "skilled nursing _", "zh": "专业护理机构", "answers": ["facility"]}, {"id": "6-8", "unit": 6, "no": 8, "prompt": "_ care", "zh": "生命终末期护理", "answers": ["end-of-life"]}, {"id": "6-9", "unit": 6, "no": 9, "prompt": "_ care", "zh": "舒适护理", "answers": ["comfort"]}, {"id": "6-10", "unit": 6, "no": 10, "prompt": "hospital _ planner", "zh": "出院计划专员", "answers": ["discharge"]}, {"id": "6-11", "unit": 6, "no": 11, "prompt": "symptom _", "zh": "症状护理", "answers": ["care"]}, {"id": "6-12", "unit": 6, "no": 12, "prompt": "_ care", "zh": "姑息疗法", "answers": ["palliative"]}, {"id": "6-13", "unit": 6, "no": 13, "prompt": "_ illness", "zh": "绝症", "answers": ["fatal"]}, {"id": "6-14", "unit": 6, "no": 14, "prompt": "chronic obstructive _ disease", "zh": "慢性阻塞性肺病", "answers": ["pulmonary"]}, {"id": "6-15", "unit": 6, "no": 15, "prompt": "_ treatment", "zh": "实验性治疗", "answers": ["experimental"]}, {"id": "6-16", "unit": 6, "no": 16, "prompt": "spiritual _", "zh": "精神顾问", "answers": ["advisor"]}, {"id": "6-17", "unit": 6, "no": 17, "prompt": "_ all treatment", "zh": "终止所有治疗", "answers": ["discontinue"]}, {"id": "6-18", "unit": 6, "no": 18, "prompt": "go through _", "zh": "经历透析", "answers": ["dialysis"]}, {"id": "6-19", "unit": 6, "no": 19, "prompt": "PAP _", "zh": "巴氏涂片试验", "answers": ["smear"]}, {"id": "6-20", "unit": 6, "no": 20, "prompt": "patient-_ relationship", "zh": "医患关系", "answers": ["provider"]}, {"id": "6-21", "unit": 6, "no": 21, "prompt": "provide _", "zh": "提供惯常医护", "answers": ["care-as-usual"]}, {"id": "6-22", "unit": 6, "no": 22, "prompt": "_ examination", "zh": "预防性检查", "answers": ["preventive"]}, {"id": "6-23", "unit": 6, "no": 23, "prompt": "off the _ path", "zh": "离开熟路；另辟蹊径", "answers": ["beaten"]}, {"id": "6-24", "unit": 6, "no": 24, "prompt": "_ into a shape", "zh": "塑形", "answers": ["mold"]}, {"id": "6-25", "unit": 6, "no": 25, "prompt": "_ a prescription", "zh": "照旧处方再开药", "answers": ["renew", "refill"]}, {"id": "7-1", "unit": 7, "no": 1, "prompt": "nursing _", "zh": "护士站", "answers": ["station"]}, {"id": "7-2", "unit": 7, "no": 2, "prompt": "_ machine", "zh": "呼吸机", "answers": ["life-support"]}, {"id": "7-3", "unit": 7, "no": 3, "prompt": "comfort _", "zh": "舒适护理措施", "answers": ["measure"]}, {"id": "7-4", "unit": 7, "no": 4, "prompt": "_ treatment", "zh": "停止治疗", "answers": ["withdraw"]}, {"id": "7-5", "unit": 7, "no": 5, "prompt": "_ decision-making process", "zh": "家长式决策程序", "answers": ["paternalistic"]}, {"id": "7-6", "unit": 7, "no": 6, "prompt": "patient _", "zh": "病人授权", "answers": ["empowerment"]}, {"id": "7-7", "unit": 7, "no": 7, "prompt": "medical _", "zh": "医学伦理学家", "answers": ["ethicist"]}, {"id": "7-8", "unit": 7, "no": 8, "prompt": "ethical _", "zh": "伦理准则", "answers": ["principle"]}, {"id": "7-9", "unit": 7, "no": 9, "prompt": "clinical _", "zh": "临床理念", "answers": ["ideal"]}, {"id": "7-10", "unit": 7, "no": 10, "prompt": "_ care", "zh": "以病人为中心的护理", "answers": ["patient-centered"]}, {"id": "7-11", "unit": 7, "no": 11, "prompt": "patient _", "zh": "病人自主权", "answers": ["autonomy"]}, {"id": "7-12", "unit": 7, "no": 12, "prompt": "treatment _", "zh": "治疗选择", "answers": ["option"]}, {"id": "7-13", "unit": 7, "no": 13, "prompt": "_ purview", "zh": "专属领域", "answers": ["exclusive"]}, {"id": "7-14", "unit": 7, "no": 14, "prompt": "_ decision", "zh": "紧急状况下做的决定", "answers": ["emergency"]}, {"id": "7-15", "unit": 7, "no": 15, "prompt": "physician _", "zh": "对医生的限制", "answers": ["restraint"]}, {"id": "7-16", "unit": 7, "no": 16, "prompt": "_ and confusion", "zh": "焦虑与困惑", "answers": ["anxiety"]}, {"id": "7-17", "unit": 7, "no": 17, "prompt": "ethical _", "zh": "违背伦理", "answers": ["transgression"]}, {"id": "7-18", "unit": 7, "no": 18, "prompt": "family _", "zh": "家庭医疗", "answers": ["practice"]}, {"id": "7-19", "unit": 7, "no": 19, "prompt": "widespread _", "zh": "广泛转移", "answers": ["metastases"]}, {"id": "7-20", "unit": 7, "no": 20, "prompt": "_ treatment", "zh": "积极治疗", "answers": ["aggressive"]}, {"id": "7-21", "unit": 7, "no": 21, "prompt": "_ lesion", "zh": "原发病灶", "answers": ["primary"]}, {"id": "7-22", "unit": 7, "no": 22, "prompt": "recommend _", "zh": "建议随访", "answers": ["follow-up"]}, {"id": "7-23", "unit": 7, "no": 23, "prompt": "electronic _", "zh": "电子病历", "answers": ["record"]}, {"id": "7-24", "unit": 7, "no": 24, "prompt": "pulmonary _", "zh": "肺栓塞", "answers": ["emboli"]}, {"id": "7-25", "unit": 7, "no": 25, "prompt": "computerized _", "zh": "CT，计算机断层扫描", "answers": ["tomography"]}, {"id": "7-26", "unit": 7, "no": 26, "prompt": "bilateral _", "zh": "双侧浸润", "answers": ["infiltrates"]}, {"id": "7-27", "unit": 7, "no": 27, "prompt": "_ X-ray", "zh": "X线胸片", "answers": ["chest"]}, {"id": "7-28", "unit": 7, "no": 28, "prompt": "left _ pneumonia", "zh": "左肺下叶肺炎", "answers": ["lower-lobe"]}, {"id": "7-29", "unit": 7, "no": 29, "prompt": "_ breathing", "zh": "呼吸困难", "answers": ["labored"]}, {"id": "7-30", "unit": 7, "no": 30, "prompt": "hospice _", "zh": "善终医护团队", "answers": ["team"]}, {"id": "8-1", "unit": 8, "no": 1, "prompt": "human _", "zh": "研究中的人类受试者", "answers": ["subject"]}, {"id": "8-2", "unit": 8, "no": 2, "prompt": "_ research", "zh": "生物医学研究", "answers": ["biomedical"]}, {"id": "8-3", "unit": 8, "no": 3, "prompt": "accepted _", "zh": "公认的治疗", "answers": ["therapy"]}, {"id": "8-4", "unit": 8, "no": 4, "prompt": "formal _", "zh": "正式方案", "answers": ["protocol"]}, {"id": "8-5", "unit": 8, "no": 5, "prompt": "principle of _", "zh": "善行原则", "answers": ["beneficence"]}, {"id": "8-6", "unit": 8, "no": 6, "prompt": "principle of _", "zh": "公正原则", "answers": ["justice"]}, {"id": "8-7", "unit": 8, "no": 7, "prompt": "_ agent", "zh": "有自主能力的行为者", "answers": ["autonomous"]}, {"id": "8-8", "unit": 8, "no": 8, "prompt": "_ autonomy", "zh": "受损的自主权", "answers": ["diminished"]}, {"id": "8-9", "unit": 8, "no": 9, "prompt": "be _ to risk of harm", "zh": "使……有受到伤害的风险", "answers": ["exposed"]}, {"id": "8-10", "unit": 8, "no": 10, "prompt": "Hippocratic _", "zh": "希波克拉底誓言", "answers": ["Oath"]}, {"id": "8-11", "unit": 8, "no": 11, "prompt": "fairness in _", "zh": "分配的公正性", "answers": ["distribution"]}, {"id": "8-12", "unit": 8, "no": 12, "prompt": "informed _", "zh": "知情同意", "answers": ["consent"]}, {"id": "8-13", "unit": 8, "no": 13, "prompt": "fair _ and outcome", "zh": "公正的程序和结果", "answers": ["procedure"]}, {"id": "8-14", "unit": 8, "no": 14, "prompt": "_ table", "zh": "手术台", "answers": ["operating"]}, {"id": "8-15", "unit": 8, "no": 15, "prompt": "ethical _", "zh": "伦理责任", "answers": ["obligation"]}, {"id": "8-16", "unit": 8, "no": 16, "prompt": "_ neurosurgeon", "zh": "儿科神经外科医生", "answers": ["pediatric"]}, {"id": "8-17", "unit": 8, "no": 17, "prompt": "_ the surgery", "zh": "做手术", "answers": ["perform"]}, {"id": "8-18", "unit": 8, "no": 18, "prompt": "blood _", "zh": "血流", "answers": ["flow"]}, {"id": "8-19", "unit": 8, "no": 19, "prompt": "_ care", "zh": "重症监护", "answers": ["intensive"]}, {"id": "8-20", "unit": 8, "no": 20, "prompt": "_ father", "zh": "养父", "answers": ["adoptive"]}, {"id": "8-21", "unit": 8, "no": 21, "prompt": "_ father", "zh": "生父", "answers": ["biological"]}, {"id": "8-22", "unit": 8, "no": 22, "prompt": "_ needs", "zh": "心理需要", "answers": ["psychological"]}, {"id": "8-23", "unit": 8, "no": 23, "prompt": "_ judgment", "zh": "医学判断", "answers": ["medical"]}, {"id": "8-24", "unit": 8, "no": 24, "prompt": "_ therapy", "zh": "职业疗法", "answers": ["occupational"]}, {"id": "8-25", "unit": 8, "no": 25, "prompt": "_ meningitis", "zh": "感染脑膜炎", "answers": ["contract"]}, {"id": "8-26", "unit": 8, "no": 26, "prompt": "die of a(n) _", "zh": "死于感染", "answers": ["infection"]}, {"id": "8-27", "unit": 8, "no": 27, "prompt": "blood _", "zh": "血管", "answers": ["vessel"]}, {"id": "8-28", "unit": 8, "no": 28, "prompt": "imbalance in _", "zh": "循环的不平衡", "answers": ["circulation"]}]</script>
+<script id="pronunciations" type="application/json">{"1-1":"audio/1-1.mp3","1-2":"audio/1-2.mp3","1-3":"audio/1-3.mp3","1-4":"audio/1-4.mp3","1-5":"audio/1-5.mp3","1-6":"audio/1-6.mp3","1-7":"audio/1-7.mp3","1-8":"audio/1-8.mp3","1-9":"audio/1-9.mp3","1-10":"audio/1-10.mp3","1-11":"audio/1-11.mp3","1-12":"audio/1-12.mp3","1-13":"audio/1-13.mp3","1-14":"audio/1-14.mp3","1-15":"audio/1-15.mp3","1-16":"audio/1-16.mp3","1-17":"audio/1-17.mp3","1-18":"audio/1-18.mp3","1-19":"audio/1-19.mp3","1-20":"audio/1-20.mp3","1-21":"audio/1-21.mp3","1-22":"audio/1-22.mp3","1-23":"audio/1-23.mp3","1-24":"audio/1-24.mp3","1-25":"audio/1-25.mp3","1-26":"audio/1-26.mp3","1-27":"audio/1-27.mp3","1-28":"audio/1-28.mp3","1-29":"audio/1-29.mp3","1-30":"audio/1-30.mp3","1-31":"audio/1-31.mp3","1-32":"audio/1-32.mp3","1-33":"audio/1-33.mp3","1-34":"audio/1-34.mp3","1-35":"audio/1-35.mp3","1-36":"audio/1-36.mp3","1-37":"audio/1-37.mp3","1-38":"audio/1-38.mp3","2-1":"audio/2-1.mp3","2-2":"audio/2-2.mp3","2-3":"audio/2-3.mp3","2-4":"audio/2-4.mp3","2-5":"audio/2-5.mp3","2-6":"audio/2-6.mp3","2-7":"audio/2-7.mp3","2-8":"audio/2-8.mp3","2-9":"audio/2-9.mp3","2-10":"audio/2-10.mp3","2-11":"audio/2-11.mp3","2-12":"audio/2-12.mp3","2-13":"audio/2-13.mp3","2-14":"audio/2-14.mp3","2-15":"audio/2-15.mp3","2-16":"audio/2-16.mp3","2-17":"audio/2-17.mp3","2-18":"audio/2-18.mp3","2-19":"audio/2-19.mp3","2-20":"audio/2-20.mp3","2-21":"audio/2-21.mp3","2-22":"audio/2-22.mp3","2-23":"audio/2-23.mp3","2-24":"audio/2-24.mp3","2-25":"audio/2-25.mp3","2-26":"audio/2-26.mp3","2-27":"audio/2-27.mp3","2-28":"audio/2-28.mp3","3-1":"audio/3-1.mp3","3-2":"audio/3-2.mp3","3-3":"audio/3-3.mp3","3-4":"audio/3-4.mp3","3-5":"audio/3-5.mp3","3-6":"audio/3-6.mp3","3-7":"audio/3-7.mp3","3-8":"audio/3-8.mp3","3-9":"audio/3-9.mp3","3-10":"audio/3-10.mp3","3-11":"audio/3-11.mp3","3-12":"audio/3-12.mp3","3-13":"audio/3-13.mp3","3-14":"audio/3-14.mp3","3-15":"audio/3-15.mp3","3-16":"audio/3-16.mp3","3-17":"audio/3-17.mp3","3-18":"audio/3-18.mp3","3-19":"audio/3-19.mp3","3-20":"audio/3-20.mp3","3-21":"audio/3-21.mp3","3-22":"audio/3-22.mp3","3-23":"audio/3-23.mp3","3-24":"audio/3-24.mp3","3-25":"audio/3-25.mp3","3-26":"audio/3-26.mp3","3-27":"audio/3-27.mp3","3-28":"audio/3-28.mp3","3-29":"audio/3-29.mp3","3-30":"audio/3-30.mp3","3-31":"audio/3-31.mp3","3-32":"audio/3-32.mp3","3-33":"audio/3-33.mp3","3-34":"audio/3-34.mp3","3-35":"audio/3-35.mp3","3-36":"audio/3-36.mp3","3-37":"audio/3-37.mp3","3-38":"audio/3-38.mp3","3-39":"audio/3-39.mp3","3-40":"audio/3-40.mp3","3-41":"audio/3-41.mp3","3-42":"audio/3-42.mp3","3-43":"audio/3-43.mp3","3-44":"audio/3-44.mp3","4-1":"audio/4-1.mp3","4-2":"audio/4-2.mp3","4-3":"audio/4-3.mp3","4-4":"audio/4-4.mp3","4-5":"audio/4-5.mp3","4-6":"audio/4-6.mp3","4-7":"audio/4-7.mp3","4-8":"audio/4-8.mp3","4-9":"audio/4-9.mp3","4-10":"audio/4-10.mp3","4-11":"audio/4-11.mp3","4-12":"audio/4-12.mp3","4-13":"audio/4-13.mp3","4-14":"audio/4-14.mp3","4-15":"audio/4-15.mp3","4-16":"audio/4-16.mp3","4-17":"audio/4-17.mp3","4-18":"audio/4-18.mp3","4-19":"audio/4-19.mp3","4-20":"audio/4-20.mp3","4-21":"audio/4-21.mp3","4-22":"audio/4-22.mp3","4-23":"audio/4-23.mp3","4-24":"audio/4-24.mp3","4-25":"audio/4-25.mp3","4-26":"audio/4-26.mp3","4-27":"audio/4-27.mp3","4-28":"audio/4-28.mp3","4-29":"audio/4-29.mp3","4-30":"audio/4-30.mp3","4-31":"audio/4-31.mp3","4-32":"audio/4-32.mp3","4-33":"audio/4-33.mp3","4-34":"audio/4-34.mp3","4-35":"audio/4-35.mp3","4-36":"audio/4-36.mp3","5-1":"audio/5-1.mp3","5-2":"audio/5-2.mp3","5-3":"audio/5-3.mp3","5-4":"audio/5-4.mp3","5-5":"audio/5-5.mp3","5-6":"audio/5-6.mp3","5-7":"audio/5-7.mp3","5-8":"audio/5-8.mp3","5-9":"audio/5-9.mp3","5-10":"audio/5-10.mp3","5-11":"audio/5-11.mp3","5-12":"audio/5-12.mp3","5-13":"audio/5-13.mp3","5-14":"audio/5-14.mp3","5-15":"audio/5-15.mp3","5-16":"audio/5-16.mp3","5-17":"audio/5-17.mp3","5-18":"audio/5-18.mp3","5-19":"audio/5-19.mp3","6-1":"audio/6-1.mp3","6-2":"audio/6-2.mp3","6-3":"audio/6-3.mp3","6-4":"audio/6-4.mp3","6-5":"audio/6-5.mp3","6-6":"audio/6-6.mp3","6-7":"audio/6-7.mp3","6-8":"audio/6-8.mp3","6-9":"audio/6-9.mp3","6-10":"audio/6-10.mp3","6-11":"audio/6-11.mp3","6-12":"audio/6-12.mp3","6-13":"audio/6-13.mp3","6-14":"audio/6-14.mp3","6-15":"audio/6-15.mp3","6-16":"audio/6-16.mp3","6-17":"audio/6-17.mp3","6-18":"audio/6-18.mp3","6-19":"audio/6-19.mp3","6-20":"audio/6-20.mp3","6-21":"audio/6-21.mp3","6-22":"audio/6-22.mp3","6-23":"audio/6-23.mp3","6-24":"audio/6-24.mp3","6-25":"audio/6-25.mp3","7-1":"audio/7-1.mp3","7-2":"audio/7-2.mp3","7-3":"audio/7-3.mp3","7-4":"audio/7-4.mp3","7-5":"audio/7-5.mp3","7-6":"audio/7-6.mp3","7-7":"audio/7-7.mp3","7-8":"audio/7-8.mp3","7-9":"audio/7-9.mp3","7-10":"audio/7-10.mp3","7-11":"audio/7-11.mp3","7-12":"audio/7-12.mp3","7-13":"audio/7-13.mp3","7-14":"audio/7-14.mp3","7-15":"audio/7-15.mp3","7-16":"audio/7-16.mp3","7-17":"audio/7-17.mp3","7-18":"audio/7-18.mp3","7-19":"audio/7-19.mp3","7-20":"audio/7-20.mp3","7-21":"audio/7-21.mp3","7-22":"audio/7-22.mp3","7-23":"audio/7-23.mp3","7-24":"audio/7-24.mp3","7-25":"audio/7-25.mp3","7-26":"audio/7-26.mp3","7-27":"audio/7-27.mp3","7-28":"audio/7-28.mp3","7-29":"audio/7-29.mp3","7-30":"audio/7-30.mp3","8-1":"audio/8-1.mp3","8-2":"audio/8-2.mp3","8-3":"audio/8-3.mp3","8-4":"audio/8-4.mp3","8-5":"audio/8-5.mp3","8-6":"audio/8-6.mp3","8-7":"audio/8-7.mp3","8-8":"audio/8-8.mp3","8-9":"audio/8-9.mp3","8-10":"audio/8-10.mp3","8-11":"audio/8-11.mp3","8-12":"audio/8-12.mp3","8-13":"audio/8-13.mp3","8-14":"audio/8-14.mp3","8-15":"audio/8-15.mp3","8-16":"audio/8-16.mp3","8-17":"audio/8-17.mp3","8-18":"audio/8-18.mp3","8-19":"audio/8-19.mp3","8-20":"audio/8-20.mp3","8-21":"audio/8-21.mp3","8-22":"audio/8-22.mp3","8-23":"audio/8-23.mp3","8-24":"audio/8-24.mp3","8-25":"audio/8-25.mp3","8-26":"audio/8-26.mp3","8-27":"audio/8-27.mp3","8-28":"audio/8-28.mp3"}</script>
+<script>'use strict';
+
+const bank = JSON.parse(document.getElementById('bank').textContent);
+const pronunciations = JSON.parse(document.getElementById('pronunciations').textContent);
+const byId = new Map(bank.map(question => [question.id, question]));
+const bookOrder = new Map(bank.map((question, index) => [question.id, index]));
+const el = id => document.getElementById(id);
+const storageKey = 'medspell.progress.v1';
+
+function today() {
+  const date = new Date();
+  return [date.getFullYear(), String(date.getMonth() + 1).padStart(2, '0'),
+    String(date.getDate()).padStart(2, '0')].join('-');
+}
+
+function normalize(text) {
+  return text.normalize('NFKC').toLowerCase().replace(/[‐‑–—]/g, '-')
+    .replace(/[’‘]/g, "'").trim().replace(/\s+/g, ' ');
+}
+
+function phrase(question, answer = question.answers[0]) {
+  return question.prompt.replace('_', answer);
+}
+
+const phraseKey = new Map(bank.map(question => [question.id, normalize(phrase(question))]));
+
+function candidates(scope, mastered) {
+  const excluded = new Set(mastered.map(id => phraseKey.get(id)));
+  return bank.filter(q => (!scope || q.unit === scope) && !excluded.has(phraseKey.get(q.id)))
+    .map(q => q.id);
+}
+
+function shuffle(ids) {
+  for (let i = ids.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [ids[i], ids[j]] = [ids[j], ids[i]];
+  }
+}
+
+function newQueue(mode, scope, mastered) {
+  const ids = candidates(scope, mastered);
+  if (mode === 'mix') shuffle(ids);
+  return ids;
+}
+
+function fresh() {
+  return { date: today(), mode: 'seq', scope: 0, goal: 20, done: 0, roundStart: 0,
+    mastered: [], ids: candidates(0, []), pos: 0 };
+}
+
+function validNumber(value, min, max) {
+  return Number.isSafeInteger(value) && value >= min && value <= max;
+}
+
+function loadProgress() {
+  const seed = fresh();
+  try {
+    const old = JSON.parse(localStorage.getItem(storageKey));
+    if (!old) return seed;
+    const mastered = Array.isArray(old.mastered) ? [...new Set(old.mastered.filter(id => byId.has(id)))] : [];
+    const scope = validNumber(old.scope, 0, 8) ? old.scope : seed.scope;
+    const mode = old.mode === 'mix' ? 'mix' : 'seq';
+    const available = candidates(scope, mastered);
+    const allowed = new Set(available);
+    const validQueue = Array.isArray(old.ids) && old.ids.length === available.length &&
+      new Set(old.ids).size === available.length && old.ids.every(id => allowed.has(id));
+    const done = validNumber(old.done, 0, Number.MAX_SAFE_INTEGER) ? old.done : 0;
+    // Version 1.0 stored the number of extra questions unlocked after the daily goal.
+    const baseline = old.roundStart ?? old.extra ?? 0;
+    return { date: old.date, mode, scope, mastered, done,
+      goal: validNumber(old.goal, 1, bank.length) ? old.goal : seed.goal,
+      roundStart: validNumber(baseline, 0, done) ? baseline : 0,
+      ids: validQueue ? old.ids : newQueue(mode, scope, mastered),
+      pos: validQueue && validNumber(old.pos, 0, old.ids.length) ? old.pos : 0 };
+  } catch { return seed; }
+}
+
+const s = loadProgress();
+let storageOk = true;
+let hints = 0;
+let activeClip = null;
+
+function stopPronunciation() {
+  if (activeClip) {
+    activeClip.onended = null;
+    activeClip.onerror = null;
+    activeClip.pause();
+    activeClip = null;
+  }
+  el('listen').dataset.playing = 'false';
+  el('listen').setAttribute('aria-label', '播放完整英文词组');
+  el('voiceStatus').textContent = '';
+}
+
+async function playPronunciation() {
+  if (el('card').hidden) return;
+  stopPronunciation();
+  const source = pronunciations[s.ids[s.pos]];
+  let clip;
+  function failed() {
+    if (clip && clip !== activeClip) return;
+    stopPronunciation();
+    el('voiceStatus').textContent = '发音播放失败，请再点一次喇叭。';
+  }
+  try {
+    if (!source) { failed(); return; }
+    clip = new Audio(source);
+    activeClip = clip;
+    clip.onerror = failed;
+    clip.onended = () => { if (clip === activeClip) stopPronunciation(); };
+    el('listen').dataset.playing = 'true';
+    el('listen').setAttribute('aria-label', '重新播放完整英文词组');
+    await clip.play();
+  } catch { failed(); }
+}
+
+function save() {
+  try {
+    localStorage.setItem(storageKey, JSON.stringify(s));
+    storageOk = true;
+  } catch { storageOk = false; }
+}
+
+function rollDay() {
+  if (s.date === today()) return false;
+  s.date = today();
+  s.done = 0;
+  s.roundStart = 0;
+  save();
+  return true;
+}
+
+function groupDone() { return s.done - s.roundStart; }
+
+function draw(message = '') {
+  stopPronunciation();
+  rollDay();
+  const question = byId.get(s.ids[s.pos]);
+  const reachedGoal = groupDone() >= s.goal;
+  el('card').hidden = !question || reachedGoal;
+  el('finish').hidden = !el('card').hidden;
+  const [, month, day] = s.date.split('-');
+  el('date').textContent = Number(month) + '月' + Number(day) + '日';
+  el('date').setAttribute('datetime', s.date);
+  el('progress').textContent = String(groupDone());
+  el('target').textContent = '/ ' + s.goal + ' 题';
+  el('dayCount').textContent = '今日已答对 ' + s.done + ' 题';
+  el('scoreline').setAttribute('aria-valuenow', String(Math.min(groupDone(), s.goal)));
+  el('scoreline').setAttribute('aria-valuemax', String(s.goal));
+  el('bar').style.width = Math.min(100, groupDone() / s.goal * 100) + '%';
+  el('modeLabel').textContent = s.mode === 'seq' ? '顺序练习' : '乱序练习';
+  el('notice').textContent = storageOk ? message : '当前环境无法保存进度，请使用已安装的应用。';
+  el('feedback').textContent = '';
+  el('word').setAttribute('aria-invalid', 'false');
+  el('word').value = '';
+  hints = 0;
+  el('hint').textContent = '查看提示';
+  el('goal').value = s.goal;
+  el('mode').value = s.mode;
+  el('scope').value = s.scope;
+  if (question && !reachedGoal) {
+    el('unit').textContent = 'UNIT ' + String(question.unit).padStart(2, '0') + ' · 第 ' + question.no + ' 题';
+    const [before, after] = question.prompt.split('_');
+    const blank = document.createElement('span');
+    blank.className = 'blank';
+    el('phrase').replaceChildren(document.createTextNode(before), blank, document.createTextNode(after));
+    el('zh').textContent = question.zh;
+  }
+  if (el('card').hidden) {
+    const empty = s.ids.length === 0;
+    el('finishTitle').textContent = empty ? '这个范围的词都已斩过' : reachedGoal ? '本组目标已完成' : '所选范围已练完';
+    el('finishText').textContent = empty ? '可以换个单元，或从已斩词库移回词汇。' :
+      '今天共答对 ' + s.done + ' 题。可以继续练一组，也可以切换单元。';
+    el('more').hidden = empty;
+    el('more').textContent = '再练一组（' + Math.min(s.goal, question ? s.ids.length - s.pos : s.ids.length) + ' 题）';
+  }
+}
+
+function renderLibrary() {
+  const query = normalize(el('librarySearch').value);
+  el('libraryCount').textContent = String(s.mastered.length);
+  const rows = [];
+  for (const id of [...s.mastered].reverse()) {
+    const q = byId.get(id);
+    const english = q.answers.map(answer => phrase(q, answer)).join(' / ');
+    if (query && !normalize(english + ' ' + q.zh + ' Unit ' + q.unit).includes(query)) continue;
+    const row = document.createElement('li');
+    const description = document.createElement('div');
+    const title = document.createElement('strong');
+    const detail = document.createElement('small');
+    title.textContent = english;
+    detail.textContent = q.zh + ' · Unit ' + q.unit + ' 第 ' + q.no + ' 题';
+    description.append(title, detail);
+    const restore = document.createElement('button');
+    restore.type = 'button';
+    restore.className = 'quiet';
+    restore.dataset.restore = id;
+    restore.textContent = '移回练习';
+    restore.onclick = () => restoreWord(id);
+    row.append(description, restore);
+    rows.push(row);
+  }
+  el('libraryList').replaceChildren(...rows);
+  el('libraryEmpty').hidden = rows.length > 0;
+  el('libraryEmpty').textContent = s.mastered.length ? '没有找到匹配的词汇。' : '斩过的词会保存在这里。';
+}
+
+function cutWord() {
+  if (el('card').hidden) return;
+  const id = s.ids[s.pos];
+  const key = phraseKey.get(id);
+  const keep = item => phraseKey.get(item) !== key;
+  s.mastered.push(id);
+  const prefix = s.ids.slice(0, s.pos).filter(keep);
+  s.ids = prefix.concat(s.ids.slice(s.pos).filter(keep));
+  s.pos = prefix.length;
+  save();
+  renderLibrary();
+  draw('已斩：' + phrase(byId.get(id)) + '。可在已斩词库移回。');
+}
+
+function restoreWord(id) {
+  if (!s.mastered.includes(id)) return;
+  s.mastered = s.mastered.filter(item => item !== id);
+  const present = new Set(s.ids);
+  const added = candidates(s.scope, s.mastered).filter(item => !present.has(item));
+  const remaining = s.ids.slice(s.pos);
+  if (s.mode === 'seq') {
+    remaining.push(...added);
+    remaining.sort((a, b) => bookOrder.get(a) - bookOrder.get(b));
+  } else {
+    for (const item of added) remaining.splice(Math.floor(Math.random() * (remaining.length + 1)), 0, item);
+  }
+  s.ids = s.ids.slice(0, s.pos).concat(remaining);
+  save();
+  renderLibrary();
+  draw('已移回练习：' + phrase(byId.get(id)));
+}
+
+function settings(startOver) {
+  const goal = Number(el('goal').value);
+  const scope = Number(el('scope').value);
+  const mode = el('mode').value;
+  if (!validNumber(goal, 1, bank.length)) {
+    el('goal').reportValidity();
+    el('goal').focus();
+    return;
+  }
+  rollDay();
+  if (startOver || scope !== s.scope || mode !== s.mode) {
+    s.roundStart = s.done;
+    s.ids = newQueue(mode, scope, s.mastered);
+    s.pos = 0;
+  }
+  s.goal = goal;
+  s.scope = scope;
+  s.mode = mode;
+  save();
+  el('settings').open = false;
+  draw(startOver ? '新一组已开始。' : '已保存练习设置。');
+  el('card').scrollIntoView?.({ block: 'nearest' });
+}
+
+el('form').onsubmit = event => {
+  event.preventDefault();
+  rollDay();
+  const q = byId.get(s.ids[s.pos]);
+  if (!q || groupDone() >= s.goal) { draw(); return; }
+  const value = normalize(el('word').value);
+  if (!value || !q.answers.some(answer => normalize(answer) === value)) {
+    el('word').setAttribute('aria-invalid', 'true');
+    el('feedback').className = 'msg err';
+    el('feedback').textContent = value ? '再试一次，留意拼写和词形。' : '先写下你的答案。';
+    el('word').focus();
+    return;
+  }
+  s.done++;
+  s.pos++;
+  save();
+  draw('✓ 上一题答对了：' + phrase(q));
+  if (!el('card').hidden) el('word').focus();
+};
+el('hint').onclick = () => {
+  const answer = byId.get(s.ids[s.pos]).answers[0];
+  el('feedback').className = 'msg';
+  el('feedback').textContent = ++hints === 1 ? '首字母 ' + answer[0] + '，共 ' +
+    answer.replace(/\s/g, '').length + ' 个字符。' : '参考答案：' + answer;
+  el('hint').textContent = '查看答案';
+};
+el('ban').onclick = cutWord;
+el('listen').onclick = playPronunciation;
+el('word').oninput = () => {
+  if (el('feedback').className === 'msg err') {
+    el('word').setAttribute('aria-invalid', 'false');
+    el('feedback').textContent = '';
+    el('feedback').className = 'msg';
+  }
+};
+el('librarySearch').oninput = renderLibrary;
+function openSettings() {
+  el('settings').open = true;
+  el('settings').scrollIntoView?.({ block: 'start' });
+}
+el('clearRound').onclick = openSettings;
+el('clearFinished').onclick = openSettings;
+el('apply').onclick = () => settings(false);
+el('newRound').onclick = () => settings(true);
+el('more').onclick = () => {
+  rollDay();
+  s.roundStart = s.done;
+  if (s.pos >= s.ids.length) {
+    s.ids = newQueue(s.mode, s.scope, s.mastered);
+    s.pos = 0;
+  }
+  save();
+  draw();
+};
+for (let unit = 1; unit <= 8; unit++) {
+  el('scope').add(new Option('Unit ' + unit + ' · ' + candidates(unit, []).length + ' 题', unit));
+}
+el('goal').max = bank.length;
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) stopPronunciation();
+  else if (rollDay()) draw();
+});
+setInterval(() => { if (rollDay()) draw(); }, 30000);
+rollDay();
+save();
+renderLibrary();
+draw();
+</script></body></html>
