@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">医学拼写</string>
+    <color name="icon_green">#39AF48</color>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowBackground">#F7FAF4</item>
+        <item name="android:statusBarColor">#F7FAF4</item>
+        <item name="android:navigationBarColor">#F7FAF4</item>
+    </style>
+</resources>
